@@ -11,14 +11,19 @@
   </head>
   <body>
           <nav class="top-bar">
-            
+
             <%= link_to 'Stefan Armijo', '/' %>
             <%= link_to 'blog', '/blog.html' %>
+            <!-- link to notes -->
             <a href="/js/">Photos</a>
       <!-- End Header and Nav -->
 
     <div id="main" role="main">
       <%= yield %>
+    </div>
+
+    <div id="notes" role="notes">
+        <!-- yeild some notes here -->
     </div>
 
     <aside>
