@@ -12,6 +12,9 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '~> 4.1'
 gem 'middleman-blog'
 
+# For realtime results
+gem 'middleman-livereload'
+
 # Middleman console like pry
 gem 'middleman-pry'
 
