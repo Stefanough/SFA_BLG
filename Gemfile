@@ -26,5 +26,8 @@ gem 'middleman-pry'
 # For parsing Markdown
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
+# The nokogiri for peering into documents
+gem 'nokogiri'
+
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
