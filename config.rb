@@ -53,22 +53,13 @@ end
 
 # blog two - notes
 activate :blog do |blog|
-  # This will add a prefix to all links, template references and source paths
-    blog.prefix = "notes"
-    blog.name = "notes"
+# This will add a prefix to all links, template references and source paths
+  blog.prefix = "notes"
+  blog.name = "notes"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
-  # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
-  # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
-  # blog.year_link = "{year}.html"
-  # blog.month_link = "{year}/{month}.html"
-  # blog.day_link = "{year}/{month}/{day}.html"
-  # blog.default_extension = ".markdown"
-
+# See blog config above for all the options
+  blog.sources = "{title}.html"  
+ 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
@@ -81,6 +72,9 @@ end
 # Realtime results durring development
 activate :livereload
 
+# Config for syntax highlighting
+set :markdown_engine, :redcarpet
+activate :syntax
 
 page "/feed.xml", layout: false
 # Reload the browser automatically whenever files change

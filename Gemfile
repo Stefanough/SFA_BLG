@@ -28,5 +28,8 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 # The nokogiri for peering into documents
 gem 'nokogiri'
 
+# For Syntax highlighting
+gem 'middleman-syntax'
+
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
