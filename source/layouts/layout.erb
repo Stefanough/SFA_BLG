@@ -5,18 +5,18 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% blog_title = 'SFA BLG' %>
-    <title><%= blog_title %> <%= ' - ' + current_article.title unless current_article.nil? %></title>
-    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'assets/normalize', media: 'all' %>
+    <title><%#= "whatever" %> <%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <%#= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <%#= stylesheet_link_tag 'assets/normalize', media: 'all' %>
   </head>
   <body>
           <nav class="top-bar">
 
             <%= link_to 'Stefan Armijo', '/' %>
-            <%= link_to 'blog', '/blog' %>
+            <%= link_to 'blog', '/scribbles' %>
             <%= link_to 'notes', '/notes' %>
-            <a href="/js/">Photos</a>
       <!-- End Header and Nav -->
+          </nav>
 
     <div id="main" role="main">
       <%= yield %>
