@@ -43,6 +43,8 @@ Using these resources:
 
 <http://epochwolf.com/>
 
+<https://cole.money/blog/>
+
 
 Configuration notes:
 --------------------
@@ -90,8 +92,8 @@ Timeline:
 ---------
 
 * ~~get blog link in navbar to link to /blog~~
-*     had to link to /blog.html to get to the blog.html.erb file
-* different layouts for blog page and front page
+    * had to link to /blog.html to get to the blog.html.erb file
+* different ==layouts== for blog page and front page
 * just created two blogs in the 'basic_blog' project - "scribbles" and "notes"
 *     removed all previous articeles and notes
 *     use <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
@@ -103,8 +105,19 @@ Timeline:
 *
 *    Solved above error. Cause was another call to `blog.articles` method with out specifing blog name. changed to `blog('scribbles').articles`.
 *    ToDo: add a few large notes markdown files to `/notes` and have them displayed as links on hte main notes page.
-*   ~~ ToDo: change how articles are generated. Want to generate 'notes articles' without the date in the filename.~~
+*   ~~ToDo: change how articles are generated. Want to generate 'notes articles' without the date in the filename.~~
 *       Solved by changing blog configuration in `config.rb` with the option `blog.sources = "{title}.html"`
+* Get notes to render how I want I want.
+* pass options to the markdown configuration:
+ 
+      ```ruby
+      set :markdown,
+      fenced_code_blocks: true,
+      strikethrough: true,
+      smartypants: true
+      ```
+      set the `strikethrough` option to `true` and pass it to `:markdown`
+      
 
 Notes:
 ------

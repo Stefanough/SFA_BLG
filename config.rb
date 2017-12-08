@@ -72,8 +72,16 @@ end
 # Realtime results durring development
 activate :livereload
 
-# Config for syntax highlighting
+# Allow syntax highlighting
 set :markdown_engine, :redcarpet
+set :markdown,
+  :fenced_code_blocks => true,
+  # disable_indented_code_blocks: true,
+  strikethrough: true,
+  :smartypants => true,
+  highlight: true,
+  # lax_spacing: true,
+  superscript: true
 activate :syntax
 
 page "/feed.xml", layout: false
@@ -97,6 +105,3 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
-
-
-
