@@ -1,16 +1,13 @@
 ---
 
-title: html_notes
+title: html
+blog: notes
 date: 2017-12-08 18:18 UTC
 tags: 
 
 ---
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+
 
 HTML Notes
 ----
@@ -71,22 +68,23 @@ Other `meta` attributes include authorship, content-language, social media speci
 
 **Attributes** - Attributes are used to add additional information to tags. They reside in the opening of a tag and consist of an attribute name and an attribute value.
   
-    ```html
+```html
     <form class="" action="index.html" method="post">
 
     </form>
-    ```
-  In the above, `class`, `action`, and `method` are attributes for the form tag.
-  Some attributes have only two values and are known as `boolean attributes`. They can be shortened to an empty value or just the attribute name.
+```
+    In the above, `class`, `action`, and `method` are attributes for the form tag.
+
+    Some attributes have only two values and are known as `boolean attributes`. They can be shortened to an empty value or just the attribute name.
  
-  ```html
-  <input required="required">
+```html
+    <input required="required">
 
-  <input required="">
+    <input required="">
 
-  <input required>
-  ```
-  All forms of the `required` attribute above have the same meaning.
+    <input required>
+```
+All forms of the `required` attribute above have the same meaning.
 
 
 **Self Closing Tag** - Tags where all the attributes as well as the value are in between the `< >` and there is no closing tag `</tag>` are called *self closing tags*. `<input>`, for example is a self closing tag. Self closing tags contain no content. `<textarea></textarea>` and `<body></body>` are not self closing tags.
@@ -105,23 +103,23 @@ Other `meta` attributes include authorship, content-language, social media speci
 
 
 
-  ```html
-  <form action="cat_rental_requests_url" method="post">
+```html
+    <form action="cat_rental_requests_url" method="post">
 
-    <label for="cat_rental_request_cat_id">Cat:</label>
-    <select name="cat_rental_request[cat_id]" id="cat_rental_request_cat_id">
-      <option disabled selected>-- Please Select a Cat --</option>
-      <% Cat.all.each do |cat| %>
-        <% selected = @rental_request.cat_id == cat.id %>
-        <option <%= selected ? "selected" : "" %> value="<%= cat.id %>">
-          <%= cat.name %>
-        </option>
+      <label for="cat_rental_request_cat_id">Cat:</label>
+      <select name="cat_rental_request[cat_id]" id="cat_rental_request_cat_id">
+        <option disabled selected>-- Please Select a Cat --</option>
+        <% Cat.all.each do |cat| %>
+          <% selected = @rental_request.cat_id == cat.id %>
+          <option <%= selected ? "selected" : "" %> value="<%= cat.id %>">
+            <%= cat.name %>
+          </option>
 
-      <% end %>
+        <% end %>
 
-    </select>
-  </form>  
-  ```
+      </select>
+    </form>  
+```
   
   In the above:
   

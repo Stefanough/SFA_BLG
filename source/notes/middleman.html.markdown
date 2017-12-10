@@ -1,6 +1,7 @@
 ---
 
 title: middleman
+blog: notes
 date: 2017-12-08 07:40 UTC
 tags: 
 
@@ -73,11 +74,11 @@ Design Ideas/goals:
     - ~~vertica nav bar~~ No, horizontal for now.
         - blog
         - notes
+        - projects (notes in here?)
+        - project euler/code_something? (put in notes?)
         - photos
         - about
     - front page with just latest updates
-    - ~~folder for aricles~~
-    - ~~folder for notes~~
 
 #### Plan for notes page:
 * main notes page will have links to differente subject (Ruby, Rails, Sql, Vim, Etc...)
@@ -90,22 +91,35 @@ Design Ideas/goals:
 
 Timeline:
 ---------
+* ~~**ToDo**: all links working in build.~~
+* **ToDo**: RecentArticles only on frontpage.
+* **ToDo**: import all notes.
+* ~~**ToDo**: Soved!~~
+    * Links on danalol: 
+
+        ```
+        <li><%= link_to 'Archives', '/browse' %></li>
+        ```
+    * Links on STFNBLG:
+       
+        ```
+        <%= link_to 'blog', 'blog.html' %>
+        ```
+      Solved with `activate :directory_indexes` in configure.rb
 
 * ~~get blog link in navbar to link to /blog~~
-    * had to link to /blog.html to get to the blog.html.erb file
+     * had to link to /blog.html to get to the blog.html.erb file
 * different ==layouts== for blog page and front page
 * just created two blogs in the 'basic_blog' project - "scribbles" and "notes"
-*     removed all previous articeles and notes
-*     use <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
-*     how do I render pages from both blogs where I want them?
+    * use <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
+    * how do I render pages from both blogs where I want them?
 * Current error when launching MM server and loading front page: `you must either use the flag --blog (ex. --blog 'myBlog') when calling this method, or add blog: [blog_name] to your page's frontmatter`
-*     What is causing this error? There is a `blog_controller` method in the middleman-blog gem.
-*     Changed `page_articles.each`... method to `blog('scribbles').page_articles.each`... method
-*         new error: `undefined method page_articles' for #<Middleman::Blog::BlogData:0x00000003a32958>`
-*
-*    Solved above error. Cause was another call to `blog.articles` method with out specifing blog name. changed to `blog('scribbles').articles`.
+    * What is causing this error? There is a `blog_controller` method in the middleman-blog gem.
+    * Changed `page_articles.each`... method to `blog('scribbles').page_articles.each`... method
+         * new error: `undefined method page_articles' for #<Middleman::Blog::BlogData:0x00000003a32958>`
+         * Solved above error. Cause was another call to `blog.articles` method with out specifing blog name. changed to `blog('scribbles').articles`.
 *    ToDo: add a few large notes markdown files to `/notes` and have them displayed as links on hte main notes page.
-*   ~~ToDo: change how articles are generated. Want to generate 'notes articles' without the date in the filename.~~
+*   ~~**ToDo**: change how articles are generated. Want to generate 'notes articles' without the date in the filename.~~
 *       Solved by changing blog configuration in `config.rb` with the option `blog.sources = "{title}.html"`
 * Get notes to render how I want I want.
 * pass options to the markdown configuration:
@@ -117,7 +131,21 @@ Timeline:
       smartypants: true
       ```
       set the `strikethrough` option to `true` and pass it to `:markdown`
-      
+
+* do a test build and see  if syntax highlighting works
+
+    ```
+    == Request: /notes.html
+           error  build/feed.xml
+           You have more than one blog so you must either use the flag --blog (ex. --blog 'myBlog') when calling this method, or add blog: [blog_name] to your page's frontmatter
+           /var/lib/gems/2.3.0/gems/middleman-blog-4.0.2/lib/middleman-blog/helpers.rb:41:in `blog_controller'
+    ````
+    fixed error. `blog.articles` method in feed.xml file. have to specify which blog when working with multiple blogs.
+
+    `middleman build` runs successfully but code blocks still not highlighted. Requires styling?
+
+* **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
+* **ToDo**: Render available methods, and constants on a page.
 
 Notes:
 ------

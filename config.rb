@@ -57,7 +57,8 @@ activate :blog do |blog|
   blog.prefix = "notes"
   blog.name = "notes"
 
-# See blog config above for all the options
+  # See blog config above for all the options
+  # custom file naming template
   blog.sources = "{title}.html"  
  
   blog.tag_template = "tag.html"
@@ -72,16 +73,18 @@ end
 # Realtime results durring development
 activate :livereload
 
+# Activave directory indexes
+activate :directory_indexes
+
 # Allow syntax highlighting
 set :markdown_engine, :redcarpet
 set :markdown,
-  :fenced_code_blocks => true,
-  # disable_indented_code_blocks: true,
+  fenced_code_blocks: true,
   strikethrough: true,
-  :smartypants => true,
+  smartypants: true,
   highlight: true,
-  # lax_spacing: true,
-  superscript: true
+  superscript: true,
+  tables: true
 activate :syntax
 
 page "/feed.xml", layout: false
