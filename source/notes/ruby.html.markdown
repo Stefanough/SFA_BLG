@@ -357,3 +357,196 @@ a.zip(b)
     target_hash.merge(hash1) → nil
 
 Merges target hash into has1. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
+
+
+* A *method* is a basic Ruby command. Methods are *called* or
+*invoked* on to objects. When we call a method, we always use the format
+*object.method* (like noun.verb). `puts` is one of the most basic Ruby
+commands. `puts` tells ruby to print out a *string*, numbers, or an
+*array*.
+
+* `gets`, `to_i`, and `to_s` are also methods. `chomp` is a method that
+removes the newline character from the end of a string. Methods can be
+combined by placing a `.` between them. `gets.chomp` calls the `gets`
+method to get user input and then calls the `chomp` method on that
+input. `gets.chomp.to_s` and `gets.to_s.chomp` give the same result. I
+don’t know if the order of methods is always arbitrary. Some methods,
+like `puts` need an argument. `chomp` and `gets` do not need arguments.
+`gets().chomp().to_s()` is read the same as `gets.chomp.to_s`.
+
+    * More on the `chomp` method. `name = gets.chomp` produces a new string
+without the newline; it does not modify or change the original string.
+After using `name = gets’ using `name.chomp’ and then calling on `name`
+does not have the same effect. `name.chomp` creates a new string that is
+not called on when we simply call the variable `name`. `puts(“Hello “ +
+name.chomp + “!”)` creates a new string and uses it immediately giving
+the same effect as using ‘name = gets.chomp’ but the original variable
+‘name’ still contains the string with the newline character.
+
+* A *string* is a sequence of characters. Different from a number. A string
+must be wrapped in quotation marks.
+
+* *Operators* (or operands, operations?) are traditional mathematical items
+such as +, -, * and /. These are also *methods*. + = .+ , - = .- etc.
+
+       10 = 5.+(5)
+      => 10 = object.method(argument)
+
+* *Variables* allow you to store data in an *object* (strings, numbers,
+arrays). *Variables* are  *assigned*. A variable name consists of letters
+and numbers. It must start with a lowercase letter. It cannot contain
+spaces. Variables ARE NOT THEMSELVES OBJECTS (They CAN be objects,
+though?). Variables are names that point to values? The value is the
+Object.
+
+* An *argument* is the data that is passed into a *method*. In
+`puts(“yo!”)` `puts` is the method and `` “yo!” `` is the *argument*. If a method
+requires an argument it must have parentheses ( ‘puts()’ for example).
+some methods don’t require an argument and therefore don’t need
+parentheses (‘gets’ for example can be written by itself.    
+
+* puts actually doesn’t need parentheses `puts(“hello there!”)` is the
+same as ` puts “hello there!” `
+
+* *==* and *!=* are special methods that compare two objects and shows if they
+are equal or not. *==* and *!=* return true or false.
+
+* *<* and *>* are special methods that return *true* or *false*.
+*true* and *false* are not strings but special ruby objects.
+
+* *if* statements. the if test is really saying “if true, go to body and run
+code. if false go to end.
+
+* *code branching* is what allows your program to do different things
+depending on different conditions. By using *if*, *else*, and
+*elsif*, for example.
+
+        puts("Type in a number")
+
+        # In one line, we use `gets` to read a string from the user, then
+        # immediately call `to_i` on the string to return an integer.
+
+        num = gets.to_i
+
+        if num < 10
+          puts("That's not a big number!")
+        end
+
+        puts("Thanks for typing in a number!")
+
+* The if has two parts: the *conditional* `num < 10` and the *body*
+puts `("That's not a big number!")`. The test should be a Ruby expression that returns true
+or false. The body can be multiple lines long. The special keyword end
+indicates the end of the body. If the test is true, Ruby will run the
+code in the body. If the test is false, Ruby will skip it. In this
+example, if the user types a number less than ten, the program will tell
+them it is not a big number. Regardless whether the number is big or
+small, the program will thank them.
+
+        puts("Type in a number")
+        num = gets.to_i
+
+        if num < 10
+          puts("That's not a big number!")
+        else
+          puts("Wow, that's a big number!")
+        end
+
+        puts("Thanks for typing in a number!")
+
+* By using the *else* keyword, we create a second body that will run
+only if the above *if* test is false. *if* false then go to *else*
+then to end. *if true* then go straight to end. When *if* is true it
+always goes to the endof it’s body, skipping all the else or elsif
+statements.of it’s body, skipping all the else or elsif statements.of it’s body, skipping all the else or elsif statements.
+
+* *&&* and *||* are both *logical connectives*. In `if (x) &&
+(y)` the if test will return true only when both x and y are true. We then move straight
+to the end of the body. In `if (x) || (y)` the *if* test returns true
+when either x or y are true.
+
+* About expressions in parentheses. Expressions in parentheses are one
+(object or argument?). ‘number == (7 || 13)’ does not read “Number is
+equal to 7 or 13”. Instead, Ruby will compare ‘number’ to everything in
+the parentheses at once (similar to the order of operations, or
+PEMDAS?). In Ruby the || method works left to right, returning when it
+finds something that reads as true. In ‘(7 || 13) Ruby asks, is the
+right operand (7) true? Any number besides ‘nil’ or ‘false’ is
+inherently true, so Ruby returns 7. So, if ‘number’ equals 13 the
+statement ‘number == (7 || 13)’ will return false because ruby thinks it
+is being asked if number == 7. The correct if statement is ‘if (number
+== 7) || (number == 13)’. ‘if (number == 7 || number == 13)’ also seems
+to work.
+
+* Looping. Using while and then giving a condition will run the loop as
+long as the while test is true. When  while is false, the program will
+jump to end. while this thing is true, run the loop and when it is false
+jump to end.
+
+* Data structures. integers (numbers) and strings are data structures
+(types?). not sure where floats, and other types fall into this.
+
+* An array is another data structure. Arrays store a sequence of objects
+separated by commas ‘[1, 2,...]’. The index of the array is the position
+of the items in the array. ‘puts(cool_things[0])’ prints item at index
+0, which is the first item in the array. Array indices always start at
+zero. An array with 4 items will have an item at index 0, 1, 2, and 3.
+We can use the length method to return the number of items in a array as
+an integer ‘array.length’.
+
+* To create a new method we use the method ‘def’ followed by the body and
+ending with ‘end’. Anything in the body (loops, statements, etc…) will
+not be run until the method is actually called.
+
+* To return a value from a method we use the `return` keyword before the
+end of the defined method. `return` goes in the method body. It can go
+anywhere in the body and will always break us out of the method, whether
+it’s returning a value or not. In the following:
+
+        # The caller will give the input `number_of_squares`; this method will
+        return an array
+        # consisting of the squares for numbers from 0 up until the number
+        specified by 'number_of_squares'.
+        def first_square_numbers(number_of_squares)
+          squares = []
+
+          idx = 0
+          while idx < number_of_squares
+            squares.push(idx * idx)
+            idx = idx + 1
+          end
+
+          return squares
+        end
+
+        puts("How many square numbers do you want?")
+        number_of_desired_squares = gets.to_i
+        squares = first_square_numbers(number_of_desired_squares)
+
+        idx = 0
+        while idx < squares.length
+          puts(squares[idx])
+          idx = idx + 1
+        end
+
+        # Output:
+        #   How many square numbers do you want?
+        #   7
+        #   0
+        #   1
+        #   4
+        #   9
+        #   16
+        #   25
+        #   36
+
+* The array `squares` is returned by the method `first_square_numbers`.
+The variable `squares` is assigned in the actual program after the
+method is defined. It is populated with whatever the return of the
+method `first_square_numbers` is. Inside the method, another variable
+called squares is assigned. This contains the value that is eventually
+returned but it is actually a whole new variable and could be named
+anything (a local variable I think?).
+
+* *Breaking out of loops* the `break` command (keyword?) is used to break
+out of normally infinite loops.
