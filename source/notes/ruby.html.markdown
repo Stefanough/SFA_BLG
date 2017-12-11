@@ -31,11 +31,14 @@ if var equals this | do this | else do this
 :---:|:---:|:---:
 var == | ? | :
 `condition` | `result if condition is true` | `result if condition is false`
-   
-        def tern_test(var)
-          var == 1 ? 2 : 3
-        end
-   
+
+```ruby
+       def tern_test(var)
+         var == 1 ? 2 : 3
+       end
+```
+
+
         tern_test(1)
         => 2
    
