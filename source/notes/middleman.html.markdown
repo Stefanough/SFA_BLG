@@ -46,6 +46,8 @@ Using these resources:
 
 <https://cole.money/blog/>
 
+<https://sheep.horse/>
+
 
 Configuration notes:
 --------------------
