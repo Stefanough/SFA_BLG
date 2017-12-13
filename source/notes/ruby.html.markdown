@@ -10,67 +10,65 @@ Methods
 -------
 
 **Ruby bitwise or | operations**
-   
-        +-------------+------------+
-        | 9 | 5 => 13 | 2 | 4 => 6 |
-        +-------------+------------+
-        |  9:   1001  | 2:   0010  |
-        |  5:   0101  | 4:   0100  |
-        |  13:  1101  | 6:   0110  |
-        +-------------+------------+
 
+```
++-------------+------------+
+| 9 | 5 => 13 | 2 | 4 => 6 |
++-------------+------------+
+|  9:   1001  | 2:   0010  |
+|  5:   0101  | 4:   0100  |
+|  13:  1101  | 6:   0110  |
++-------------+------------+
+```
 
 **<<** -  fix `<<` count → integer Shifts fix left count positions, or right if count is negative.
 
   `3 << 4 => 48` double 3 4 times (6, 12, 24, 48)
 
 
-**Ternary Conditional** -
+**Ternary Conditional** - 
 
-if var equals this | do this | else do this
-:---:|:---:|:---:
-var == | ? | :
-`condition` | `result if condition is true` | `result if condition is false`
+`condition` | `condition = true` | `condition = false`
 
 ```ruby
-       def tern_test(var)
-         var == 1 ? 2 : 3
-       end
+def tern_test(var)
+  var == 1 ? 2 : 3
+end
+
+tern_test(1)
+=> 2
+
+tern_test(2)
+=> 3
+
+tern_test(4000)
+=> 3
 ```
-
-
-        tern_test(1)
-        => 2
-   
-        tern_test(2)
-        => 3
-   
-        tern_test(4000)
-        => 3
-
 
 **Enumerable#each_cons**
 
-        each_cons(n) { ... } → nil
-        each_cons(n) → an_enumerator
-    
-        Means `each consecutive`.
+``` ruby
+each_cons(n) { ... } → nil
+each_cons(n) → an_enumerator
 
+Means `each consecutive`.
+```
 Iterates a given block for (n) consecutive elements passed as an array Will return an array of length *self.length - 1* no matter the value of *n*.
 
-
-        +----------------------------------+--------------------------------------------------------------+
-        | (1..10).each_cons(3) { |a| p a } | #an array of 3 consecutive elements passed on each iteration |
-        |                                  |                                                              |
-        | [1, 2, 3]                        | <= outputs                                                   |
-        | [2, 3, 4]                        |                                                              |
-        | [3, 4, 5]                        |                                                              |
-        | [4, 5, 6]                        |                                                              |
-        | [5, 6, 7]                        |                                                              |
-        | [6, 7, 8]                        |                                                              |
-        | [7, 8, 9]                        |                                                              |
-        | [8, 9, 10]                       |                                                              |
-        +----------------------------------+--------------------------------------------------------------+
+```
++----------------------------------+--------------------------------------------------------------+
+| (1..10).each_cons(3) { |a| p a } | #an array of 3 consecutive elements passed on each iteration |
+|                                  |                                                              |
+| [1, 2, 3]                        | <= outputs                                                   |
+| [2, 3, 4]                        |                                                              |
+| [3, 4, 5]                        |                                                              |
+| [4, 5, 6]                        |                                                              |
+| [5, 6, 7]                        |                                                              |
+| [6, 7, 8]                        |                                                              |
+| [7, 8, 9]                        |                                                              |
+| [8, 9, 10]                       |                                                              |
++----------------------------------+--------------------------------------------------------------+
+```
 
 
 **Enumerator#zip**
@@ -81,63 +79,67 @@ Iterates a given block for (n) consecutive elements passed as an array Will retu
 Called on an array. Takes one or more arguments, converts them to arrays and combines them with `.self` and returns an array of arrays of combined elements.  Generates an array of length *n*, where *n* is 1 more than the number of arguments.  If the arguments are shorter than `.self`, `nil` values will be provided.
 
 
+```ruby
+a = [ 4, 5, 6 ]
+b = [ 7, 8, 9 ]
+[1, 2, 3].zip(a, b) #=> [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+[1, 2].zip(a, b)    #=> [[1, 4, 7], [2, 5, 8]]
+a.zip([1, 2], [8])  #=> [[4, 1, 8], [5, 2, nil], [6, nil, nil]]
 
-        a = [ 4, 5, 6 ]
-        b = [ 7, 8, 9 ]
-        [1, 2, 3].zip(a, b)   #=> [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-        [1, 2].zip(a, b)      #=> [[1, 4, 7], [2, 5, 8]]
-        a.zip([1, 2], [8])    #=> [[4, 1, 8], [5, 2, nil], [6, nil, nil]]
-        
-        a = [2, 3, 4, 5, 6, 7, 8, 9, 10] # 9 elements
-        
-        b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] # 10 elements
-        a.zip(b)
-        => [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]] # 9 sub arrays
+a = [2, 3, 4, 5, 6, 7, 8, 9, 10] # 9 elements
 
+b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] # 10 elements
+a.zip(b)
+=> [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]] # 9 sub arrays
+```
 
 **Hash#merge**
 
-    target_hash.merge(hash1) → nil
+```
+target_hash.merge(hash1) → nil
+```
 
 Merges target hash into has1. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
 
 
 The `Array#each` method is hella cool. The .each method accepts a block of code to which each element of the array is passed in turn:
 
-        def array_copy(source)
-           destination = [] #create a new empty array
-           source.each do |number|
-        #for each element in the array do the block of code targeting the variable ‘number’
-             destination << number if number < 4
-        #push ‘number’ to array ‘ destination’ if number is less than 4
-           end
-           return destination
-        end
+```ruby
+def array_copy(source)
+   destination = [] #create a new empty array
+   source.each do |number|
+#for each element in the array do the block of code targeting the variable ‘number’
+     destination << number if number < 4
+#push ‘number’ to array ‘ destination’ if number is less than 4
+   end
+   return destination
+end
+```
 
+**inject** is a cool method inside of `enumerable` that allows you to get the sum or product of the contents of an array if all the elements are numeric values. inject is given a method argument then a block containing two parameters representing the so-far accumulated value and the next element to be operated on. inject will run on each element in the array and then return the final accumulated value.
 
-**inject** is a cool method inside of **enumerable** that allows you to get the sum or product of the contents of an array if all the elements are numeric values. inject is given a method argument then a block containing two parameters representing the so-far accumulated value and the next element to be operated on. inject will run on each element in the array and then return the final accumulated value.
-
-
-        +------------------------------------+--------------------------------------------------------------------------------+
-        | nums = Array(1..10)                |                                                                                |
-        | nums.inject(0) do |accum, element| | # accum is initially set to the method argument 0 but can be set to any value. |
-        |   accum + element                  |                                                                                |
-        | end                                |                                                                                |
-        |                                    |                                                                                |
-        | stdout:                            |                                                                                |
-        | => 55                              |                                                                                |
-        |                                    |                                                                                |
-        | nums.inject(:+ )                   | # A cool shortcut that does the same as the above code.                        |
-        | nums.inject(:* )                   | # Also works for returning a product.                                          |
-        |                                    |                                                                                |
-        | nums.inject('')                    | # Will set the accum value to an empty string.                                 |
-        +------------------------------------+--------------------------------------------------------------------------------+
-
-
-        inject(initial, sym) → obj
-        inject(sym) → obj
-        inject(initial) { |memo, obj| block } → obj
-        inject { |memo, obj| block } → obj
+```
++------------------------------------+--------------------------------------------------------------------------------+
+| nums = Array(1..10)                |                                                                                |
+| nums.inject(0) do |accum, element| | # accum is initially set to the method argument 0 but can be set to any value. |
+|   accum + element                  |                                                                                |
+| end                                |                                                                                |
+|                                    |                                                                                |
+| stdout:                            |                                                                                |
+| => 55                              |                                                                                |
+|                                    |                                                                                |
+| nums.inject(:+ )                   | # A cool shortcut that does the same as the above code.                        |
+| nums.inject(:* )                   | # Also works for returning a product.                                          |
+|                                    |                                                                                |
+| nums.inject('')                    | # Will set the accum value to an empty string.                                 |
++------------------------------------+--------------------------------------------------------------------------------+
+```
+```ruby
+inject(initial, sym) → obj
+inject(sym) → obj
+inject(initial) { |memo, obj| block } → obj
+inject { |memo, obj| block } → obj
+```
 
 * Combines all elements of an enumerable using a binary operator or named in a method or block passed to #inject. Inject has an accumulator value called *memo* (short for memory?) that takes the accumulator value and each element. *Memo* is held by a block or associated with a symbol passed to inject ( :*, :+, :/)
 
@@ -145,54 +147,60 @@ The `Array#each` method is hella cool. The .each method accepts a block of code 
 
     *Memo* will be returned in whatever form it is after #inject is done.
 
+```
++-------------------------------------+---------+
+| [1, 2, 3, 4, 5].inject(:+)          | #=> 15  |
+| (1..5).inject(:*)                   | #=> 120 |
+| (5..10).inject { |sum, n| sum + n } | #=> 45  |
++-------------------------------------+---------+
+```
 
-        +-------------------------------------+---------+
-        | [1, 2, 3, 4, 5].inject(:+)          | #=> 15  |
-        | (1..5).inject(:*)                   | #=> 120 |
-        | (5..10).inject { |sum, n| sum + n } | #=> 45  |
-        +-------------------------------------+---------+
-
-        +-------------------------------------------------------+--------------------------------------------------------------+
-        | longest = %w{ cat sheep bear }.inject do |memo, word| | #gen 3 element arr of strings. memo is accumulator value.    |
-        |   memo.length > word.length ? memo : word             | Word is element passed if length of string currently in memo |
-        | end                                                   | currently in memo is longer than the passed element,         |
-        |                                                       | memo = memo. If not, memo = word                             |
-        +-------------------------------------------------------+--------------------------------------------------------------+
-
+```
++-------------------------------------------------------+--------------------------------------------------------------+
+| longest = %w{ cat sheep bear }.inject do |memo, word| | #gen 3 element arr of strings. memo is accumulator value.    |
+|   memo.length > word.length ? memo : word             | Word is element passed if length of string currently in memo |
+| end                                                   | currently in memo is longer than the passed element,         |
+|                                                       | memo = memo. If not, memo = word                             |
++-------------------------------------------------------+--------------------------------------------------------------+
+```
 
 **select** takes elements of an array or a range and tests them against a code block. all the elements that return true are returned in a new array.
 
-        nums = (1..30)
+```ruby
+nums = (1..30)
 
-        arr = nums.select do |i|
-          i % 2 == 0
-        end
-        puts arr
-  
-        stdout:
-        [2, 4, 6, 8, 10…]
+arr = nums.select do |i|
+  i % 2 == 0
+end
+puts arr
+
+stdout:
+[2, 4, 6, 8, 10…]
+```
 
 
 **include?** takes an object as a parameter and returns a boolean value if any item in the array is equal to that object.
 
-         nums = (1..10)
-         nums_arr = Array(1..10)
-         nums_hsh = {1 => "a", 2 => "b", 3 => "c", 4 => "d", 5 => "e"}
-   
-         puts nums.include?(5)
-         => true
-         puts nums.include?(11)
-         => false
-         puts nums_arr.include?(5)
-         => true
-         puts nums_arr.include?(11)
-         => false
-         puts nums_hsh.include?(3)
-         => true
-         puts nums_hsh.include?(11)
-         => false
-         puts nums_hsh.include?('c')
-         =>false #does not work for hash values? only keys?
+```ruby
+nums = (1..10)
+nums_arr = Array(1..10)
+nums_hsh = {1 => "a", 2 => "b", 3 => "c", 4 => "d", 5 => "e"}
+
+puts nums.include?(5)
+=> true
+puts nums.include?(11)
+=> false
+puts nums_arr.include?(5)
+=> true
+puts nums_arr.include?(11)
+=> false
+puts nums_hsh.include?(3)
+=> true
+puts nums_hsh.include?(11)
+=> false
+puts nums_hsh.include?('c')
+=>false #does not work for hash values? only keys?
+```
 
 
 **any?** **all?** and **none?** return a boolean based on the given code block for the members in their collection. Check to see if an array has any element greater than zero, any odd/even elements, if all elements are positive etc.
