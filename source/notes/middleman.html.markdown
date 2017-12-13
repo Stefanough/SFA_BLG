@@ -49,6 +49,20 @@ Using these resources:
 <https://sheep.horse/>
 
 
+### Site inspirations:
+<http://o-r-g.com/>
+
+<http://eric.young.li/#>
+
+<http://text.npr.org/>
+
+<http://ryder-ripps.com/>
+
+<https://sfbay.craigslist.org/>
+
+<http://stallman.org/>
+
+
 Configuration notes:
 --------------------
 
@@ -93,11 +107,16 @@ Design Ideas/goals:
 
 Timeline:
 ---------
+
+* **ToDo**: Blog article title on article page
+* **ToDo**: Screw that, make styling dead simple. Get site live ASAP!
+* ~~**ToDo**: styling~~
+    * Very confused about how this site is pulling fonts from the web. In my stylesheet there are links to fonts in the `et-book` family. None of these fonts are stored locally in structure of the site. I don't think the links are pointing to anything remote. Does the `@font-face` somehow parse it's contained links?
 * ~~**ToDo**: all links working in build.~~
 * **ToDo**: RecentArticles only on frontpage.
 * **ToDo**: import all notes.
 * ~~**ToDo**: Soved!~~
-    * Links on danalol: 
+    * Links on danalol:
 
         ```
         <li><%= link_to 'Archives', '/browse' %></li>

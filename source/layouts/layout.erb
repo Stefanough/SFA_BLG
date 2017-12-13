@@ -22,9 +22,12 @@
             <%= link_to 'about', '/about' %>
           </nav>
 
-    <div id="main" role="main">
-      <%= yield %>
-    </div>
+          <div id="main" role="main">
+              <% if is_blog_article? %>
+                  <h2> <%= current_article.title %> </h2>
+              <% end %>
+              <%= yield %>
+          </div>
 
 
     <aside>

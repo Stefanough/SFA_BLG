@@ -81,6 +81,11 @@
              font-style: normal; }
 
 
-html { font-size: 14px;
-       font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+html { font-size: 100%;
+       font-family: "Times New Roman";
+       // font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
        }
+
+body { background-color: #faffd7;
+       padding-left: 5%;
+     }
