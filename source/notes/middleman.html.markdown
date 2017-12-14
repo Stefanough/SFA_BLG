@@ -32,7 +32,6 @@ Using these resources:
 <http://www.rubydoc.info/github/middleman/middleman-blog>
 
 
-
 #### Blog inspiration:
 <https://vgpena.github.io/>
 
@@ -47,6 +46,8 @@ Using these resources:
 <https://cole.money/blog/>
 
 <https://sheep.horse/>
+
+<https://benhur07b.github.io/index.html>
 
 
 ### Site inspirations:
