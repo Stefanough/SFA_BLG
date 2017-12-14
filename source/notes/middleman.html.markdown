@@ -109,10 +109,12 @@ Design Ideas/goals:
 Timeline:
 ---------
 
-* **ToDo**: Blog article title on article page
-* **ToDo**: Screw that, make styling dead simple. Get site live ASAP!
 * ~~**ToDo**: styling~~
     * Very confused about how this site is pulling fonts from the web. In my stylesheet there are links to fonts in the `et-book` family. None of these fonts are stored locally in structure of the site. I don't think the links are pointing to anything remote. Does the `@font-face` somehow parse it's contained links?
+    * content kept at half? page width.
+    * Monospace font from vgpena blog.
+* ~~**ToDo**: Blog article title on article page~~
+* **ToDo**: Screw that, make styling dead simple. Get site live ASAP!
 * ~~**ToDo**: all links working in build.~~
 * **ToDo**: RecentArticles only on frontpage.
 * **ToDo**: import all notes.

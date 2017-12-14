@@ -2,13 +2,22 @@
 
 // Start off with Tufte fonts
 
+@font-face { font-family:'Overpass Mono';
+             src: url("/fonts/OverpassMono-Light.woff2") format("woff2"),url("/fonts/OverpassMono-Light.woff") format("woff");
+             font-weight:normal;
+             font-style:normal }
+             
+@font-face { font-family:'Overpass Mono';
+             src: url("/fonts/OverpassMono-Bold.woff2") format("woff2"),url("/fonts/OverpassMono-Bold.woff") format("woff");
+             font-weight:bold;
+             font-style:normal }
 
 html { font-size: 100%;
        font-family: sans-serif;
        // font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
-body { background-color: #faffd7;
+body { background-color: #f9feff;
        padding-left: 5%;
 }
 
@@ -18,9 +27,16 @@ h1, h2, h3, h4 { font-weight: 400;
 p { font-size: 14;
 }
 
-pre { padding-left: 20px;
-          padding-top: 20px;
-          padding-bottom: 20px;
-          background-color: #1e1e1e;
-          font-size: 0.8em;
+pre code {
+    line-height: 1.5em;
+    background-color: #161705;
+    z-index: 1;
+    padding: 1rem 2rem;
+    position: relative;
+    display: block;
+}
+
+code { font-family: "Overpass Mono", monospace;
+    background-color: #eaeaea;
+    font-size: .85em;
 }
