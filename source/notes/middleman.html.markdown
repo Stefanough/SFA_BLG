@@ -91,7 +91,7 @@ Design Ideas/goals:
     - ~~vertica nav bar~~ No, horizontal for now.
         - blog
         - notes
-        - projects (notes in here?)
+        - projects (notes in here? or projects in notes?)
         - project euler/code_something? (put in notes?)
         - photos
         - about
@@ -99,10 +99,22 @@ Design Ideas/goals:
 
 #### Plan for notes page:
 * main notes page will have links to differente subject (Ruby, Rails, Sql, Vim, Etc...)
-*     each link goes to a markdown file of that subjects notes. One markdown file per subject?
-*     different sections for programming related notes and others?
-*     add front matter to each notes page? subject and whatnot?
-
+    * each link goes to a markdown file of that subjects notes. One markdown file per subject?
+    * different sections for programming related notes and others?
+    * add front matter to each notes page? subject and whatnot?
+* List of notes:
+    * ~~Git~~
+    * ~~CSS~~
+    * ~~Rails~~
+    * ~~HTML~~
+    * ~~Middleman~~
+    * ~~Ruby~~
+    * SQL
+    * Unix and Linux
+    * Vim
+    * Javascript
+    * 
+    * 
 
 * Imagined workflow:???
 
@@ -148,12 +160,12 @@ Timeline:
 * Get notes to render how I want I want.
 * pass options to the markdown configuration:
  
-      ```ruby
-      set :markdown,
-      fenced_code_blocks: true,
-      strikethrough: true,
-      smartypants: true
-      ```
+```ruby
+set :markdown,
+fenced_code_blocks: true,
+strikethrough: true,
+smartypants: true
+```
       set the `strikethrough` option to `true` and pass it to `:markdown`
 
 * do a test build and see  if syntax highlighting works
