@@ -24,9 +24,11 @@
 
           <div id="main" role="main">
               <% if is_blog_article? %>
-                  <h2> <%= current_article.title %> </h2>
+                  <h2 class="article-title"> <%= current_article.title %> </h2>
               <% end %>
-              <%= yield %>
+              <section class="content">
+                  <%= yield %>
+              </section>
           </div>
 
 

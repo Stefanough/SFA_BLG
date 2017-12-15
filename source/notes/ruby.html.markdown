@@ -48,8 +48,8 @@ tern_test(4000)
 **Enumerable#each_cons**
 
 ``` ruby
-each_cons(n) { ... } → nil
-each_cons(n) → an_enumerator
+each_cons(n) { ... } => nil
+each_cons(n) => an_enumerator
 
 Means `each consecutive`.
 ```
@@ -101,13 +101,14 @@ a = [2, 3, 4, 5, 6, 7, 8, 9, 10] #9 elements
 b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] #10 elements
 
 a.zip(b)
-=> [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]] #9 sub arrays
+=> [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]
+#9 sub arrays
 ```
 
 **Hash#merge**
 
 ```ruby
-target_hash.merge(hash1) → nil
+target_hash.merge(hash1) => nil
 ```
 
 Merges target hash into has1. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
@@ -129,7 +130,7 @@ end
 
 ```ruby
 nums = Array(1..10)
-nums.inject(0) do |accum, ele| #accum is set to the given argument 0 but can be any value.
+nums.inject(0) do |accum, ele| #accum set to given argument 0 but can be any value.
   accum + element
 end
 
@@ -512,14 +513,14 @@ not_there
 
 
 usually_brown = Hash.new("brown") #the empty hash is given a default value
-pretending_to_be_there = usually_brown[:zig]
+pretending = usually_brown[:zig]
 
 puts(usually_brown)
 => {}
 
-pretending_to_be_there
+pretending
 => "brown"
-#when the nonexistent hash key contained in ‘pretending_to_be_there’ is evaluated it returns the default value ‘brown’ instead of nil.
+#the nonexistent hash key contained in ‘pretending’ is evaluated and returns ‘brown’
 ```
 
 * Make a populated hash using #map method. Creates a Hash called cats with keys from 1 - 100 (generated from a range) pointing to a value (in this case the string "no hat")
@@ -678,7 +679,7 @@ If I call it on a String object:
 irb(main):088:0> "literal".is_a_string
 NoMethodError: private method 'is_a_string' called for "literal":String
     	from (irb):88
-    	from C:/Ruby22/bin/irb:11:in `<main>' 
+    	from C:/Ruby22/bin/irb:11:in `<main>'
 irb(main):089:0>
 ```
 
@@ -741,7 +742,7 @@ string?  <= this is the result of "puts self" inside the method definition.
 => 8
 ```
 
-`.class` on the above expression returns `Fixnum`. Of course methods in the String class can return a `Fixnum`. Just like calling `.length` on a string. 
+`.class` on the above expression returns `Fixnum`. Of course methods in the String class can return a `Fixnum`. Just like calling `.length` on a string.
 Just like running `.to_s` on an integer returns a string, even though "to_s" is a method in the `Fixnum` class ( and an instance method).
 
 Methods have to be called on an object. When I define a method in `main:object`, at the top level of IRB, and call it, it’s being called on the `main:Object`
@@ -758,7 +759,7 @@ This is why you can use main:Object private methods initially in Ruby. You start
 
 **Adding `self` in front of method names when defining** - When adding a method to a class what you are usually making are `instance methods` that can be called on instances of that class. Class methods can be called on the class itself. For example `.new` can be called on a class itself to instantiate an object of that class. When defining methods inside a class, add `self` (for example `self.celsius_to_fahrenheit`) to the front of the method name to make it a class method. Now you can call `Temperature.celsius_to_fahrenheit` (on the class itself as opposed to a temperature object).
 
-**Passing a symbol or a method to a method instead of a block.** 
+**Passing a symbol or a method to a method instead of a block.**
 
 Some methods, like #each, #each_cons and #map, can take blocks of code as a parameter.  As a shortcut, these can also take a unary (only operates on one value(operand). Doesn’t combine or return something from 2 values. Like #succ only increases the value of one number by one. It doesn't need more operands.) method or operator as a symbol to achieve the same effect.  Must be a method or instance method of the object?
 

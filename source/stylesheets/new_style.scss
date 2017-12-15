@@ -14,29 +14,39 @@
 
 html { font-size: 100%;
        font-family: sans-serif;
-       // font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
 body { background-color: #f9feff;
-       padding-left: 5%;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4 { font-weight: 400;
 }
 
+.article-title { font-size: 2em;
+}
+
+
 p { font-size: 14;
 }
 
+
+ .content {
+     max-width: 650px;
+     padding: 10px 0 10px 10px;
+ }
+
 pre code {
     line-height: 1.5em;
+    font-size: .7em;
     background-color: #161705;
     z-index: 1;
-    padding: 1rem 2rem;
+    padding: 1rem;
     position: relative;
     display: block;
 }
 
 code { font-family: "Overpass Mono", monospace;
     background-color: #eaeaea;
-    font-size: .85em;
+    font-size: .8em;
 }
