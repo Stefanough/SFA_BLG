@@ -10,6 +10,9 @@
 # Ignore the build directory
 /build
 
+# Ignore my secret ideas directory full of secrets
+/artcl_ideas
+
 # Ignore cache
 /.sass-cache
 /.cache
