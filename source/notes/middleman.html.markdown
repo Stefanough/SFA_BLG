@@ -128,17 +128,16 @@ Todo
     * About me on front page
 * ~~**ToDo**: Blog article title on article page~~
 * ~~**ToDo**: all links working in build.~~
-* **ToDo**: 'About Notes' on the notes page. Reference the Jargon file...
+* ~~**ToDo**: 'About Notes' on the notes page. Reference the Jargon file...~~
 * **ToDo**: RecentArticles only on frontpage.
 * **ToDo**: import all notes.
 * ~~**ToDo**: site links to directories propper, not `.html` files~~
 * ~~**ToDo**: Two seperate 'Blogs'. One for writing and one for notes.~~
-
+* ~~**ToDo**: "cloud" of note top~~ics (like bottom of <http://ezyang.com/>) (halfway there)
 
 Defered Todo
 ------------
 * **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
-* **ToDo**: "cloud" of note topics (like bottom of <http://ezyang.com/>)
 
 
 Timeline:

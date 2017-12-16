@@ -23,6 +23,9 @@ body { background-color: #f9feff;
 h1, h2, h3, h4 { font-weight: 400;
 }
 
+a {
+    text-decoration: none;
+}
 .article-title { font-size: 2em;
 }
 
@@ -31,17 +34,25 @@ p { font-size: 14;
 }
 
 
- .content {
+.content {
      max-width: 650px;
      padding: 10px 0 10px 10px;
  }
 
- ul {
+ul.compact {
     margin: 1em auto 1em;
     padding: 0;
-    text-align: center;
-    font-size: 80%;
+    text-align: justify;
+    font-size: 2em;
     width: 80%;
+}
+
+ul.compact li {
+    line-height: 1.2em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0.5em;
+    display: inline;   
  }
 
 pre code {
