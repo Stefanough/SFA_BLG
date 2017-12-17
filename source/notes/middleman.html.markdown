@@ -198,6 +198,13 @@ Notes:
  
 * **template files** - Will be rendered in html and should have the extension `.html.erb` 
 
+* **Deploy to S#** - From Dlol "You will need domain name (like example.com), a blog domain name (like www.example.com), and an AWS ACM Certificate ARN str"
+
+    Things I need:
+   * domain: stefanarmijo.com 
+   * AWS ACM Certificate ARN str
+
+
 Middleman methods:
 ------------------
 Taken by calling self.methods and pulling from the server log

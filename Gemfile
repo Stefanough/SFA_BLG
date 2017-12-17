@@ -19,7 +19,7 @@ gem 'awesome_print'
 # For realtime results
 gem 'middleman-livereload'
 
-# Middleman console like pry
+# Middleman console
 gem 'middleman-pry'
 
 # For parsing Markdown
@@ -33,3 +33,6 @@ gem 'middleman-syntax'
 
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
+
+# For uploading to s3
+gem 's3_website'
