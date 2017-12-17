@@ -1,4 +1,4 @@
-// Style sheet for STFN BLG based on tufte.css
+// Style sheet   for STFN BLG based on tufte.css
 
 // Start off with Tufte fonts
 
@@ -17,13 +17,13 @@ html { font-size: 100%;
 }
 
 body { background-color: #f9feff;
-    margin: 0 auto;
+    padding: 10px 0px 0px 35px;
 }
 
 h1, h2, h3, h4 { font-weight: 400;
 }
 
-a {
+a  {
     text-decoration: none;
 }
 .article-title { font-size: 2em;
@@ -36,7 +36,7 @@ p { font-size: 14;
 
 .content {
      max-width: 650px;
-     padding: 10px 0 10px 10px;
+     //padding: 35px 0px 0px 35px;
  }
 
 ul.compact {
@@ -66,6 +66,9 @@ pre code {
 }
 
 code { font-family: "Overpass Mono", monospace;
-    background-color: #eaeaea;
-    font-size: .8em;
+    background-color: #161705;
+    color: #ffffff;
+    font-size: .79em;
+    padding: 2px;
+    //margin: 8px;
 }
