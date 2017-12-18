@@ -190,6 +190,12 @@ ul.compact {
 }
 ```
 
+* **ToDo**: deploy to s3
+   * add 's3_website' to Gemfile
+   * follow instructions: [here](https://github.com/laurilehmijoki/s3_website/blob/master/additional-docs/setting-up-aws-credentials.md) and [here](https://github.com/laurilehmijoki/s3_website)
+   * create a `.env` file and populate with s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>, s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>, s3_bucket: <%= ENV['STATIC_SITE_BUCKET'] %>
+   * `s3_website cfg apply` to www.stefanarmijo.com gave error: `Applying the configurations in s3_website.yml on the AWS services ... The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint. (Aws::S3::Errors::PermanentRedirect)` 
+
 
 Notes:
 ------
@@ -203,6 +209,7 @@ Notes:
     Things I need:
    * domain: stefanarmijo.com 
    * AWS ACM Certificate ARN str
+   * Gem 's3_website'
 
 
 Middleman methods:
