@@ -10,7 +10,7 @@ tags:
 Using these resources:
 ----------------------
 
-#### tutorials:
+### tutorials:
 <https://medium.com/@ryanswapp/build-a-blog-with-middleman-and-host-on-github-pages-aab82a7fc56e>
 
 <http://12devs.co.uk/articles/204/>
@@ -26,13 +26,13 @@ Using these resources:
 *middlman with two blogs:*
 <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
 
-#### official docs:
+### official docs:
 <http://www.rubydoc.info/github/middleman/middleman>
 
 <http://www.rubydoc.info/github/middleman/middleman-blog>
 
 
-#### Blog inspiration:
+### Blog inspiration:
 <https://vgpena.github.io/>
 
 <https://ashfurrow.com/>
@@ -100,6 +100,8 @@ Design Ideas/goals:
         - photos
         - about
     - front page with just latest updates
+    -
+articles and notes that are really pretty when rendered and really human readable when viewed in pure markup.
 
 #### Plan for notes page:
 * main notes page will have links to differente subject (Ruby, Rails, Sql, Vim, Etc...)
@@ -113,25 +115,28 @@ Design Ideas/goals:
     * ~~HTML~~
     * ~~Middleman~~
     * ~~Ruby~~
-    * SQL
-    * Database
-    * Networking
-    * Unix and Linux
-    * Vim
+    * ~~SQL~~
+    * ~~Database~~
+    * ~~Networking~~
+    * ~~Unix and Linux~~
+    * ~~Vim (cheatsheet)~~
     * Javascript
     * Algorithms
-    * Jargon (General)
+    * ~~Jargon (General)~~
 
 
 Todo
 ----
-
-* **ToDo**: display projects and code on the site
-    * how to go about this properly
-* **ToDo**: contacts page
+* **Todo**: Better title and name
+* **ToDo**: link to github and linkedin on the page
+* **ToDo**: Write  more filled out 'about me' article 
+* **Todo**: Write 'How this blog works' article
+* **ToDo**: Write article for front page
+* **ToDo**: fix how tables are displayed
+* **ToDo**: contact me page
 * **ToDo**: Deploy to Amazon s3 bucket
-* **ToDo**: projects page
-    * keep it simple to get live. link to repos on git hub.
+* ~~**ToDo**: Simple projects page~~
+    ~~* keep it simple to get live. link to repos on git hub.~~
 * ~~**ToDo**: styling make styling dead simple. Get site live ASAP!~~
     * Very confused about how this site is pulling fonts from the web. In my stylesheet there are links to fonts in the `et-book` family. None of these fonts are stored locally in structure of the site. I don't think the links are pointing to anything remote. Does the `@font-face` somehow parse it's contained links?
     * ~~content kept at half? page width.~~
@@ -141,7 +146,7 @@ Todo
 * ~~**ToDo**: all links working in build.~~
 * ~~**ToDo**: 'About Notes' on the notes page. Reference the Jargon file...~~
 * **ToDo**: RecentArticles only on frontpage.
-* **ToDo**: import all notes.
+* ~~**ToDo**: import all notes.~~
 * ~~**ToDo**: site links to directories propper, not `.html` files~~
 * ~~**ToDo**: Two seperate 'Blogs'. One for writing and one for notes.~~
 * ~~**ToDo**: "cloud" of note top~~ics (like bottom of <http://ezyang.com/>) (halfway there)
@@ -149,6 +154,11 @@ Todo
 
 Defered Todo
 ------------
+* **ToDo**: create footer
+   * copyright
+   * built with
+* **ToDo**: display projects and code on the site
+    * how to go about this properly
 * **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
 
 
