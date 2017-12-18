@@ -118,11 +118,17 @@ Design Ideas/goals:
     * Algorithms
     * Jargon (General)
 
+
 Todo
 ----
 
+* **ToDo**: display projects and code on the site
+    * how to go about this properly
+* **ToDo**: contacts page
 * **ToDo**: Deploy to Amazon s3 bucket
-* **ToDo**: styling make styling dead simple. Get site live ASAP!
+* **ToDo**: projects page
+    * keep it simple to get live. link to repos on git hub.
+* ~~**ToDo**: styling make styling dead simple. Get site live ASAP!~~
     * Very confused about how this site is pulling fonts from the web. In my stylesheet there are links to fonts in the `et-book` family. None of these fonts are stored locally in structure of the site. I don't think the links are pointing to anything remote. Does the `@font-face` somehow parse it's contained links?
     * ~~content kept at half? page width.~~
     * ~~Better mononspace font for code~~
@@ -135,6 +141,7 @@ Todo
 * ~~**ToDo**: site links to directories propper, not `.html` files~~
 * ~~**ToDo**: Two seperate 'Blogs'. One for writing and one for notes.~~
 * ~~**ToDo**: "cloud" of note top~~ics (like bottom of <http://ezyang.com/>) (halfway there)
+
 
 Defered Todo
 ------------
