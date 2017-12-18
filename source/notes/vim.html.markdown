@@ -40,7 +40,7 @@ tags:
 
 * `r` - replace one character
 * `R` - enter *replace* mode
-
+* `ci <delimiter>` - when cursor is on `"`, `'`, `(`, `{`, etc, remove internal text and enter insert
 
 **Splits**
 
