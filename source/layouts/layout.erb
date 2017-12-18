@@ -24,8 +24,16 @@
           </nav>
 
           <div id="main" role="main">
+              <% notes_titles = [] %>
+              <% blog('notes').articles.each do |article| %>
+                  <% notes_titles << article.title %>
+              <% end %>
               <% if is_blog_article? %>
-                  <h2 class="article-title"> <%= current_article.title %> </h2>
+                  <% if notes_titles.include? current_article.title %>
+                      <h2 class="article-title"> <%= current_article.title + " Related Notes" %> </h2>
+                  <% else %>
+                      <h2 class="article-title"> <%= current_article.title %> </h2>
+                  <% end %>
               <% end %>
               <section class="content">
                   <%= yield %>

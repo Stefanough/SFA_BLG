@@ -13,10 +13,10 @@ tags:
 **Boot Loader** - A small piece of software loaded when a system is powered on that loads OS and application data from non-volatile memory into RAM.
 
 
-**Package** -
+**Package** - `.deb` files are a package type for Debian and ubuntu systems. More generally,a package is a bunch of stuff bundled together in order to make a program or utility more portable and easier to install. Instead of having a bunch of disparate files, scripts, data, and utilities that would need to be collected and put together in order to use a program, everything can be put into one entity called a *package*.
 
 
-**Directory** -
+**Directory** - You used to call this a folder
 
 
 **Root** - When `root` is used on it's own it almost always refers to the *root user* or *root account*, as in the system administrator's account (the only user that has complete access to every command and file on the system). When the system asks
@@ -26,7 +26,7 @@ tags:
   ```
   this is what it is referring to.
 
-  In the context of the filesystem, `root` refers to the topmost level directory in which all other directories and files are located. It is designated by a bare forward slash `/`. The use of the word refers to its place at the very top of the directory tree.
+  In the context of the file system, `root` refers to the topmost level directory in which all other directories and files are located. It is designated by a bare forward slash `/`. The use of the word refers to its place at the very top of the directory tree.
 
   The top-level directories right beneath `root` are usually written with a `/` preceding them. This is to avoid confusion with other similarly named directories by showing their location relative to `root`. For Example `/bin` and `/usr/local/bin`. These are both *Absolute Path Names* or *Full Path Names* because they specify the directory or file's position relative to `root` and always begin with a `/`
 
@@ -34,16 +34,19 @@ tags:
 
   Often times, there is also a `/root` directory inside of `/`. This is not the root directory but the root user's home directory.
 
-  **Working Directory** -
 
-  **Home Directory** -
+**Working Directory** -
+
+
+**Home Directory** -
 
 
 **Xenial** - The adjective half of the code name for the 16.04 LTS release of Ubuntu.
-  >What fortunate timing that our next LTS should be X, because “xenial” means “friendly relations between hosts and guests”, and given all the amazing work going into LXD and KVM for Ubuntu OpenStack, and beyond that the interoperability of Ubuntu OpenStack with hypervisors of all sorts, it seems like a perfect fit.
+
+   "What fortunate timing that our next LTS should be X, because “xenial” means “friendly relations between hosts and guests”, and given all the amazing work going into LXD and KVM for Ubuntu OpenStack, and beyond that the interoperability of Ubuntu OpenStack with hypervisors of all sorts, it seems like a perfect fit."
 
 
-**Symbolic Links** In Unix/Linux OS a symbolic link (often called symlinks) is a reference to another file that cannot modify the original referenced file. The link and target can be in any location relative to one another. The symbolic link points to the file which points to an *inode*. If the original file is deleted or modified, the symlink will be broken.
+**Symbolic Links** - In Unix/Linux OS a symbolic link (often called symlinks) is a reference to another file that cannot modify the original referenced file. The link and target can be in any location relative to one another. The symbolic link points to the file which points to an *inode*. If the original file is deleted or modified, the symlink will be broken.
 
 
 **Hard Links** A file that points to an existing *inode* in the file-system.
@@ -64,15 +67,7 @@ tags:
 The original sections go back to the Unix Programmers Manual created by Ken Thompson and Dennis Ritchie in 1971.
 
 
-**Plan 9**
-
-
-**TTY**
-    * session management
-    * line discipline
-
-
-**Jobs**
+**Plan 9** - An experimental research operating system born out of the Computer Science Research Center at Bell Labs. Plan 9 is based on Unix concepts but built from the ground up for networks and distributed systems (distributed systems can act as a single system). 
 
 
 **Sessions**
@@ -167,9 +162,12 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
 
 **Alias** - Another name for code that already exists. For example: `shutdown now` is a command and a parameter that is already in BASH, it can be aliased to `sdn` or anything else.
 
+
 **Shell Scripting** -
 
+
 **Script v. Alias** -
+
 
 **wget & curl** -
 
@@ -177,22 +175,31 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
 
   > Curl on the other hand is basically a terminal front end for the powerful libcurl library. Libcurl provides a very powerful set of tools for working with URLs in all their forms and flavors, and is available for almost all languages and platforms. Curl basically gives you the ability to use this library in shell scripts.
 
-**Everything Is A File**
+
+**Everything Is A File** - One of the core tenants of the Unix Philosophy. This is why your hard-drive or even your keyboard can be viewed in the filesystem like another file. These "files" can have standard file attributes such as an owner and access permissions.
+
 
 **inode** A unique integer that pointed to by files on the disk. Files pointing to the same inode are representations of the same data. Data can be linked to from multiple places in a volume through hardlinks.
 
-**DotFiles**
+
+**DotFiles** - A file with a dot preceding the file name. Dotfiles are often used to hold configuration data for other programs as they are hidden by default, reducing clutter when viewing a projects file tree and making them less likely to be accidentally modified.
 > In Unix-like operating systems, any file or folder that starts with a dot character (for example, /home/user/.config), commonly called a dot file or dotfile, is to be treated as hidden – that is, the ls command does not display them unless the -a flag (ls -a) is used. -  *Wikipedia*
+
 
 **Vim** - **V**i **Im** proved   Vim  is  a  text editor that is upwards compatible to Vi.  It can be used to edit all kinds of plain text.  It is especially useful for editing programs. - *man vi* in Linux Terminal.
 
-**Vi**
 
-**POISX**
+**Vi** - The ancestor of Vim, vi was written in 1976 by Bill Joy.
+
+
+**POISX** - Portable Operating System Interface (POISX) is a set of standards encompassing api's, command line shells, utilities, with the goal being software compatibility with variants and offshoots of Unix.
+
 
 **Unix-like**
 
+
 **Grep** - stands for the editor command that it simulates, g/re/p (Global Regular Expression Print). A program created by Ken Thompson for Doug McIlroy to aid in his voice synthesizer program. grep allows a user to search for a data pattern in a file without having to resort to an editor to go inside the file.
+
 
 **Unix** - An operating system (but today, really more like a design philosophy) created in the late 1960s at Bell Labs by Ken Thompson and Dennis Ritchie. Characterized by a 'modular' design incorporating many small daemons and utilities that perform their specific tasks very well.
   > The shell? The Kernel? Do these count as these utilities and daemons? Could the file-system be thought of just another little utility that talks to the others that make up the operating system that could be swapped out?
@@ -203,11 +210,9 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
   Hardware devices as files for example, in the /proc directory there is a file called cpuinfo that stores relevant information about the cpu.
   > Remember, /proc/cpuinfo isn’t actually a text file containing this information – the Linux kernel and the proc file system are exposing this information to us as a file. This allows us to use familiar tools to view and work with the information. - *howtogeek.com*
 
-  **/dev**
-  > In the /dev directory, you’ll find files that represent devices – as well as files that represent other special things. For example, /dev/cdrom is your CD-ROM drive. /dev/sda represents your first hard drive, while /dev/sda1 represents the first partition on your first hard drive.  
 
-  > Want to mount your CD-ROM? Run the mount command and specify /dev/cdrom as the device you want to mount. Want to partition your first hard drive? Run a disk-partitioning utility and specify /dev/sda as the hard disk you want to edit. Want to format the first partition on your first hard drive? Run a formatting command and tell it to format /dev/sda1.
+  **/dev** - In the /dev directory, you’ll find files that represent devices – as well as files that represent other special things. For example, /dev/cdrom is your CD-ROM drive. /dev/sda represents your first hard drive, while /dev/sda1 represents the first partition on your first hard drive.  
 
-  > In practice, it’s more accurate to say that “everything is a stream of bytes” than “everything is a file.” /dev/random isn’t a file, but it certainly is a stream of bytes. And, although these things technically aren’t files, they are accessible in the file system – the file system is a universal “name space” where everything is accessible.
+Want to mount your CD-ROM? Run the mount command and specify /dev/cdrom as the device you want to mount. Want to partition your first hard drive? Run a disk-partitioning utility and specify /dev/sda as the hard disk you want to edit. Want to format the first partition on your first hard drive? Run a formatting command and tell it to format /dev/sda1.
 
-
+In practice, it’s more accurate to say that “everything is a stream of bytes” than “everything is a file.” /dev/random isn’t a file, but it certainly is a stream of bytes. And, although these things technically aren’t files, they are accessible in the file system – the file system is a universal “name space” where everything is accessible.

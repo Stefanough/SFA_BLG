@@ -65,6 +65,8 @@ Using these resources:
 
 <http://stallman.org/>
 
+<http://pascalwyse.net/sound/>
+
 
 Configuration notes:
 --------------------
@@ -112,6 +114,8 @@ Design Ideas/goals:
     * ~~Middleman~~
     * ~~Ruby~~
     * SQL
+    * Database
+    * Networking
     * Unix and Linux
     * Vim
     * Javascript
