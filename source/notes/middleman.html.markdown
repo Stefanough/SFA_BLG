@@ -51,6 +51,8 @@ Using these resources:
 
 <http://idlewords.com/>
 
+<https://www.steveklabnik.com/>
+
 
 ### Site inspirations:
 <http://o-r-g.com/>
@@ -127,6 +129,7 @@ articles and notes that are really pretty when rendered and really human readabl
 
 Todo
 ----
+* **ToDo**: use nokogiri to parse links for CodeEval projects
 * **Todo**: Better title and name
 * **ToDo**: link to github and linkedin on the page
 * **ToDo**: Write  more filled out 'about me' article 
