@@ -137,7 +137,7 @@ articles and notes that are really pretty when rendered and really human readabl
 Todo
 ----
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
-   * **Todo**: ^^^ the same for project euler
+   * ~~**Todo**: ^^^ the same for project euler~~
    * **ToDo**: clean up link names
 * **ToDo**: refactor code for CodeEval into helper method
 * **Todo**: Better title and name

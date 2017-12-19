@@ -3,7 +3,7 @@
              src: url("/fonts/OverpassMono-Light.woff2") format("woff2"),url("/fonts/OverpassMono-Light.woff") format("woff");
              font-weight:normal;
              font-style:normal }
-             
+
 @font-face { font-family:'Overpass Mono';
              src: url("/fonts/OverpassMono-Bold.woff2") format("woff2"),url("/fonts/OverpassMono-Bold.woff") format("woff");
              font-weight:bold;
@@ -38,49 +38,61 @@ section > p, section > footer, section > table { width: 100%; }
      padding-top: 0rem;
  }
 
-section > ul { width: 90%;
+section.exercises p {
+    line-height: 0.5em;
+    font-size: 1.1em;
+    padding: 0px 0px 0px 25px;
+}
+
+section > ul {
+    width: 90%;
     list-style-type: none;
 }
 
-ul.compact { margin: 1em auto 1em;
+ul.compact {
+    margin: 1em auto 1em;
     padding: 0;
     text-align: center;
     font-size: 2em;
     width: 80%;
 }
 
-ul.compact li { line-height: 1.4em;
+ul.compact li {
+    line-height: 1.4em;
     list-style-type: none;
     margin: 0;
     padding: 0 0.4em;
-    display: inline;   
+    display: inline;
  }
 
-ul.compact-small { margin: 1em auto 1em;
+ul.compact-small {
+    margin: 0em 0em 0em;
     padding: 0;
     text-align: center;
     font-size: 1em;
-    width: 80%;
+    width: 90%;
 }
 
-ul.compact-small li { line-height: 1.4em;
+ul.compact-small li {
+    line-height: 1.4em;
     list-style-type: none;
-    margin: 0;
     padding: 0 0.4em;
-    display: inline;   
+    display: inline;
  }
 
-blockquote { font-size: 0.9rem; 
+blockquote {
+    font-size: 0.9rem;
 }
 
-blockquote p { width: 80%;
-    margin-right: 10px; 
+blockquote p {
+    width: 80%;
+    margin-right: 10px;
 }
 
 
 /* Code styling */
 pre code { line-height: 1.5em;
-    font-size: .7em;
+    font-size: .8em;
     background-color: #161705;
     z-index: 1;
     padding: 1rem;

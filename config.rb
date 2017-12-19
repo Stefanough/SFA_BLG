@@ -24,6 +24,7 @@ page '/*.txt', layout: false
 ###
 
 helpers do
+
     def whatsup
         p "whatsup im on the internet"
     end
