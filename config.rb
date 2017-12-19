@@ -23,6 +23,8 @@ page '/*.txt', layout: false
 # Helpers
 ###
 
+
+
 # Activate two blogs for notes and articles
 # blog one - articles ('scribbles')
 activate :blog do |blog|
