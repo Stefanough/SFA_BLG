@@ -6,6 +6,7 @@ per_page: 10
 
 <% require 'open-uri' %>
 
+<%= whatsup %>
 
 <% blog('scribbles').articles.each do |article| %>
     <% if article.title == "Projects" %>
@@ -15,13 +16,15 @@ per_page: 10
 <% end %>
 
 <ul class='compact-small'>
-<% hdoc = Nokogiri::HTML(open('https://github.com/Stefanough/CodeEval')) %>
-<% links = hdoc.css('td.content a').map { |link| %>
-    <% {:name=> link.content, :uri=> 'https://github.com' + link['href']} } %>
-
-    <% links.each do |link| %>
-        <% unless link[:name].include? '.' %>
-            <li><a href=<%= link[:uri] %>><%= link[:name].gsub('_', ' ') %></a></li>
+    <% gh_links('https://github.com/Stefanough/CodeEval', 'td.content a').each do |l| %>
+        <% unless l[:name].include? '.' %>
+            <li><a href=<%= l[:uri] %>><%= l[:name].gsub('_', ' ') %></a></li>
         <% end %>
+    <% end %>
+
+
+<ul class='compact-small'>
+    <% gh_links('https://github.com/Stefanough/project_euler_exercises/tree/master/projectEuler', 'td.content a').each do |l| %>
+            <li><a href=<%= l[:uri] %>><%= l[:name].gsub('_', ' ') %></a></li>
     <% end %>
 </ul>

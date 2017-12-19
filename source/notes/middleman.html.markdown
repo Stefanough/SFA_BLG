@@ -32,7 +32,7 @@ Using these resources:
 <http://www.rubydoc.info/github/middleman/middleman-blog>
 
 
-### Blog inspiration:
+### Blog inspiration (style):
 <https://vgpena.github.io/>
 
 <https://ashfurrow.com/>
@@ -52,6 +52,13 @@ Using these resources:
 <http://idlewords.com/>
 
 <https://www.steveklabnik.com/>
+
+<http://andre.arko.net/>
+
+### Blog inspirations (content):
+### some overlap, ofcourse
+
+<https://www.koszek.com/>
 
 
 ### Site inspirations:
@@ -129,7 +136,10 @@ articles and notes that are really pretty when rendered and really human readabl
 
 Todo
 ----
-* **ToDo**: use nokogiri to parse links for CodeEval projects
+* ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
+   * **Todo**: ^^^ the same for project euler
+   * **ToDo**: clean up link names
+* **ToDo**: refactor code for CodeEval into helper method
 * **Todo**: Better title and name
 * **ToDo**: link to github and linkedin on the page
 * **ToDo**: Write  more filled out 'about me' article 

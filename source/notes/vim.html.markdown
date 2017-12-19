@@ -77,11 +77,12 @@ tags:
 * `:source ~/.vimrc` - refresh .vimrc without exiting vim
 
 
-**Visual aka Selecting**
+**Selecting**
 
 * `v` - enter VISUAL mode to select individual characters
 * `V` - enter VISUAL LINE mode to select whole lines
-* `<ctrl>` + `v` - enter VISUAL BLOCK mode to select blocks of text
+* `<C>v` - enter VISUAL BLOCK mode to select blocks of text
+* `yi<[{('">` - select all within a bracket delimited region while cursor is inside
 
 
 **Manipulate Selected Text**

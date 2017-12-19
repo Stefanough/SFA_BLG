@@ -23,6 +23,21 @@ page '/*.txt', layout: false
 # Helpers
 ###
 
+helpers do
+    def whatsup
+        p "whatsup im on the internet"
+    end
+
+
+    def gh_links(url, css)
+       Nokogiri::HTML(open(url)).css(css).map { |link|
+           {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
+    end
+
+
+end
+
+
 
 
 # Activate two blogs for notes and articles

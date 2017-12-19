@@ -348,11 +348,14 @@ arr = Array.new(3) { |i| i * 3}
 ranges to arrays:
 
 ```ruby
-arr = Array.new(0..5)
+Array.new(0..5)
 => [0, 1, 2, 3, 4, 5]
 
-arr = (0..5).to_a
+(0..5).to_a
 => [0, 1, 2, 3, 4, 5]
+
+('a'..'f').to_a
+=> ["a", "b", "c", "d", "e", "f"]
 ```
 
 To add elements to an array:
