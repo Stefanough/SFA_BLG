@@ -25,17 +25,11 @@
  
     <div id="main" role="main">
         <!-- Render '<NoteSubject> Related Notes' at the top of each notes page -->
-        <% notes_titles = [] %>
-        <% blog('notes').articles.each do |article| %>
-            <% notes_titles << article.title %>
-        <% end %>
-        <% if is_blog_article? %>
-            <% if notes_titles.include? current_article.title %>
+            <% if is_note? %>
                 <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
-            <% else %>
+            <% elsif is_blog_article? %>
                 <h2 class="article-title"> <%= current_article.title %> </h2>
             <% end %>
-        <% end %>
 
         <!-- Use Nokogiri to build links in notes -->
         <!-- if this is a notes 'blog' article find all text surounded with '** **' -->
@@ -45,7 +39,10 @@
             <%= yield %>
         </section>
     </div>
+<% if false %> <!-- BEGIN COMMENT -->
+<!-- sidebar for notes -->
 
+<% end %> <!-- END COMMENT -->
 
   <aside>
     <h2>Recent Articles</h2>

@@ -31,8 +31,18 @@ helpers do
 
 
     def gh_links(url, css)
-       Nokogiri::HTML(open(url)).css(css).map { |link|
-           {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
+        Nokogiri::HTML(open(url)).css(css).map { |link|
+            {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
+    end
+    
+    def is_note?
+        notes = []
+        blog('notes').articles.each do |article|
+            notes << article
+        end
+        if is_blog_article? & notes.include?(current_article)
+          true
+        end
     end
 
 end

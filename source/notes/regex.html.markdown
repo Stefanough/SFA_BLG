@@ -1,0 +1,33 @@
+---
+
+title: regex
+date: 2017-12-20 20:35 UTC
+tags: 
+
+---
+**regex rules**
+
+```ruby
+Character   Meaning
+------------------------------------------------------------
+^           # Anchor for the begning of a line
+$           # Anchor for the end of a line
+\A          # Anchor for the start of a string
+\Z          # Anchor for the end of a string
+.           # Any character
+\w          # Any letter, digit, or underscore
+\W          # Anything that \w doesnt match
+\d          # Any digit
+\D          # Anything that \d doesnt't match (non-digits)
+\s          # Whitespace (spaces, tas, newlines, and so on)
+\S          # Non-whitespace (any visible character)
+```
+
+
+**usefull expresions**
+
+```ruby
+string.scan( /<([^>]*)>/)
+```
+This pulls everything between `<` and `>` out as a string
+

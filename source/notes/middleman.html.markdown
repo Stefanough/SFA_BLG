@@ -131,13 +131,13 @@ articles and notes that are really pretty when rendered and really human readabl
     * ~~Vim (cheatsheet)~~
     * Javascript
     * Algorithms
+    * Regex
     * ~~Jargon (General)~~
 
 
 Todo
 ----
-
-* **ToDo**: have a drafts tab visible when in `.development`
+* **ToDo**: remove 'recent articles' on bottom of page
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
    * ~~**Todo**: ^^^ the same for project euler~~
    * ~~**ToDo**: clean up link names~~
@@ -169,12 +169,14 @@ Todo
 
 Defered Todo
 ------------
+* **ToDo**: have a drafts tab visible when in `.development`
 * **ToDo**: create footer
    * copyright
    * built with
 * **ToDo**: display projects and code on the site
     * how to go about this properly
 * **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
+   * I can pull out each note 'section' with  the statement `doc.text.scan(/\*\*.+\*\*/).each`
 
 
 Timeline:

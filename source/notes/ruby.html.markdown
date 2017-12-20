@@ -755,7 +755,7 @@ Methods have a "receiver" , which is the data object to the left of the method b
 * For private methods the receiver is always "self"
 
 
-**Private Methods** - Private methods are always called on `self` in the context of the current object. If i enter `string".private_methods` I can see an array of private methods associated with string objects. These cannot be called on the string object itself ( `string.global_variables` for example ) but must be invoked on self **within the context of the string object**. I think when public or other methods are called on a string object, behind the scenes, Ruby jumps into the context of the string object and invokes its private methods to return the requested data which may be a string, fixnum, or an array. (Integer and Array are both private methods of string objects, btw)
+**Private Methods** - Private methods are always called on `self` in the context of the current object. If i enter `string".private_methods` I can see an array of private methods associated with string objects. These cannot be called on the string object itself ( `string.global_variables` for example ) but must be invoked on self *within the context of the string object*. I think when public or other methods are called on a string object, behind the scenes, Ruby jumps into the context of the string object and invokes its private methods to return the requested data which may be a string, fixnum, or an array. (Integer and Array are both private methods of string objects, btw)
 
 This is why you can use main:Object private methods initially in Ruby. You start off in the context of the main object and can use private methods (like puts and rand) to return data.
 
@@ -986,7 +986,7 @@ String s = "cat";
 ```
 A literal is hard coded directly into source code as opposed to being called from or created in memory at run time.
 
-* Method **each** and keyword **do**. ‘do’ is a keyword for creating loops in Ruby. `String#each_char` and `Array#each` call a block on to each character in the String or each element in the Array. The element or character must be represented in the block as a parameter in between the "double pipes" ||. **do** itself (concluded by **end**) contains the block of code.
+**each** enumerable method and keyword `do`. ‘do’ is a keyword for creating loops in Ruby. `String#each_char` and `Array#each` call a block on to each character in the String or each element in the Array. The element or character must be represented in the block as a parameter in between the "double pipes" ||. `do` itself (concluded by `end`) contains the block of code.
 
 ```ruby
 array = [1, 2, 3, 4, 5]
@@ -1014,7 +1014,7 @@ The block can be between braces or inside of `do`.
 Use map to get a modified array based on the code block. Use ‘each’ for its side effects (such as printing each element or pushing it into another array.)
 
 
-* A **Range** is a different class than **Array** but also mixes in enumerable. **Range** also works for strings?
+* A `Range` is a different class than `Array` but also mixes in enumerable. `Range` also works for strings?
 
 ```ruby
 nums = (1..10)
@@ -1034,4 +1034,4 @@ puts char_arr
 => [a, b, c, d, e]
 ```
 
-**Argument** vs **parameter** - An argument is a single value to give to a method. for example for an array `a.index("x")`  "x" is the argument. A parameter is like a mini variable that will given a new value when iterated over. for example a.each `{|i| puts i}` i is the parameter.
+**Argument vs parameter** - An argument is a single value to give to a method. for example for an array `a.index("x")`  "x" is the argument. A parameter is like a mini variable that will given a new value when iterated over. for example a.each `{|i| puts i}` i is the parameter.
