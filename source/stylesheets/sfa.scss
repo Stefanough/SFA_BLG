@@ -10,29 +10,37 @@
              font-style:normal }
 
 /* Styling */
-html { font-family: sans-serif;
+html {
+    font-family: sans-serif;
 }
 
-body { background-color: #f9feff;
+body {
+    background-color: #f9feff;
     padding: 10px 0px 0px 25px;
 }
 
-h1, h2, h3, h4 { font-weight: 200;
+h1, h2, h3, h4 {
+    font-weight: 200;
 }
 
 
-a { text-decoration: none;
+a { 
+    text-decoration: none;
 }
 
-.article-title { font-size: 2.5em;
+.article-title {
+    font-size: 2.5em;
     font-family:  "Overpass Mono", monospace;
 }
 
 
-p { font-size: 100%;
+p {
+    font-size: 100%;
 }
 
-section > p, section > footer, section > table { width: 100%; }
+section > p, section > footer, section > table {
+    width: 100%;
+}
 
 .content { max-width: 650px;
      padding-top: 0rem;
@@ -91,7 +99,8 @@ blockquote p {
 
 
 /* Code styling */
-pre code { line-height: 1.5em;
+pre code {
+    line-height: 1.5em;
     font-size: .8em;
     background-color: #161705;
     z-index: 1;
@@ -100,7 +109,8 @@ pre code { line-height: 1.5em;
     display: block;
 }
 
-code { font-family: "Overpass Mono", monospace;
+code {
+    font-family: "Overpass Mono", monospace;
     //background-color: #161705;
     //color: #ffffff;
     font-size: .9em;

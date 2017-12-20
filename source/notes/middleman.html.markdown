@@ -136,10 +136,12 @@ articles and notes that are really pretty when rendered and really human readabl
 
 Todo
 ----
+
+* **ToDo**: have a drafts tab visible when in `.development`
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
    * ~~**Todo**: ^^^ the same for project euler~~
-   * **ToDo**: clean up link names
-* **ToDo**: refactor code for CodeEval into helper method
+   * ~~**ToDo**: clean up link names~~
+* ~~**ToDo**: refactor code for CodeEval into helper method~~
 * **Todo**: Better title and name
 * **ToDo**: link to github and linkedin on the page
 * **ToDo**: Write  more filled out 'about me' article 

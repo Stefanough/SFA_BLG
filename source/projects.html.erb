@@ -4,6 +4,8 @@ pageable: false
 per_page: 10
 ---
 
+<% require 'open-uri' %>
+
 
 <% blog('scribbles').articles.each do |article| %>
     <% if article.title == "Projects" %>
