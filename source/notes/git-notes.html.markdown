@@ -56,7 +56,7 @@ git workflow
 
 Help in Windows: git help
                  git help "command"
-                 
+
 Help in Linux: git --help
                git <command> --help
 
@@ -68,6 +68,7 @@ git ls-remote --get-url           shows the remote address where data will be pu
 git push -u origin master         pushes current changes to remote server or address
 
 
+```
 Try these commands:----------------------------------------------------------------------------
 command---------------------------Description--------------------------------------------------
 git l                             Show commit history
@@ -108,7 +109,7 @@ GIT_DIR                           If the GIT_DIR environment variable is set the
 GIT_WORK_TREE                     Set the path to the root of the working tree. This can also be
 			                            controlled by the --work-tree command line option and the core.worktree
 														      configuration variable.
-
+```
 
 
 -------------------------------------------------------------
