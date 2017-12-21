@@ -40,25 +40,17 @@
         </section>
     </div>
  
- 
-<% if is_blog_article? %>   
-<% end %>
-    
     
 <!-- sidebar for notes. pull '<strong> elements (note sections) from article body -->
 <% if is_note? %>
-    <% blog('notes').articles.each do |article| %>
-        <% if article.title == current_article.title %>
-            <% note_doc = article.body %>
-            <ul>
-            <% doc = Nokogiri::HTML(note_doc) %>
-            <% doc.css('strong').each do |link| %> 
-                <li> <%= link %> </li> 
-            <% end %>
-            </ul>
-        <% end %>
+    <% ndoc = current_article.body %>
+    <ul>
+    <% doc = Nokogiri::HTML(ndoc).css('strong').each do |link| %> 
+        <li><a href="#<%= link.text %>"> <%= link %> </a></li> 
     <% end %>
+    </ul>
 <% end %>
+
 
   <aside>
     <h2>Recent Articles</h2>

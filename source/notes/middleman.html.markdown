@@ -176,7 +176,10 @@ Defered Todo
 * **ToDo**: display projects and code on the site
     * how to go about this properly
 * **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
-   * I can pull out each note 'section' with  the statement `doc.text.scan(/\*\*.+\*\*/).each`
+   * ~~Pull note 'sections' out with Nokogiri search on css `strong` tag~~
+   * ~~Display sections as links in the note document.~~
+   * Modify the note document so that 'sections' are surounded with `<a name="section title"></a>` tags
+   * Modiffy the section links to reference the section names: `<a.
 
 
 Timeline:
