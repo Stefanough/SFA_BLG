@@ -179,7 +179,8 @@ Defered Todo
    * ~~Pull note 'sections' out with Nokogiri search on css `strong` tag~~
    * ~~Display sections as links in the note document.~~
    * Modify the note document so that 'sections' are surounded with `<a name="section title"></a>` tags
-   * Modiffy the section links to reference the section names: `<a.
+   * Modiffy the section links to reference the section names: `<a href="#sectoin name">`.
+      * `<p><strong>Section</strong></p>` >> `<p><a name="Section"><strong>Section</strong></a></p>`
 
 
 Timeline:

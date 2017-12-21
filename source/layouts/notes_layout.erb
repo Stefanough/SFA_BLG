@@ -25,7 +25,9 @@
  
     <div id="main" role="main">
         <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
-        <% if is_blog_article? %>
+        <% if is_note? %>
+            <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
+        <% elsif is_blog_article? %>
             <h2 class="article-title"> <%= current_article.title %> </h2>
         <% end %>
 
@@ -37,16 +39,17 @@
             <%= yield %>
         </section>
     </div>
+ 
     
-  <aside>
-    <h2>Recent Articles</h2>
-    <ol>
-        <% blog('scribbles').articles[0...10].each do |article| %>
-            <% if !["Welcome", "The Jargon File", "Projects"].include? article.title %>
-                <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-            <% end %>
-      <% end %>
-    </ol>
-  </aside>
+    <!-- sidebar for notes. pull '<strong> elements (note sections) from article body -->
+    <% if is_note? %>
+        <% ndoc = current_article.body %>
+        <ul>
+        <% doc = Nokogiri::HTML(ndoc).css('strong').each do |link| %> 
+            <li><a href="#<%= link.text %>"> <%= link %> </a></li> 
+        <% end %>
+        </ul>
+    <% end %>
+
 </body>
 </html>

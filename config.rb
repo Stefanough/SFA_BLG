@@ -36,7 +36,7 @@ helpers do
     end
     
     
-    # is the the current object a note article in the 'notes' blog?
+    # is the the current object an article in the 'notes' blog?
     def is_note?
         notes = []
         blog('notes').articles.each do |article|
@@ -82,6 +82,7 @@ end
 
 # blog two - notes
 activate :blog do |blog|
+  blog.layout = "notes_layout"
 # This will add a prefix to all links, template references and source paths
   blog.prefix = "notes"
   blog.name = "notes"
