@@ -35,6 +35,8 @@ helpers do
             {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
     end
     
+    
+    # is the the current object a note article in the 'notes' blog?
     def is_note?
         notes = []
         blog('notes').articles.each do |article|

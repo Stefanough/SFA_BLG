@@ -626,3 +626,161 @@ ipsum primis in.</em></p>
 
               ">
 ```
+
+article methods
+
+```
+[
+    [  0]                                                            !()                           Middleman::Sitemap::Resource (BasicObject)
+    [  1]                                                           !=(arg1)                       Middleman::Sitemap::Resource (BasicObject)
+    [  2]                                                           !~(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [  3]                                                          <=>(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [  4]                                                           ==(arg1)                       Middleman::Sitemap::Resource (BasicObject)
+    [  5]                                                          ===(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [  6]                                                           =~(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [  7]                                                     Contract(*args)                      Middleman::Sitemap::Resource
+    [  8]                                                  __binding__()                           Middleman::Sitemap::Resource (Object)
+    [  9]          __contracts_ruby_original_add_metadata_jbfq66uw6xyd(*meta, *reverse)            Middleman::Sitemap::Resource
+    [ 10]               __contracts_ruby_original_binary?_jbfq66ux8t9z()                           Middleman::Sitemap::Resource
+    [ 11]          __contracts_ruby_original_content_type_jbfq66uy3kq7()                           Middleman::Sitemap::Resource
+    [ 12]                   __contracts_ruby_original_data_jbfq66uwmnx()                           Middleman::Sitemap::Resource
+    [ 13]                   __contracts_ruby_original_ext_jbfq66uxcnrk()                           Middleman::Sitemap::Resource
+    [ 14]        __contracts_ruby_original_file_descriptor_jbfq66uvok5()                           Middleman::Sitemap::Resource
+    [ 15]               __contracts_ruby_original_ignore!_jbfq66ux925m()                           Middleman::Sitemap::Resource
+    [ 16]              __contracts_ruby_original_ignored?_jbfq66ux12g1()                           Middleman::Sitemap::Resource
+    [ 17]                __contracts_ruby_original_locals_jbfq66uxefks()                           Middleman::Sitemap::Resource
+    [ 18] __contracts_ruby_original_make_implicit_page_id_jbfq66uy410m(path)                       Middleman::Sitemap::Resource
+    [ 19]              __contracts_ruby_original_metadata_jbfq66uw4i2j()                           Middleman::Sitemap::Resource
+    [ 20]               __contracts_ruby_original_options_jbfq66uxgplh()                           Middleman::Sitemap::Resource
+    [ 21]               __contracts_ruby_original_page_id_jbfq66uw3kjs()                           Middleman::Sitemap::Resource
+    [ 22]                __contracts_ruby_original_render_jbfq66uxci31(*opts, *locs)               Middleman::Sitemap::Resource
+    [ 23]            __contracts_ruby_original_source_file_jbfq66uw7q4()                           Middleman::Sitemap::Resource
+    [ 24]             __contracts_ruby_original_template?_jbfq66uw6ir2()                           Middleman::Sitemap::Resource
+    [ 25]                   __contracts_ruby_original_url_jbfq66ux3bfn()                           Middleman::Sitemap::Resource
+    [ 26]                                                       __id__()                           Middleman::Sitemap::Resource (BasicObject)
+    [ 27]                                                     __send__(*arg1)                      Middleman::Sitemap::Resource (BasicObject)
+    [ 28]                                     _deprecated_next_article()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 29]                                 _deprecated_previous_article()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 30]                                                   acts_like?(duck)                       Middleman::Sitemap::Resource (Object)
+    [ 31]                                                 add_metadata(*args, &blk)                Middleman::Sitemap::Resource
+    [ 32]                                                           ai(*options)                   Middleman::Sitemap::Resource (Kernel)
+    [ 33]                                          article_locale_next()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 34]                                      article_locale_previous()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 35]                                                 article_next()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 36]                                             article_previous()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 37]                                              awesome_inspect(*options)                   Middleman::Sitemap::Resource (Kernel)
+    [ 38]                                                awesome_print(object, *options)           Middleman::Sitemap::Resource (Kernel)
+    [ 39]                                                      binary?(*args, &blk)                Middleman::Sitemap::Resource
+    [ 40]                                                       blank?()                           Middleman::Sitemap::Resource (Object)
+    [ 41]                                              blog_controller()                           Middleman::Sitemap::Resource
+    [ 42]                                             blog_controller=(arg1)                       Middleman::Sitemap::Resource
+    [ 43]                                                    blog_data()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 44]                                                 blog_options()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 45]                                                         body()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 46]                                                     children()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [ 47]                                                        class()                           Middleman::Sitemap::Resource (Kernel)
+    [ 48]                                                   class_eval(*args, &block)              Middleman::Sitemap::Resource (Kernel)
+    [ 49]                                                        clone(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [ 50]                                                 content_type(*args, &blk)                Middleman::Sitemap::Resource
+    [ 51]                                                         data(*args, &blk)                Middleman::Sitemap::Resource
+    [ 52]                                                         date()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 53]                                                     deep_dup()                           Middleman::Sitemap::Resource (Object)
+    [ 54]                                    default_summary_generator(rendered, length, ellipsis) Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 55]                                      define_singleton_method(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [ 56]                                             destination_path()                           Middleman::Sitemap::Resource
+    [ 57]                                            destination_path=(arg1)                       Middleman::Sitemap::Resource
+    [ 58]                                             directory_index?()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [ 59]                                                      display(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [ 60]                                                          dup()                           Middleman::Sitemap::Resource (Kernel)
+    [ 61]                                                  duplicable?()                           Middleman::Sitemap::Resource (Object)
+    [ 62]                                                     enum_for(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [ 63]                                         eponymous_directory?()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [ 64]                                     eponymous_directory_path()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [ 65]                                                         eql?(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 66]                                                       equal?(arg1)                       Middleman::Sitemap::Resource (BasicObject)
+    [ 67]                                                          ext(*args, &blk)                Middleman::Sitemap::Resource
+    [ 68]                                                       extend(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [ 69]                                              file_descriptor(*args, &blk)                Middleman::Sitemap::Resource
+    [ 70]                                                       freeze()                           Middleman::Sitemap::Resource (Kernel)
+    [ 71]                                                      frozen?()                           Middleman::Sitemap::Resource (Kernel)
+    [ 72]                                                     functype(funcname)                   Middleman::Sitemap::Resource
+    [ 73]                                                          gem(dep, *reqs)                 Middleman::Sitemap::Resource (Kernel)
+    [ 74]                                                         hash()                           Middleman::Sitemap::Resource (Kernel)
+    [ 75]                                                   html_safe?()                           Middleman::Sitemap::Resource (Object)
+    [ 76]                                                      ignore!(*args, &blk)                Middleman::Sitemap::Resource
+    [ 77]                                                      ignored()                           Middleman::Sitemap::Resource
+    [ 78]                                                     ignored=(arg1)                       Middleman::Sitemap::Resource
+    [ 79]                                                     ignored?(*args, &blk)                Middleman::Sitemap::Resource
+    [ 80]                                                      inspect()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 81]                                                instance_eval(*arg1)                      Middleman::Sitemap::Resource (BasicObject)
+    [ 82]                                                instance_exec(*arg1)                      Middleman::Sitemap::Resource (BasicObject)
+    [ 83]                                                 instance_of?(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 84]                                   instance_variable_defined?(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 85]                                        instance_variable_get(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 86]                                        instance_variable_set(arg1, arg2)                 Middleman::Sitemap::Resource (Kernel)
+    [ 87]                                           instance_variables()                           Middleman::Sitemap::Resource (Kernel)
+    [ 88]                                                        is_a?(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 89]                                                     is_haml?()                           Middleman::Sitemap::Resource (Object)
+    [ 90]                                                       itself()                           Middleman::Sitemap::Resource (Kernel)
+    [ 91]                                                     kind_of?(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 92]                                                         lang()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 93]                                                       locale()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [ 94]                                                       locals(*args, &blk)                Middleman::Sitemap::Resource
+    [ 95]                                        make_implicit_page_id(*args, &blk)                Middleman::Sitemap::Resource
+    [ 96]                                                     metadata(*args, &blk)                Middleman::Sitemap::Resource
+    [ 97]                                                       method(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [ 98]                                                      methods(*args)                      Middleman::Sitemap::Resource (Object)
+    [ 99]                                                 next_article(*args, &block)              Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [100]                                                         nil?()                           Middleman::Sitemap::Resource (Kernel)
+    [101]                                              normalized_path()                           Middleman::Sitemap::Resource
+    [102]                                                    object_id()                           Middleman::Sitemap::Resource (Kernel)
+    [103]                                                      options(*args, &blk)                Middleman::Sitemap::Resource
+    [104]                                                      page_id(*args, &blk)                Middleman::Sitemap::Resource
+    [105]                                                       parent()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [106]                                                         path()                           Middleman::Sitemap::Resource
+    [107]                                                     presence()                           Middleman::Sitemap::Resource (Object)
+    [108]                                                     present?()                           Middleman::Sitemap::Resource (Object)
+    [109]                                               pretty_inspect()                           Middleman::Sitemap::Resource (Kernel)
+    [110]                                                 pretty_print(q)                          Middleman::Sitemap::Resource (PP::ObjectMixin)
+    [111]                                           pretty_print_cycle(q)                          Middleman::Sitemap::Resource (PP::ObjectMixin)
+    [112]                                         pretty_print_inspect()                           Middleman::Sitemap::Resource (PP::ObjectMixin)
+    [113]                              pretty_print_instance_variables()                           Middleman::Sitemap::Resource (PP::ObjectMixin)
+    [114]                                             previous_article(*args, &block)              Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [115]                                              private_methods(*args)                      Middleman::Sitemap::Resource (Object)
+    [116]                                            protected_methods(*args)                      Middleman::Sitemap::Resource (Object)
+    [117]                                                     proxy_to(_path)                      Middleman::Sitemap::Resource
+    [118]                                                          pry(*object, *hash)             Middleman::Sitemap::Resource (Object)
+    [119]                                                psych_to_yaml(*options)                   Middleman::Sitemap::Resource (Object)
+    [120]                                                public_method(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [121]                                               public_methods(*args)                      Middleman::Sitemap::Resource (Object)
+    [122]                                                  public_send(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [123]                                                   published?()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [124]                                     remove_instance_variable(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [125]                                                       render(*opts, *locs, &block)       Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [126]                                                 request_path()                           Middleman::Sitemap::Resource
+    [127]                                                  respond_to?(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [128]                                                         send(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [129]                                                     siblings()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [130]                                              singleton_class()                           Middleman::Sitemap::Resource (Kernel)
+    [131]                                             singleton_method(arg1)                       Middleman::Sitemap::Resource (Kernel)
+    [132]                                            singleton_methods(*args)                      Middleman::Sitemap::Resource (Object)
+    [133]                                                         slug()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [134]                                                  source_file(*args, &blk)                Middleman::Sitemap::Resource
+    [142]                                                        title()                           Middleman::Sitemap::Resource (Middleman::Blog::BlogArticle)
+    [143]                                                      to_enum(*arg1)                      Middleman::Sitemap::Resource (Kernel)
+    [144]                                                      to_json(*arg1)                      Middleman::Sitemap::Resource (JSON::Ext::Generator::GeneratorMethods::Object)
+    [145]                                                     to_param()                           Middleman::Sitemap::Resource (Object)
+    [146]                                                     to_query(key)                        Middleman::Sitemap::Resource (Object)
+    [147]                                                         to_s()                           Middleman::Sitemap::Resource
+    [148]                                                      to_yaml(*options)                   Middleman::Sitemap::Resource (Object)
+    [149]                                           to_yaml_properties()                           Middleman::Sitemap::Resource (Object)
+    [150]                                               traversal_root()                           Middleman::Sitemap::Resource (Middleman::Sitemap::Extensions::Traversal)
+    [151]                                                        trust()                           Middleman::Sitemap::Resource (Kernel)
+    [152]                                                          try(*a, &b)                     Middleman::Sitemap::Resource (ActiveSupport::Tryable)
+    [153]                                                         try!(*a, &b)                     Middleman::Sitemap::Resource (ActiveSupport::Tryable)
+    [154]                                                      untaint()                           Middleman::Sitemap::Resource (Kernel)
+    [155]                                                      untrust()                           Middleman::Sitemap::Resource (Kernel)
+    [156]                                                   untrusted?()                           Middleman::Sitemap::Resource (Kernel)
+    [157]                                                          url(*args, &blk)                Middleman::Sitemap::Resource
+]
+```

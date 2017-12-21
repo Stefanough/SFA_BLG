@@ -39,9 +39,24 @@
             <%= yield %>
         </section>
     </div>
+ 
+ 
+<% if is_blog_article? %>   
+<% blog('notes').articles.each do |article| %>
+    <% if article.title == current_article.title %>
+        <p><%= article.body %></p>
+        <% end %>
+   
+    <% end %>
+<% end %>
+    
+    
 <% if false %> <!-- BEGIN COMMENT -->
 <!-- sidebar for notes -->
-
+<% if is_note? %>
+    <% Nokogiri::HTML(open(current_article.out_buf)).text.scan(/\*\*.+\*\*/).each do |link| %>
+    <% end %>
+<% end %>
 <% end %> <!-- END COMMENT -->
 
   <aside>
