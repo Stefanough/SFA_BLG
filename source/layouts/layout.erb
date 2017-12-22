@@ -49,11 +49,10 @@
 <% if is_note? %>
     <% blog('notes').articles.each do |article| %>
         <% if article.title == current_article.title %>
-            <% note_doc = article.body %>
+            <% note = article.body %>
             <ul>
-            <% doc = Nokogiri::HTML(note_doc) %>
-            <% doc.css('strong').each do |link| %> 
-                <li> <%= link %> </li> 
+            <% Nokogiri::HTML(note).css('strong').each do |link| %> 
+                <li><a href> <%= link %> </a></li> 
             <% end %>
             </ul>
         <% end %>
