@@ -34,8 +34,8 @@ helpers do
         Nokogiri::HTML(open(url)).css(css).map { |link|
             {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
     end
-    
-    
+
+
     # is the the current object an article in the 'notes' blog?
     def is_note?
         notes = []
@@ -48,8 +48,6 @@ helpers do
     end
 
 end
-
-
 
 
 # Activate two blogs for notes and articles
@@ -89,8 +87,8 @@ activate :blog do |blog|
 
   # See blog config above for all the options
   # custom file naming template
-  blog.sources = "{title}.html"  
- 
+  blog.sources = "{title}.html"
+
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 

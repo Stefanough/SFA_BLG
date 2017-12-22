@@ -9,7 +9,7 @@
       <%= '[dev] ' if development? %>
       <%= blog_title %> <%= ' - ' + current_article.title unless current_article.nil? %>
   </title>
-  <%= stylesheet_link_tag "all" %> 
+  <%= stylesheet_link_tag "all" %>
   <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   <%= stylesheet_link_tag 'assets/normalize', media: 'all' %>
 </head>
@@ -22,31 +22,40 @@
       <%= link_to 'projects', '/projects' %>
       <%= link_to 'about', '/about' %>
     </nav>
- 
+
     <div id="main" role="main">
         <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
         <% if is_note? %>
             <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
-        <% elsif is_blog_article? %>
-            <h2 class="article-title"> <%= current_article.title %> </h2>
         <% end %>
 
         <!-- Use Nokogiri to build links in notes -->
         <!-- if this is a notes 'blog' article find all text surounded with '** **' -->
         <!-- I need to look in the note.html.markdown doc or treat is as a link? -->
 
+        <!-- inject href tags around sections in  note doc -->
+        <section class="content">
+
+        <% if false %> <!-- BEGIN COMMENT -->
+            <% @doc = Nokogiri::HTML(yield).parse do |link| %>
+                <li> <a href="#<%= link.text %>"> <%= link %> </a> </li>
+            <% end %>
+        <% end %> <!-- END COMMENT -->
+
+        </section>
+
         <section class="content">
             <%= yield %>
         </section>
     </div>
- 
-    
+
+
     <!-- sidebar for notes. pull '<strong> elements (note sections) from article body -->
     <% if is_note? %>
         <% ndoc = current_article.body %>
         <ul>
-        <% doc = Nokogiri::HTML(ndoc).css('strong').each do |link| %> 
-            <li><a href="#<%= link.text %>"> <%= link %> </a></li> 
+        <% doc = Nokogiri::HTML(ndoc).css('strong').each do |link| %>
+            <li><a href="#<%= link.text %>"> <%= link %> </a></li>
         <% end %>
         </ul>
     <% end %>

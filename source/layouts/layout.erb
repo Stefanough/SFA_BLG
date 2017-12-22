@@ -9,7 +9,7 @@
       <%= '[dev] ' if development? %>
       <%= blog_title %> <%= ' - ' + current_article.title unless current_article.nil? %>
   </title>
-  <%= stylesheet_link_tag "all" %> 
+  <%= stylesheet_link_tag "all" %>
   <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   <%= stylesheet_link_tag 'assets/normalize', media: 'all' %>
 </head>
@@ -22,40 +22,18 @@
       <%= link_to 'projects', '/projects' %>
       <%= link_to 'about', '/about' %>
     </nav>
- 
+
     <div id="main" role="main">
         <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
         <% if is_blog_article? %>
             <h2 class="article-title"> <%= current_article.title %> </h2>
         <% end %>
 
-        <!-- Use Nokogiri to build links in notes -->
-        <!-- if this is a notes 'blog' article find all text surounded with '** **' -->
-        <!-- I need to look in the note.html.markdown doc or treat is as a link? -->
-
         <section class="content">
             <%= yield %>
         </section>
     </div>
-    
-<<<<<<< HEAD
-    
-<!-- sidebar for notes. pull '<strong> elements (note sections) from article body -->
-<% if is_note? %>
-    <% blog('notes').articles.each do |article| %>
-        <% if article.title == current_article.title %>
-            <% note = article.body %>
-            <ul>
-            <% Nokogiri::HTML(note).css('strong').each do |link| %> 
-                <li><a href> <%= link %> </a></li> 
-            <% end %>
-            </ul>
-        <% end %>
-    <% end %>
-<% end %>
 
-=======
->>>>>>> 4e3bd65c336a33f41c65f0522f72edc360cce7d6
   <aside>
     <h2>Recent Articles</h2>
     <ol>

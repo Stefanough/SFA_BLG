@@ -3,7 +3,7 @@
 title: middleman
 blog: notes
 date: 2017-12-08 07:40 UTC
-tags: 
+tags:
 
 ---
 
@@ -144,7 +144,7 @@ Todo
 * ~~**ToDo**: refactor code for CodeEval into helper method~~
 * **Todo**: Better title and name
 * **ToDo**: link to github and linkedin on the page
-* **ToDo**: Write  more filled out 'about me' article 
+* **ToDo**: Write  more filled out 'about me' article
 * **Todo**: Write 'How this blog works' article
 * **ToDo**: Write article for front page
 * **ToDo**: fix how tables are displayed
@@ -193,7 +193,7 @@ Timeline:
         <li><%= link_to 'Archives', '/browse' %></li>
         ```
     * Links on STFNBLG:
-       
+
         ```
         <%= link_to 'blog', 'blog.html' %>
         ```
@@ -210,7 +210,7 @@ Timeline:
          * Solved above error. Cause was another call to `blog.articles` method with out specifing blog name. changed to `blog('scribbles').articles`.
 *   ~~**ToDo**: change how articles are generated. Want to generate 'notes articles' without the date in the filename.~~
 *       Solved by changing blog configuration in `config.rb` with the option `blog.sources = "{title}.html"`
- 
+
 
     fixed error. `blog.articles` method in feed.xml file. have to specify which blog when working with multiple blogs.
 
@@ -236,20 +236,20 @@ ul.compact {
    * add 's3_website' to Gemfile
    * follow instructions: [here](https://github.com/laurilehmijoki/s3_website/blob/master/additional-docs/setting-up-aws-credentials.md) and [here](https://github.com/laurilehmijoki/s3_website)
    * create a `.env` file and populate with s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>, s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>, s3_bucket: <%= ENV['STATIC_SITE_BUCKET'] %>
-   * `s3_website cfg apply` to www.stefanarmijo.com gave error: `Applying the configurations in s3_website.yml on the AWS services ... The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint. (Aws::S3::Errors::PermanentRedirect)` 
+   * `s3_website cfg apply` to www.stefanarmijo.com gave error: `Applying the configurations in s3_website.yml on the AWS services ... The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint. (Aws::S3::Errors::PermanentRedirect)`
 
 
 Notes:
 ------
 
 * **layout files** - Should have only the template language extension. In this case `.erb`
- 
-* **template files** - Will be rendered in html and should have the extension `.html.erb` 
+
+* **template files** - Will be rendered in html and should have the extension `.html.erb`
 
 * **Deploy to S#** - From Dlol "You will need domain name (like example.com), a blog domain name (like www.example.com), and an AWS ACM Certificate ARN str"
 
     Things I need:
-   * domain: stefanarmijo.com 
+   * domain: stefanarmijo.com
    * AWS ACM Certificate ARN str
    * Gem 's3_website'
 
@@ -539,7 +539,7 @@ Taken by calling self.methods and pulling from the server log
     [276]                                                     yield_content(key, *args)                                      #<Class:0x000000050a7670> (Padrino::Helpers::OutputHelpers)
 ]
 
-``` 
+```
 
 
 Anatomy of a Middleman article:
@@ -597,10 +597,10 @@ Derived from calling 'ap self' in layout.erb, following a link to a blog article
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <title>
-        [dev] 
+        [dev]
         SFA BLG  - test 4.4444
     </title>
-    <link href=\"/stylesheets/all.css\" rel=\"stylesheet\" /> 
+    <link href=\"/stylesheets/all.css\" rel=\"stylesheet\" />
     <link rel=\"alternate\" type=\"application/atom+xml\" title=\"Atom Feed\" href=\"/scribbles/feed.xml\" />
     <link href=\"/stylesheets/assets/normalize.css\" rel=\"stylesheet\" media=\"all\" />
   </head>
