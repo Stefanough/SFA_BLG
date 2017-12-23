@@ -48,17 +48,16 @@
             <% if is_note? %>
                 <% ndoc = current_article.body %>
                 <% doc = Nokogiri::HTML::DocumentFragment.parse(ndoc) %>
-                <% nodes = doc.css "strong" %> <!-- creates an array of node objects -->
-                <%# ap nodes %>
-                <%# nodes = nodes.map { |node| [node] } %> <!-- encapsulates each node object in an array ina 2d array [[node0], [node1]] -->
-                <%# p nodes[0][0].content %>
-                <% nodes.each do |node| %> 
-                    <%# node.wrap("<a name=#{node[0].content}></a>") %>
+                <% doc.css('strong').wrap("<a name='temp'></a>") %>
+                <% nodes = doc.css('a') %>
+                <% nodes.each do |node| %>
+                    <% node.attributes['name'].value = node.text %>
                 <% end %>
                 <%= doc.to_html %>
             <% end %>
         </section>
 
+    <!-- Bad to convert modified Nokogiri obj to HTML and render instead of yeilding? -->
         <section class="content">
             <%# yield %>
         </section>
