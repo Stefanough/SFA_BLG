@@ -49,17 +49,18 @@
                 <% ndoc = current_article.body %>
                 <% doc = Nokogiri::HTML::DocumentFragment.parse(ndoc) %>
                 <% nodes = doc.css "strong" %> <!-- creates an array of node objects -->
-                <% nodes = nodes.map { |node| [node] } %> <!-- encapsulates each node object in an array ina 2d array [[node0], [node1]] -->
+                <%# ap nodes %>
+                <%# nodes = nodes.map { |node| [node] } %> <!-- encapsulates each node object in an array ina 2d array [[node0], [node1]] -->
                 <%# p nodes[0][0].content %>
                 <% nodes.each do |node| %> 
-                    <% node.wrap("<a name=#{node[0].content}></a>") %>
+                    <%# node.wrap("<a name=#{node[0].content}></a>") %>
                 <% end %>
                 <%= doc.to_html %>
             <% end %>
         </section>
 
         <section class="content">
-            <%#= yield %>
+            <%# yield %>
         </section>
     </div>
 

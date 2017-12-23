@@ -331,7 +331,7 @@ arr = []
 => []
 ```
 
-Populated arrays:
+Create populated arrays:
 
 ```ruby
 
@@ -361,7 +361,6 @@ Array.new(0..5)
 To add elements to an array:
 
 ```ruby
-
 arr << "thing" #adds element to the end of an array
 arr.push("thing")
 
@@ -384,6 +383,28 @@ arr.delete_at(2) # delete element at a particular index in this case 2
 #special removal:
 arr.compact #removes all nil values from the array
 arr.uniq #removes all duplicate values in the array
+```
+
+Access array elements:
+
+```ruby
+a = ('A'..'G').to_a
+=> ["A", "B", "C", "D", "E", "F", "G"]
+
+a[0]
+=> "A"
+
+a[-1]
+=> "G"
+
+a.first
+=> "A"
+
+a.last
+=> "G"
+
+a[2..4]
+=> ["C", "D", "E"]
 ```
 
 
@@ -779,7 +800,7 @@ For Example:
 such as +, -, * and /. These are also *methods*. + = .+ , - = .- etc.
 
 ```ruby
- 10 = 5.+(5)
+10 = 5.+(5)
 => 10 = object.method(argument)
 ```
 
