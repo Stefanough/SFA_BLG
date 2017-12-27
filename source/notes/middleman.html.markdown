@@ -76,6 +76,7 @@ Using these resources:
 
 <http://pascalwyse.net/sound/>
 
+<http://www.econlib.org/>
 
 Configuration notes:
 --------------------
@@ -137,6 +138,7 @@ articles and notes that are really pretty when rendered and really human readabl
 
 Todo
 ----
+* **ToDo**: Notes pulled from GitHub instead of stored locally.
 * **ToDo**: remove 'recent articles' on bottom of page
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
    * ~~**Todo**: ^^^ the same for project euler~~
@@ -169,6 +171,7 @@ Todo
 
 Defered Todo
 ------------
+* **ToDo**: Searchable notes.
 * **ToDo**: have a drafts tab visible when in `.development`
 * **ToDo**: create footer
    * copyright

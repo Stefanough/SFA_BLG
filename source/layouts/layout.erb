@@ -7,11 +7,11 @@
   <% blog_title = 'SFA BLG' %>
   <title>
       <%= '[dev] ' if development? %>
-      <%= blog_title %> <%= ' - ' + current_article.title unless current_article.nil? %>
+      <%= blog_title + ' - ' + current_article.title unless current_article.nil? %>
   </title>
   <%= stylesheet_link_tag "all" %>
   <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-  <%= stylesheet_link_tag 'assets/normalize', media: 'all' %>
+  <%#= stylesheet_link_tag 'assets/normalize', media: 'all' %>
 </head>
 
 <body>

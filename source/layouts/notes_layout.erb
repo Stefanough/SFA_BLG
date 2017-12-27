@@ -51,7 +51,9 @@
                 <% doc.css('strong').wrap("<a name='temp'></a>") %>
                 <% nodes = doc.css('a') %>
                 <% nodes.each do |node| %>
-                    <% node.attributes['name'].value = node.text %>
+                    <% if node.attributes['name'] %>
+                        <% node.attributes['name'].value = node.text %>
+                    <% end %>
                 <% end %>
                 <%= doc.to_html %>
             <% end %>
