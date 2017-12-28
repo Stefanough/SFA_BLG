@@ -50,6 +50,10 @@ helpers do
 end
 
 
+# Ignore /drafts dir
+ignore 'drafts/'
+
+
 # Activate two blogs for notes and articles
 # blog one - articles ('scribbles')
 activate :blog do |blog|
