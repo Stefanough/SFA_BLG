@@ -276,7 +276,11 @@ ul.compact {
    * Create and Configure Amazon Route 53 to use a custom url to direct traffic to your bucket.
       * Migrate DNS Service for an Existing Domain to Amazon Route 53
          * ~~Create hosted zone~~
-         * Create records
+         * ~~Create records~~
+
+
+   * Can view site at `stefanarmijo.com` but as soon as I visit `www.stefanarmijo.com` I get an error.
+      * Solved! created *two* aliases for my single hosted zone in route 53. One for `stefanarmijo.com` and ond for `www.stefanarmijo.com`.
 
 
 Notes:

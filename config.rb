@@ -50,8 +50,8 @@ helpers do
 end
 
 
-# Ignore /drafts dir
-ignore 'drafts/'
+# Ignore drafts dir
+ignore 'drafts/*'
 
 
 # Activate two blogs for notes and articles
