@@ -10,7 +10,8 @@ tags:
 Using these resources:
 ----------------------
 
-### tutorials:
+**tutorials:**
+
 <https://medium.com/@ryanswapp/build-a-blog-with-middleman-and-host-on-github-pages-aab82a7fc56e>
 
 <http://12devs.co.uk/articles/204/>
@@ -26,13 +27,14 @@ Using these resources:
 *middlman with two blogs:*
 <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
 
-### official docs:
+**official docs:**
+
 <http://www.rubydoc.info/github/middleman/middleman>
 
 <http://www.rubydoc.info/github/middleman/middleman-blog>
 
 
-### Blog inspiration (style):
+**Blog inspiration (style):**
 <https://vgpena.github.io/>
 
 <https://ashfurrow.com/>
@@ -55,14 +57,19 @@ Using these resources:
 
 <http://andre.arko.net/>
 
-### Blog inspirations (content):
-### some overlap, ofcourse
+**Blog inspirations (content):**
+Tsome overlap, ofcourse
 
 <https://www.koszek.com/>
 
+<https://jvns.ca/about/>
 
-### Site inspirations:
+
+**Site inspiration:**
+
 <http://o-r-g.com/>
+
+<https://www.dickgrune.com/>
 
 <http://eric.young.li/#>
 
@@ -77,6 +84,8 @@ Using these resources:
 <http://pascalwyse.net/sound/>
 
 <http://www.econlib.org/>
+
+<http://www.paulgraham.com/index.html>
 
 Configuration notes:
 --------------------
@@ -147,11 +156,11 @@ Todo
 * **Todo**: Better title and name
 * **ToDo**: link to github and linkedin on the page
 * **ToDo**: Write  more filled out 'about me' article
-* **Todo**: Write 'How this blog works' article
+* **Todo**: 'How this blog works' article
 * **ToDo**: Write article for front page
 * **ToDo**: fix how tables are displayed
 * **ToDo**: contact me page
-* **ToDo**: Deploy to Amazon s3 bucket
+* ~~**ToDo**: Deploy to Amazon s3 bucket~~
 * ~~**ToDo**: Simple projects page~~
     ~~* keep it simple to get live. link to repos on git hub.~~
 * ~~**ToDo**: styling make styling dead simple. Get site live ASAP!~~
@@ -188,6 +197,22 @@ Defered Todo
 
 Timeline:
 ---------
+
+* **ToDo**: Name ideas - 
+   * Disparate Interests
+      * Maybe says to the viewer that I am not focused?
+      * Disparate Interests but here I focus on one
+   * SFA BLG
+   * STFN BLG
+   * Build Process
+   * Dream Ape
+   * A. Human
+      * From Flatland's A. Square.
+   * A. Stefan
+   * DreamAbout
+   * I'm here
+   * Stefan Armijo
+
 
 * ~~**ToDo**: site links to directories propper, not `.html` files~~
     * Links on danalol:
@@ -236,10 +261,22 @@ ul.compact {
 ```
 
 * **ToDo**: deploy to s3
-   * add 's3_website' to Gemfile
-   * follow instructions: [here](https://github.com/laurilehmijoki/s3_website/blob/master/additional-docs/setting-up-aws-credentials.md) and [here](https://github.com/laurilehmijoki/s3_website)
-   * create a `.env` file and populate with s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>, s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>, s3_bucket: <%= ENV['STATIC_SITE_BUCKET'] %>
-   * `s3_website cfg apply` to www.stefanarmijo.com gave error: `Applying the configurations in s3_website.yml on the AWS services ... The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint. (Aws::S3::Errors::PermanentRedirect)`
+   * add 's3_website' to Gemfile and configure
+
+      * follow instructions: [here](https://github.com/laurilehmijoki/s3_website/blob/master/additional-docs/setting-up-aws-credentials.md) and [here](https://github.com/laurilehmijoki/s3_website)
+      * create a `.env` file and populate with `s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>`, `s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>`, `s3_bucket: <%= ENV['STATIC_SITE_BUCKET'] %>`.
+      * `s3_website cfg apply` to www.stefanarmijo.com gave error: `Applying the configurations in s3_website.yml on the AWS services ... The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint. (Aws::S3::Errors::PermanentRedirect)`
+      * ~~Create two buckets: 'www.stefanarmijo.com', 'stefanarmijo.com'. Website build content will be pushed to 'stefanarmijo.com'.~~
+         * Endpoint for 'stefanarmijo.com': http://stefanarmijo.com.s3-website-us-east-1.amazonaws.com
+         * Endpoint for 'www.stefanarmijo.com': http://www.stefanarmijo.com.s3-website-us-east-1.amazonaws.com
+
+      * ~~'www.stefanarmijo.com' will redirect to 'stefanarmijo.com'.~~
+      * Configure Logging for Website Traffic
+
+   * Create and Configure Amazon Route 53 to use a custom url to direct traffic to your bucket.
+      * Migrate DNS Service for an Existing Domain to Amazon Route 53
+         * ~~Create hosted zone~~
+         * Create records
 
 
 Notes:

@@ -6,6 +6,8 @@ tags:
 
 ---
 
+**Subdomain vs Subdirectory** - For the domain `example.com`, a subdomain would be `blog.example.com` or `www.example.com`. A subdirectory would be `example.com/blog`.
+
 
 **Rack** - Middleware that sits inbetween a Ruby application and an HTTP server. Rack wraps HTTP requests and environment params (HTTP request method, url information, server information, etc...) in a hash and returns an array of strings consisting of a status code, a header of key-value pairs and body.
 
