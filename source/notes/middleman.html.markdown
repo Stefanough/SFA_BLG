@@ -119,7 +119,7 @@ Design Ideas/goals:
         - photos
         - about
     - front page with just latest updates
-    -
+
 articles and notes that are really pretty when rendered and really human readable when viewed in pure markup.
 
 #### Plan for notes page:
@@ -198,7 +198,7 @@ Defered Todo
 Timeline:
 ---------
 
-* **ToDo**: Name ideas - 
+* **ToDo**: Name ideas -
    * Disparate Interests
       * Maybe says to the viewer that I am not focused?
       * Disparate Interests but here I focus on one
