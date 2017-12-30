@@ -57,12 +57,18 @@ Using these resources:
 
 <http://andre.arko.net/>
 
+<http://errtheblog.com/>
+
+<http://ruby-doc.org/docs/ruby-doc-bundle/Tutorial/part_01/first_steps.html#numbers>
+
 **Blog inspirations (content):**
 Tsome overlap, ofcourse
 
 <https://www.koszek.com/>
 
 <https://jvns.ca/about/>
+
+<http://ozmm.org/>
 
 
 **Site inspiration:**
@@ -86,6 +92,8 @@ Tsome overlap, ofcourse
 <http://www.econlib.org/>
 
 <http://www.paulgraham.com/index.html>
+
+<http://chriswanstrath.com/>
 
 Configuration notes:
 --------------------
@@ -280,7 +288,7 @@ ul.compact {
 
 
    * Can view site at `stefanarmijo.com` but as soon as I visit `www.stefanarmijo.com` I get an error.
-      * Solved! created *two* aliases for my single hosted zone in route 53. One for `stefanarmijo.com` and ond for `www.stefanarmijo.com`.
+      * Solved! created *two* aliases in my hosted zone in route 53. One for `stefanarmijo.com` and ond for `www.stefanarmijo.com`.
 
 
 Notes:
@@ -290,7 +298,7 @@ Notes:
 
 * **template files** - Will be rendered in html and should have the extension `.html.erb`
 
-* **Deploy to S#** - From Dlol "You will need domain name (like example.com), a blog domain name (like www.example.com), and an AWS ACM Certificate ARN str"
+* **Deploy to s3** - From Dlol "You will need domain name (like example.com), a blog domain name (like www.example.com), and an AWS ACM Certificate ARN str"
 
     Things I need:
    * domain: stefanarmijo.com

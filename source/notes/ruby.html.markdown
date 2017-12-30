@@ -26,9 +26,8 @@ Methods
   `3 << 4 => 48` double 3 4 times (6, 12, 24, 48)
 
 
-**Ternary Conditional** -
-
-`condition` | `condition = true` | `condition = false`
+**Ternary Conditional** - A statement with three operands and two operators in the form of:
+`conditional` ? `return if condition = true` ? `return if condition = false`
 
 ```ruby
 def tern_test(var)
@@ -111,7 +110,7 @@ a.zip(b)
 target_hash.merge(hash1) => nil
 ```
 
-Merges target hash into has1. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
+Merges `target_hash` into `hash1`. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
 
 
 **Array#each** - The `.each` method accepts a block of code to which each element of the array is passed in turn:
@@ -459,11 +458,31 @@ p rect2
   values in an array. Same as `.sort.pop` and `.sort.shift`
 
 
-**Hash** tables exist in curly braces (like a block of code? are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..`       A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the valu $5.65. In an array you can find a value at it’s index location. In a hash table you find a value contained in it’s key.
+**Hash** - Hash tables exist in curly braces (like a block of code? are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..`       A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the valu $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
 
-* Ways to add to a hash:
+Some things to remember about Hash tables:
 
-    To create an empty hash:
+* all keys in the same level of a Hash table must be unique:
+
+```ruby
+pets = {:pet => {:name => 'steve', :species => 'cat', :age => 8},
+        :pet => {:name => 'bill', :species => 'dog', :age => 2}}
+
+# warning: key :pet is duplicated and overwritten on line 1
+pets
+=> {:pet=>{:name=>"bill", :species=>"dog", :age=>2}}
+
+
+more_pets = {:cat => {type: :pet, :name => 'bob', :age => 3},
+             :dog => {type: :pet, :name => 'frank', :age => 9}}
+
+more_pets
+=> {:cat=>{:type=>:pet, :name=>"bob", :age=>3},
+    :dog=>{:type=>:pet, :name=>"Ann", :age=>9}}
+```
+
+
+* To create an empty hash:
 
 ```ruby
 hsh = {}
@@ -473,7 +492,7 @@ hsh = Hash.new
 => {}
 ```
 
-Ropulated hash:
+* Populated hash:
 
 ```ruby
 hsh = {"noodles" => 8, "tea" => 3}
@@ -504,7 +523,7 @@ p hash_test
 ```
 
 
-Add/remove and access key value pairs in a hash:
+* Add/remove and access key value pairs in a hash:
 
 ```ruby
 #add to a hash:
@@ -516,7 +535,7 @@ hsh
 => {"a" => 1, "b" => 2}
 ```
 
-Hash default values:
+* Hash default values:
 
 ```ruby
 
@@ -564,7 +583,14 @@ General
 **Bundler** - Bundler allows you to make your app more portable by automaticaly installing required gems listed in your Gemfile. Bundler is itself a gem and uses RubyGems to find, download and install required gems. Bundler is helpful because if you move your application to a new location you can ensure that all required gems will be installed when `bundle install` is run.
 
 
-**tIDENTIFIER** -
+**tIDENTIFIER** - or `tINTEGER`, `tSTRING`. These are words in standard Ruby syntax error messages meant to help you debug your code. They hint at the type of object that the interpreter encountered and caused an error They usually appear in a form similar to:
+
+```ruby
+> 8 e 9
+SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
+8 e 9
+   ^
+```
 
 
 **Colons Before and After Variables/Attributes** -
@@ -583,7 +609,42 @@ General
 **Options Hash** -
 
 
-**Here Doc** -
+**heredoc** - Generally, a Here Document, or heredoc, is an input stream in a programs source code that is treated like a seperate file. It is a delimited chunk of text that the program can read in like a string and interperate as code. The benefit of using heredocs is that it can be natively formated to whatever is contained in the heredoc.
+
+In Ruby, begin the input of a heredoc with a`<<`, `<<-` or `<<~`.
+
+* With `<<` the delimiters must start on the first column or they will be included in the heredoc.
+* Use `<<-` to begin and end with delimiters starting on any column.
+* `<<~` ommits common indentation in the heredoc.
+
+Folllow the begining symbol with a delimiter keyword, then write the body of the heredoc apropriately formatted and end it with the same delimiter keyword.
+
+* HTML heredoc
+
+```ruby
+@doc = <<-HTML
+<body>
+    <H1>Your Big Headline</h1>
+    <div class="content">
+        <p>Your important content</p>
+    </div>
+</body>
+HTML
+
+```
+
+* SQL heredoc
+
+```ruby
+query = <<-SQL
+SELECT
+  *
+FROM
+  animals
+JOIN
+  anecdotes ON aecdotes.animal_id = animals.id
+SQL
+```
 
 
 **Constants** - Constants are declared in ALL CAPS:
@@ -903,37 +964,54 @@ end
 * *Breaking out of loops* the `break` command (keyword?) is used to break out of normally infinite loops.
 
 
-* **return** exits a method!!
+**return** - Returns a value and exits a method. More acurately, `return` is a *keyword* that takes an argument (`nil` by default) and exits the method early with that value.
+
+```ruby
+def hi(a)
+  b = a * 3
+  return "whatever"
+  b
+end
+
+hi(3)
+=> "whatever"
+```
+A method will always return the value of the most recent evaluated statement inside that method but `return` can be used to exit a method early if a conditional statement is satisfied, for example. You can also `return` multiple values from a method
+
+```ruby
+def foo(a, b)
+    return a, b
+end
+
+foo 3, 5
+=> [3, 5]
+```
 
 
-* **Interpolation** is when you replace a placeholder in your code with another piece of code that is run. For example:
+**Interpolation** - Interpret variables and blocks of code inside a string. The string must be enclosed in double quotation marks for interpolation to work
 
 ```ruby
 a = 1
 b = 4
 puts "The number #{a} is less than #{b}"
 
-stdout:
-The number 1 is less than 4
+=> "The number 1 is less than 4"
 
-_________________________________________________________________
 
-def string_length_interpolater(incoming_string)
-  "The string you just gave me has a length of #{incoming_string.length}"
+def string_length_interpolater(argument_string)
+  "The string you just gave me has a length of #{argument_string.length}"
 end
 
-puts(srtring_length_interpolater("Hello there!")
+string_length_interpolater("Hello there!")
 
-stdout:
-The string you just gave me has a length of 12
+=> "The string you just gave me has a length of 12"
 ```
 
 
-* **Placeholders** are not just variables. Any valid block of Ruby code you
-place inside ``#{ }`` will be evaluated and inserted at that location. A String literal created with single quotes does not support interpolation!
+**Placeholders** are not just variables. Any valid block of Ruby code you place inside ``#{ }`` will be evaluated and inserted at that location. A String literal created with single quotes does not support interpolation!
 
 
-* **Concatenating Strings**. Adding two strings together is called concatenation. To create a new string by adding two together:
+**Concatenating Strings**. Adding two strings together is called concatenation. To create a new string by adding two together:
 
 ```ruby
 'Ruby' + 'Monk'
@@ -946,7 +1024,7 @@ RubyMonk
 
   * You can use `<<` just like `+` but in this case the String object `‘Monk’` will be appended to the object represented by `‘Ruby’` itself. In other words, when you run `‘Ruby’ + ‘Monk’` you’re left with a new string `‘RubyMonk’` in addition to the two sub strings. Using `<<` leaves you with just one string. It’s like using **Array#push** to add new elements to an array.
 
-* **Regular Expression** or **RegEx**. Used to match particular characters, words, or patterns of characters. In Ruby you specify a RegEx by putting it between a pair of forward slashes ` / `. RegExs seem a little crazy. Apparently all of these work:
+**Regular Expression** or **RegEx**. Used to match particular characters, words, or patterns of characters. In Ruby you specify a RegEx by putting it between a pair of forward slashes ` / `. RegExs seem a little crazy. Apparently all of these work:
 
 ```ruby
 'RubyMonk'.gsub(/[aeiou]/,'1')
@@ -982,9 +1060,8 @@ The pattern that `.match` uses in this case is (/ ./) to indicate a character pr
 
 ```ruby
 'RubyMonk Is Pretty Brilliant'.match(/ ./, 10)
-#You can also pass a second argument to the match method. The second parameter of 10 specifies the position in the string to begin the search.
 ```
-
+You can also pass a second argument to the match method. The second parameter of `10` specifies the position in the string to begin the search.
 
 **Looping** - Using while and then giving a condition will run the loop as long as the while test is true. When  while is false, the program will jump to end. While this thing is true, run the loop and when it is false jump to end.
 * The do keyword can be used to initiate loops:
@@ -1029,7 +1106,7 @@ h e l l o
 
 The block can be between braces or inside of `do`.
 
-* **Enumerable**. A Ruby module (collection of methods and constants mixed into other classes. See module vs Class here: https://lh4.googleusercontent.com/e_Eml6aYg1udItOLjQCzUKF1L2K1JcjyZTnzYwcP7A=w1530-h800-no (Modules are about providing methods that you can use across multiple classes. Classes are about objects; modules are about functions.) ‘map’ and ‘each’ are inside enumerable. enumerable is mixed into the Array and Hash classes.
+**Enumerable**. A Ruby module (collection of methods and constants mixed into other classes. See module vs Class here: https://lh4.googleusercontent.com/e_Eml6aYg1udItOLjQCzUKF1L2K1JcjyZTnzYwcP7A=w1530-h800-no (Modules are about providing methods that you can use across multiple classes. Classes are about objects; modules are about functions.) ‘map’ and ‘each’ are inside enumerable. enumerable is mixed into the Array and Hash classes.
 
 
 Use map to get a modified array based on the code block. Use ‘each’ for its side effects (such as printing each element or pushing it into another array.)

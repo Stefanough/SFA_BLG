@@ -8,7 +8,7 @@ tags:
 
 **HTML Fragment** - HTML fragment is HTML code that is not a complete document but parsable, user facing code in the `<body>` tags. They generaly lack a `DOCTYPE`, html, and body tags. I think a Document Fragment usualy comes in as a string?
 
-**hi** given an HTML Fragment
+Given an HTML Fragment:
 
 ```ruby
 incoming_fragment ="
