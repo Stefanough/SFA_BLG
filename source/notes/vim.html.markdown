@@ -28,7 +28,7 @@ tags:
 * `:wqa` - save, then close all open tabs and quit vim.
 
 
-**Vim temporay files** - When configured, Vim will create backup (suffixed with a '~'), swap (with a .swp extension), and undo (suffixed with an .un extension) files.
+**Vim temporary files** - When configured, Vim will create backup (suffixed with a '~'), swap (with a .swp extension), and undo (suffixed with an .un extension) files.
 
 - In your `.vimrc:`
 * `set nobackup` - disables backup files
@@ -46,8 +46,8 @@ tags:
 
 * `:vsp` - vertical split copying the current buffer.
 * `:sp` - horizontal split copying the current buffer.
-* <C-W><C-W> - switch between splits.
-* <C-J> - my remap in .vimrc
+* `<C-W><C-W>` - switch between splits.
+* `nmap <C-J> <C-W><C-W>` - my remap in .vimrc
 
 
 **Line Manipulation**
@@ -93,8 +93,8 @@ tags:
 
 **Search Highlighting**
 
-* `:noh` - remove search highlights untill next search is preformed
-* `:nohlsearch` - remove search highlights until they are reenabled
+* `:noh` - remove search highlights until next search is preformed
+* `:nohlsearch` - remove search highlights until they are re-enabled
 
 
 **Undo and Redo**
@@ -107,7 +107,7 @@ tags:
 
 * `:%s/foo/bar/g` - Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
 * `:%s/\\//gc` - Find each occurrence of '\\' (single backslash) and replace with no character but ask for confirmation first.
-* `:%s/\n\n/\r/gc` - Find each occurrence of two consecutive newlines? and replace with single newline (change double space into single space).
+* `:%s/\n\n/\r/gc` - Find each occurrence of two consecutive newlines? And replace with single newline (change double space into single space).
 * `:%s/\n / /gc` - Find each occurrence of a newline and remove (change double space to single space) but ask for confirmation first.
 * `:s/foo/bar/g` - Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
 * `:%s/foo/bar/gc` - Change each 'foo' to 'bar', but ask for confirmation first.
@@ -121,12 +121,19 @@ tags:
 
 **Insert Date and Time**
 
-* `:pu=strftime('%c')` - Formated as 'Sat 01 Jul 2017 06:20:05 PM PDT'
+* `:pu=strftime('%c')` - Formatted as 'Sat 01 Jul 2017 06:20:05 PM PDT'
 
 
 **Copying and Pasting**
 
-* `:%y` - Selct and copy all into Vim's register. This copied text can only be pasted in the same instance of vim?
-* `"+y` - Copy to system register (cliboard). *NB- Requires +xterm_clipboard*
+* `:%y` - Select and copy all into Vim's register. This copied text can only be pasted in the same instance of vim?
+* `"+y` - Copy to system register (clipboard). *NB- Requires +xterm_clipboard*
 * `"+p` - paste from system register (clipboard) while in Normal Mode.
 * `ctrl + shift + v` - This works for pasting while in Insert Mode.
+
+**Spell Checking in Vim**
+
+* `:setlocal spell spelllang=en_us` - Activate spell check and specify the language.
+* `]s` - Move cursor to next misspelled word.
+* `[s` - Move cursor to previous misspelled word.
+* `:set nospell` - Turn off spell check highlighting.

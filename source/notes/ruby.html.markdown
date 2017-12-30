@@ -125,7 +125,7 @@ def array_copy(source)
 end
 ```
 
-**inject** is a method inside of `enumerable` that allows you to get the sum or product of the contents of an array if all the elements are numeric values. inject is given a method argument then a block containing two parameters representing the so-far accumulated value and the next element to be operated on. inject will run on each element in the array and then return the final accumulated value.
+**inject** is a method inside of `enumerable` that allows you to get the sum or product of the contents of an array if all the elements are numeric values. `inject` is given a method argument then a block containing two parameters representing the so-far accumulated value and the next element to be operated on. 'inject' will run on each element in the array and then return the final accumulated value.
 
 ```ruby
 nums = Array(1..10)
@@ -179,7 +179,7 @@ longest
 => "sheep"
 ```
 
-**select** takes elements of an array or a range and tests them against a code block. all the elements that return true are returned in a new array.
+**select** takes elements of an array or a range and tests them against a code block. All the elements that return true are returned in a new array.
 
 ```ruby
 nums = (1..30)
@@ -194,7 +194,7 @@ arr
 ```
 
 
-**include?** takes an object as a parameter and returns a boolean value if any item in the array is equal to that object.
+**include?** - Takes an object as a parameter and returns a Boolean value if any item in the array is equal to that object.
 
 ```ruby
 nums = (1..10)
@@ -224,7 +224,7 @@ puts nums_hsh.include?('c')
 ```
 
 
-**any?** **all?** and **none?** return a boolean based on the given code block for the members in their collection. Check to see if an array has any element greater than zero, any odd/even elements, if all elements are positive etc.
+**any?** **all?** and **none?** return a Boolean based on the given code block for the members in their collection. Check to see if an array has any element greater than zero, any odd/even elements, if all elements are positive etc.
 
 ```ruby
 nums = [2, 3, 5, 7]
@@ -419,15 +419,15 @@ a[2..4]
 
 ```
 
-Array#Filtering an Array an array according to a boolean expression using Array#select again uses the code in the braces following the method:
+Array#Filtering an Array an array according to a Boolean expression using Array#select again uses the code in the braces following the method:
 
 ```ruby
-names = ['rock', 'paper', 'scissors', 'lizard', 'spock']
+names = ['rock', 'paper', 'scissors', 'lizard', 'Spock']
 names.select {|word| word.length > 5}
 => ["scissors", "lizard"]
 ```
 
-Again, the code in the braces assigns a temporary variable ‘word’ to the elements in the array. It then measures the length of that element against  an integer returning a boolean value. A word will only be selected if the block evaluates to true.
+Again, the code in the braces assigns a temporary variable ‘word’ to the elements in the array. It then measures the length of that element against  an integer returning a Boolean value. A word will only be selected if the block evaluates to true.
 
 
 An array within an array is sometimes called a 2 dimensional array or a matrix. An array of arrays will print all the elements in each array. To access individual elements inside an array use `arr[outter_arr][inner_arr]`
@@ -458,14 +458,14 @@ p rect2
   values in an array. Same as `.sort.pop` and `.sort.shift`
 
 
-**Hash** - Hash tables exist in curly braces (like a block of code? are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..`       A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the valu $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
+**Hash** - Hash tables exist in curly braces (like a block of code? Are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..`       A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the value $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
 
 Some things to remember about Hash tables:
 
 * all keys in the same level of a Hash table must be unique:
 
 ```ruby
-pets = {:pet => {:name => 'steve', :species => 'cat', :age => 8},
+pets = {:pet => {:name => 'Steve', :species => 'cat', :age => 8},
         :pet => {:name => 'bill', :species => 'dog', :age => 2}}
 
 # warning: key :pet is duplicated and overwritten on line 1
@@ -580,7 +580,7 @@ General
 **Gem** - A Ruby Gem is a packaged Ruby library. Packaging makes it easy to manage, download, install, update, remove, etc. Gems are handled by RubyGems, a package manager of sorts for gems.
 
 
-**Bundler** - Bundler allows you to make your app more portable by automaticaly installing required gems listed in your Gemfile. Bundler is itself a gem and uses RubyGems to find, download and install required gems. Bundler is helpful because if you move your application to a new location you can ensure that all required gems will be installed when `bundle install` is run.
+**Bundler** - Bundler allows you to make your app more portable by automatically installing required gems listed in your Gemfile. Bundler is itself a gem and uses RubyGems to find, download and install required gems. Bundler is helpful because if you move your application to a new location you can ensure that all required gems will be installed when `bundle install` is run.
 
 
 **tIDENTIFIER** - or `tINTEGER`, `tSTRING`. These are words in standard Ruby syntax error messages meant to help you debug your code. They hint at the type of object that the interpreter encountered and caused an error They usually appear in a form similar to:
@@ -609,15 +609,15 @@ SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
 **Options Hash** -
 
 
-**heredoc** - Generally, a Here Document, or heredoc, is an input stream in a programs source code that is treated like a seperate file. It is a delimited chunk of text that the program can read in like a string and interperate as code. The benefit of using heredocs is that it can be natively formated to whatever is contained in the heredoc.
+**heredoc** - Generally, a Here Document, or heredoc, is an input stream in a programs source code that is treated like a separate file. It is a delimited chunk of text that the program can read in like a string and interpret as code. The benefit of using a heredoc is that the 'body' of the heredoc can be formatted in a way that is native for its content. 
 
 In Ruby, begin the input of a heredoc with a`<<`, `<<-` or `<<~`.
 
 * With `<<` the delimiters must start on the first column or they will be included in the heredoc.
 * Use `<<-` to begin and end with delimiters starting on any column.
-* `<<~` ommits common indentation in the heredoc.
+* `<<~` omits common indentation in the heredoc.
 
-Folllow the begining symbol with a delimiter keyword, then write the body of the heredoc apropriately formatted and end it with the same delimiter keyword.
+Follow the beginning symbol with a delimiter keyword, then write the body of the heredoc appropriately formatted and end it with the same delimiter keyword.
 
 * HTML heredoc
 
@@ -696,7 +696,7 @@ these are not **Constants**.
 test.rb:1:in `/': divided by 0 (ZeroDivisionError)
 ```
 
-which is an error that will crash a program. The `rescue` block prevents a crash by running its code (in this case, just printing a message) instead of exiting the application.
+Which is an error that will crash a program. The `rescue` block prevents a crash by running its code (in this case, just printing a message) instead of exiting the application.
 
 This gets to why using different exception classes is important and why the ability to create custom exception classes is super functional. With `rescue`, different exceptions can be handled differently. For example, the above code causes `ZeroDivisionError` which you might want to trigger a certain message as opposed to a `NameError` which will trigger something else.
 
@@ -868,12 +868,12 @@ such as +, -, * and /. These are also *methods*. + = .+ , - = .- etc.
 **Variables** allow you to store data in an *object* (strings, numbers, arrays). *Variables* are  *assigned*. A variable name consists of letters and numbers. It must start with a lowercase letter. It cannot contain spaces. Variables ARE NOT THEMSELVES OBJECTS (They CAN be objects, though?). Variables are names that point to values? The value is the Object.
 
 
-**Argument** - An *argument* is the data that is passed into a *method*. In `puts("yo!")` `puts` is the method and `` "yo!" `` is the *argument*. If a method requires an argument it must have parentheses ( ‘puts()’ for example).  some methods don’t require an argument and therefore don’t need parentheses (‘gets’ for example can be written by itself.
+**Argument** - An *argument* is the data that is passed into a *method*. In `puts("yo!")` `puts` is the method and `` "yo!" `` is the *argument*. If a method requires an argument it must have parentheses ( ‘puts()’ for example). Some methods don’t require an argument and therefore don’t need parentheses (‘gets’ for example can be written by itself.
 
 
-* *if* statements. the if test is really saying "if true, go to body and run code. if false go to end.
+* *if* statements. The if test is really saying "if true, go to body and run code. If false go to end.
 
-* *code branching* is what allows your program to do different things depending on different conditions. By using *if*, *else*, and *elsif*, for example.
+* *code branching* is what allows your program to do different things depending on different conditions. By using `if`, `else`, and `elsif`, for example.
 
 ```ruby
 puts("Type in a number")
@@ -905,14 +905,14 @@ end
 puts("Thanks for typing in a number!")
 ```
 
-* By using the *else* keyword, we create a second body that will run only if the above *if* test is false. *if* false then go to *else* then to end. *if true* then go straight to end. When *if* is true it always goes to the endof it’s body, skipping all the else or elsif statements.of it’s body, skipping all the else or elsif statements.of it’s body, skipping all the else or elsif statements.
+* By using the *else* keyword, we create a second body that will run only if the above *if* test is false. *if* false then go to *else* then to end. *if true* then go straight to end. When *if* is true it always goes to the end of it’s body, skipping all the else or `elsif` statements.of it’s body, skipping all the else or `elsif` statements.of it’s body, skipping all the else or `elsif` statements.
 
 * *&&* and *||* are both *logical connectives*. In `if (x) && (y)` the if test will return true only when both x and y are true. We then move straight to the end of the body. In `if (x) || (y)` the *if* test returns true when either x or y are true.
 
 * About expressions in parentheses. Expressions in parentheses are one (object or argument?). ‘number == (7 || 13)’ does not read "Number is equal to 7 or 13". Instead, Ruby will compare ‘number’ to everything in the parentheses at once (similar to the order of operations, or PEMDAS?). In Ruby the || method works left to right, returning when it finds something that reads as true. In ‘(7 || 13) Ruby asks, is the right operand (7) true? Any number besides ‘nil’ or ‘false’ is inherently true, so Ruby returns 7. So, if ‘number’ equals 13 the statement ‘number == (7 || 13)’ will return false because ruby thinks it is being asked if number == 7. The correct if statement is ‘if (number == 7) || (number == 13)’. ‘if (number == 7 || number == 13)’ also seems to work.
 
 
-* Data structures. integers (numbers) and strings are data structures (types?). not sure where floats, and other types fall into this.
+* Data structures: integers (numbers) and strings are data structures (types?). Not sure where floats, and other types fall into this.
 
 * An array is another data structure. Arrays store a sequence of objects separated by commas ‘[1, 2,...]’. The index of the array is the position of the items in the array. ‘puts(cool_things[0])’ prints item at index 0, which is the first item in the array. Array indices always start at zero. An array with 4 items will have an item at index 0, 1, 2, and 3.  We can use the length method to return the number of items in a array as an integer ‘array.length’.
 
@@ -964,7 +964,7 @@ end
 * *Breaking out of loops* the `break` command (keyword?) is used to break out of normally infinite loops.
 
 
-**return** - Returns a value and exits a method. More acurately, `return` is a *keyword* that takes an argument (`nil` by default) and exits the method early with that value.
+**return** - Returns a value and exits a method. More accurately, `return` is a *keyword* that takes an argument (`nil` by default) and exits the method early with that value.
 
 ```ruby
 def hi(a)
@@ -1106,7 +1106,7 @@ h e l l o
 
 The block can be between braces or inside of `do`.
 
-**Enumerable**. A Ruby module (collection of methods and constants mixed into other classes. See module vs Class here: https://lh4.googleusercontent.com/e_Eml6aYg1udItOLjQCzUKF1L2K1JcjyZTnzYwcP7A=w1530-h800-no (Modules are about providing methods that you can use across multiple classes. Classes are about objects; modules are about functions.) ‘map’ and ‘each’ are inside enumerable. enumerable is mixed into the Array and Hash classes.
+**Enumerable**. A Ruby module (collection of methods and constants mixed into other classes. See module vs Class here: https://lh4.googleusercontent.com/e_Eml6aYg1udItOLjQCzUKF1L2K1JcjyZTnzYwcP7A=w1530-h800-no (Modules are about providing methods that you can use across multiple classes. Classes are about objects; modules are about functions.) ‘map’ and ‘each’ are inside enumerable. Enumerable is mixed into the Array and Hash classes.
 
 
 Use map to get a modified array based on the code block. Use ‘each’ for its side effects (such as printing each element or pushing it into another array.)
@@ -1132,4 +1132,4 @@ puts char_arr
 => [a, b, c, d, e]
 ```
 
-**Argument vs parameter** - An argument is a single value to give to a method. for example for an array `a.index("x")`  "x" is the argument. A parameter is like a mini variable that will given a new value when iterated over. for example a.each `{|i| puts i}` i is the parameter.
+**Argument vs parameter** - An argument is a single value to give to a method. For example for an array `a.index("x")`  "x" is the argument. A parameter is like a mini variable that will given a new value when iterated over. For example a.each `{|i| puts i}` i is the parameter.
