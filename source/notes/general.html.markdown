@@ -1,6 +1,6 @@
 ---
 
-title: General
+title: Jargon
 date: 2017-12-18 03:41 UTC
 tags: 
 

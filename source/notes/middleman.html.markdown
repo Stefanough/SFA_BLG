@@ -155,6 +155,12 @@ articles and notes that are really pretty when rendered and really human readabl
 
 Todo
 ----
+* What do I need to do right now to get this site up and running?
+   * Add article content and get rid of lorem
+   * create about me page
+   * clean up css
+   * 
+
 * **ToDo**: Notes pulled from GitHub instead of stored locally.
 * **ToDo**: remove 'recent articles' on bottom of page
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
