@@ -1,6 +1,6 @@
 ---
 
-title: Unix and Linux
+title: Unix/Linux
 date: 2017-12-14 23:31 UTC
 tags: 
 

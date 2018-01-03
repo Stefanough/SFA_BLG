@@ -1,6 +1,6 @@
 ---
 
-title: html
+title: HTML
 blog: notes
 date: 2017-12-08 18:18 UTC
 tags: 
