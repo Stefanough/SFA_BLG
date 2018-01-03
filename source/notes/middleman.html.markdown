@@ -175,7 +175,7 @@ Todo
     * Very confused about how this site is pulling fonts from the web. In my stylesheet there are links to fonts in the `et-book` family. None of these fonts are stored locally in structure of the site. I don't think the links are pointing to anything remote. Does the `@font-face` somehow parse it's contained links?
     * ~~content kept at half? page width.~~
     * ~~Better mononspace font for code~~
-    * About me on front page
+    * ~~About me on front page~~
 * ~~**ToDo**: Blog article title on article page~~
 * ~~**ToDo**: all links working in build.~~
 * ~~**ToDo**: 'About Notes' on the notes page. Reference the Jargon file...~~
@@ -195,7 +195,7 @@ Defered Todo
    * built with
 * **ToDo**: display projects and code on the site
     * how to go about this properly
-* **ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?
+* ~~**ToDo**: Can I use nokogiri to look inside my notes files and generate links to each bullet point?~~
    * ~~Pull note 'sections' out with Nokogiri search on css `strong` tag~~
    * ~~Display sections as links in the note document.~~
    * Modify the note document so that 'sections' are surounded with `<a name="section title"></a>` tags
