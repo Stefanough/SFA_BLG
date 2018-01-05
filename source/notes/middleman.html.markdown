@@ -61,6 +61,8 @@ Using these resources:
 
 <http://ruby-doc.org/docs/ruby-doc-bundle/Tutorial/part_01/first_steps.html#numbers>
 
+<http://basecase.org/>
+
 **Blog inspirations (content):**
 Tsome overlap, ofcourse
 
