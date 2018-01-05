@@ -1,6 +1,6 @@
 ---
 
-title: middleman
+title: This Site & Middleman
 blog: notes
 date: 2017-12-08 07:40 UTC
 tags:
@@ -70,8 +70,11 @@ Tsome overlap, ofcourse
 
 <http://ozmm.org/>
 
+<https://meteuphoric.wordpress.com/>
+
 
 **Site inspiration:**
+<https://logicmag.io/>
 
 <http://o-r-g.com/>
 

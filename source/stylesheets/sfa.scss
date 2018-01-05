@@ -46,9 +46,13 @@ section > p, section > footer, section > table {
     width: 100%;
 }
 
-.content { max-width: 650px;
+.content { 
      padding-top: 0rem;
  }
+
+p {
+    max-width: 520px;
+}
 
 section.exercises p {
     line-height: 0.5em;
@@ -61,7 +65,7 @@ section > ul {
 }
 
 ul.compact {
-    margin: 1em auto 1em;
+    max-width: 520px;
     padding: 0;
     text-align: center;
     font-size: 2em;
@@ -103,6 +107,7 @@ blockquote p {
 
 /* Code styling */
 pre code {
+    max-width: 650px;
     line-height: 1.5em;
     font-size: .8em;
     background-color: #161705;
@@ -113,6 +118,7 @@ pre code {
 }
 
 code {
+    max-width: 650px;
     font-family: "Overpass Mono", monospace;
     //background-color: #161705;
     //color: #ffffff;
