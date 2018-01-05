@@ -23,11 +23,6 @@
       <%= link_to 'about', '/about' %>
     </nav>
 
-    <div id="main" role="main">
-        <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
-        <% if is_blog_article? %>
-            <h2 class="article-title"> <%= current_article.title %> </h2>
-        <% end %>
 
         <section class="content">
             <%= yield %>

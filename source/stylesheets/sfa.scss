@@ -64,6 +64,7 @@ section > ul {
     width: 90%;
 }
 
+/*Notes list*/
 ul.compact {
     max-width: 520px;
     padding: 0;
@@ -80,7 +81,9 @@ ul.compact li {
     display: inline;
  }
 
+/*Projects list*/
 ul.compact-small {
+    max-width: 520px;
     margin: 0em 0em 0em;
     padding: 0;
     text-align: center;

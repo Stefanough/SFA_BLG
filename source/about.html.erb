@@ -1,0 +1,12 @@
+---
+page_title: About Me
+pageable: false
+per_page: 10
+---
+
+
+<% blog('scribbles').articles.each do |article| %>
+    <% if article.title == "Welcome" %>
+        <p> <%= article.body %> </p>
+    <% end %>
+<% end %>
