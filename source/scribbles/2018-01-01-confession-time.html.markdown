@@ -1,6 +1,6 @@
 ---
 
-title: Confesstion Time
+title: Confession Time
 date: 2018-01-01 07:16 UTC
 tags: 
 
