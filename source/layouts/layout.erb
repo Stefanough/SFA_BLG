@@ -15,14 +15,7 @@
 </head>
 
 <body>
-    <nav class="top-bar">
-      <%= link_to 'Stefan Armijo', '/' %>
-      <%= link_to 'blog', '/blog' %>
-      <%= link_to 'notes', '/notes' %>
-      <%= link_to 'projects', '/projects' %>
-      <%= link_to 'about', '/about' %>
-    </nav>
-
+    <%= partial "partials/nav" %>
 
         <section class="content">
             <%= yield %>

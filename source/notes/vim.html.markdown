@@ -48,6 +48,7 @@ tags:
 * `:sp` - horizontal split copying the current buffer.
 * `<C-W><C-W>` - switch between splits.
 * `nmap <C-J> <C-W><C-W>` - my remap in .vimrc
+* `<C-w> T` - Move current split window to a new tab.
 
 
 **Line Manipulation**
@@ -130,6 +131,15 @@ tags:
 * `"+y` - Copy to system register (clipboard). *NB- Requires +xterm_clipboard*
 * `"+p` - paste from system register (clipboard) while in Normal Mode.
 * `ctrl + shift + v` - This works for pasting while in Insert Mode.
+
+**Exporer in Vim**
+
+* `:Explore` - Open Vim's built-in file exporer in the current window. If the current file has unwritten modifications, the window will be split horizontally. Use Vim navigation and press `Enter` to open a file or dir.
+* `:Explore!` - Same as above but splits the window verically.
+* `:Sexplore` - Always splits the window (horizontally bu default) and opens the explorer.
+* `:Sexplore!` - Same as above but on a vertical split
+* `:Texplore` - Creates a new tab and opens the explorer.
+* `r` - Reverse sort order of items.
 
 **Spell Checking in Vim**
 
