@@ -28,7 +28,7 @@ nav a {
 }
 
 
-a { 
+a {
     text-decoration: none;
 }
 
@@ -45,7 +45,7 @@ section > p, section > footer, section > table {
     width: 100%;
 }
 
-.content { 
+.content {
      padding-top: 0rem;
  }
 
@@ -124,8 +124,11 @@ pre code {
     display: block;
 }
 
+div.highlight {
+    max-width: 650px;
+}
 
-span.nf, span.n, span.nb {
+span.nf, span.n, span.nb, span.vi {
     color: #f8f8f2;
 }
 
