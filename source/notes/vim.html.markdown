@@ -140,6 +140,7 @@ tags:
 * `:Sexplore!` - Same as above but on a vertical split
 * `:Texplore` - Creates a new tab and opens the explorer.
 * `r` - Reverse sort order of items.
+* `d` - Create new dir in the current dir.
 
 **Spell Checking in Vim**
 

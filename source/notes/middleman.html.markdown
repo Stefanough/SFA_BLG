@@ -63,6 +63,8 @@ Using these resources:
 
 <http://basecase.org/>
 
+<http://coldewey.cc/>
+
 **Blog inspirations (content):**
 Tsome overlap, ofcourse
 

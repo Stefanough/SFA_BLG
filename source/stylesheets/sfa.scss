@@ -37,7 +37,6 @@ a {
     font-family:  "Overpass Mono", monospace;
 }
 
-
 p {
     font-size: 100%;
 }
@@ -62,6 +61,10 @@ section.exercises p {
 
 section > ul {
     width: 90%;
+}
+
+img {
+    width: 100%;
 }
 
 /*Notes list*/
@@ -110,6 +113,7 @@ blockquote p {
 
 /* Code styling */
 pre code {
+    color: #00f300;
     max-width: 650px;
     line-height: 1.5em;
     font-size: .8em;
@@ -118,6 +122,11 @@ pre code {
     padding: 1rem;
     position: relative;
     display: block;
+}
+
+
+span.nf, span.n, span.nb {
+    color: #f8f8f2;
 }
 
 code {
