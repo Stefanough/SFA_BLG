@@ -12,6 +12,7 @@
 
 # Ignore drafts
 *DRAFT.*
+/source/drafts/
 
 # Ignore environment variables
 /.env
