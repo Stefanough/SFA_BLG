@@ -50,7 +50,8 @@ helpers do
 end
 
 
-# Ignore 
+# Ignore drafts dir
+ignore 'drafts/*'
 
 
 # Activate two blogs for notes and articles
@@ -134,7 +135,7 @@ page "/feed.xml", layout: false
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-    activate :minify_css
+   activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript

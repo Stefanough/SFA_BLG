@@ -18,7 +18,9 @@
 
     <%= partial "partials/nav" %>
     <div id="main" role="main">
-        <h2 class="article-title"> <%= current_article.title %> </h2>
+        <% if current_article %>
+            <h2 class="article-title"> <%= current_article.title %> </h2>
+        <% end %>
         <section class="content">
             <%= yield %>
         </section>
