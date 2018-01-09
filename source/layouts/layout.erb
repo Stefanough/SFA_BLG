@@ -15,8 +15,10 @@
 </head>
 
 <body>
-    <%= partial "partials/nav" %>
 
+    <%= partial "partials/nav" %>
+    <div id="main" role="main">
+        <h2 class="article-title"> <%= current_article.title %> </h2>
         <section class="content">
             <%= yield %>
         </section>

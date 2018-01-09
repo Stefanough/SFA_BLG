@@ -1,0 +1,68 @@
+---
+
+title: Weaponized Blogging With Middleman
+date: 2017-12-29 00:07 UTC
+tags:
+
+---
+
+<!--
+* learned about Middleman
+* design goals
+   * a place for writing
+   * a place for notes
+   * the benefits of a hand-coded site: easily moddable. "and because I built it myself I'll be able to easily add on to it. And by easily I mean with fair amount of work to implement what I want but at least I'll know where to start.
+* HOW?
+   * the basics of middleman
+      * where to get it
+      * how to install it
+      * configure for blogging
+   * How to use it with two blogs (and set one up for notes)
+* In future articles: how i used nokogiri
+*
+-->
+
+**What is this?**
+
+I built this site to act as a multi-pronged offense to get back into coding.  This blog is weaponized and It's designed to kick me in the ass on multiple fronts. I’m here to code more, write more, design more, and think more.
+
+I really only hade 2 major goals for this blog on the outset:
+
+* Host my notes which are already written in markdown.
+* Encourage me to dive in a write code.
+
+I could have just launched a Wordpress or Django site like I have in the past but I wanted to use a more hands-on framework, one that encouraged diving into the code. I’ve built small projects in Rails and know the joys of watching Ruby churn out HTML and display my data and content. Something like Rails is way too heavy for what I wanted in a weaponized blog (this is more of a guerrilla operation) but I was set on using Ruby to generate pages. Could I find a framework that would let me build static site to spec while re-re-teaching myself Ruby?
+
+Enter Middleman, a framework for building static websites with Ruby. A static page is served up exactly like it is stored on a server as opposed to dynamic pages which are built-as-requested by an application, often pulling data and assets from databases and external sources. Before the current sea of 'web-apps' bristling with their APIs, static pages disseminated information quickly and efficiently.
+
+**How did I do it?**
+
+There are great guides on the web for getting started with Middleman and I looked at many of them. I'll go over the basics of how I set up this site. I’ll try to explain things as I go because if you're like me you kind of need your hand held while absorbing new information, and that’s OK.
+
+Install Middleman and its official blog extension. The blog extension adds extra functionality such as tagging and article generation to the default installation.
+
+```
+$ gem install middleman middleman-blog
+```
+
+Initialize your Middleman project. Pass the `blog` parameter to the `--template` option to initialize it with blogging functionality.
+
+```
+$ middleman init my_fresh_blog --template=blog
+```
+
+`cd` into your project directory and start the test server.
+
+```
+$ cd my_fresh_blog
+$ middleman server
+```
+
+Point your browser to localhost and you see:
+![bare-bones blog](screenshot-blog-title.png)
+
+This super barebones site still intimidates me, but it’s truly a blank canvas.There are middleman templates that give you immediate satisfaction of having something that looks like a fully-featured, bigass website (I looked at a lot of them). I wanted something that was leaner, uglier and customizable.
+
+Even though it doesn’t look like much, the initial blog installation provides some cool features. We already have article generation with `middleman article <article_title>`, which creates a markdown file in the `source` directory. Also, we can generate the deployment ready files with `middleman build` which creates a `build` directory and places the static page files inside.
+
+In a future article, I’ll show how to set up two separate blogs inside middleman and how I used that functionality to display different types of content.

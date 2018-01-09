@@ -20,9 +20,7 @@
 
     <div id="main" role="main">
         <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
-        <% if is_note? %>
-            <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
-        <% end %>
+        <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
 
         <!-- Use Nokogiri to build links in notes -->
         <!-- if this is a notes 'blog' article find all text surounded with '** **' -->
