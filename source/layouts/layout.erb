@@ -24,12 +24,13 @@
 
   <aside>
     <h2>Recent Articles</h2>
+    <!-- dont show drafts or 'special' articles -->
     <ol>
-        <% blog('scribbles').articles[0...10].each do |article| %>
-            <% if !["Welcome", "The Jargon File", "Projects"].include? article.title %>
-                <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-            <% end %>
-      <% end %>
+    <% blog('scribbles').articles.each_with_index do |article, i| %>
+        <% if !article.tags.any? { |t| ["draft", "special"].include? t } %>
+            <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+        <% end %>
+    <% end %>
     </ol>
   </aside>
 

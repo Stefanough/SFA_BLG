@@ -6,6 +6,19 @@ tags:
 
 ---
 
+Tricks and One Liners
+---------------------
+
+Compare the contents of two Arrays:
+
+```ruby
+("a".."d").to_a.any? { |c| ["z", "a"].include? c }
+=> true
+
+("a".."d").to_a.any? { |c| ["z", "y"].include? c }
+=> false
+```
+
 Methods
 -------
 

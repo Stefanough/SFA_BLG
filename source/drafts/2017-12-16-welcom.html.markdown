@@ -1,0 +1,36 @@
+---
+
+title: Welcome
+date: 2017-12-16 06:50 UTC
+tags: 
+
+---
+
+* About me
+* About this site
+   * How this site works
+   * Why it exists
+
+
+Hi I'm Stefan and I really want to work as a professional software developer. I built this site (read more about the technical side of this site **here**) to function as my main tool and record of my journey towards this goal.
+
+The *blog* section of this site contains more general writing and thoughts on projects and exercises that I'm working on. *Notes* contains more technical explanations and defenitions as well as blocks of code that I think are relevant. *Projects* contains (mostly, I hope) finnished projects.
+
+Although everything on this site is public facing, it's also a place for me to walk myself through problems and sort of converse with myself as I strive towards something like an intuitive understanding of the programming challenges I'm grappling with.
+
+More about myself and I **here**. Here's me on github and linkedin. 
+
+
+use a curriculum and build the successive projects and post them in the projects section of this site. When I come across the 
+
+This is site is a tool for me document this path
+
+I've had some set backs. But this is something I want and I'm going to work hard for it. This is a place for notes, thoughts, books, and photos. Consider this site and its content fluid. Im going to use this site to push myself like a cold hearted bastard to get the things I want. godamnit.
+
+Look here for more and more
+
+
+
+About a year ago I turned thirty and was dropped from the program on the same day. There were certain aspects that I hated. The pace didn't allow for thoughtful questions or pondering. A lot of information, explanations and prcesses had to be taken on faith withot much consideration for fundamentals. But like I said, It was still the happiest I'd been in a very long time. 
+
+
