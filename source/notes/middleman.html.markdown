@@ -65,6 +65,8 @@ Using these resources:
 
 <http://coldewey.cc/>
 
+<https://qntm.org/>
+
 **Blog inspirations (content):**
 Tsome overlap, ofcourse
 
@@ -203,7 +205,8 @@ Todo
 Defered Todo
 ------------
 * **ToDo**: Searchable notes.
-* **ToDo**: have a drafts tab visible when in `.development`
+* ~~**ToDo**: have a drafts tab visible when in `.development`~~
+   * **ToDo**: draft state read from file name instead of article tag.
 * **ToDo**: create footer
    * copyright
    * built with

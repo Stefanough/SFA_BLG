@@ -132,10 +132,10 @@ tags:
 * `"+p` - paste from system register (clipboard) while in Normal Mode.
 * `ctrl + shift + v` - This works for pasting while in Insert Mode.
 
-**Exporer in Vim**
+**Explorer in Vim**
 
-* `:Explore` - Open Vim's built-in file exporer in the current window. If the current file has unwritten modifications, the window will be split horizontally. Use Vim navigation and press `Enter` to open a file or dir.
-* `:Explore!` - Same as above but splits the window verically.
+* `:Explore` - Open Vim's built-in file explorer in the current window. If the current file has unwritten modifications, the window will be split horizontally. Use Vim navigation and press `Enter` to open a file or dir.
+* `:Explore!` - Same as above but splits the window vertically.
 * `:Sexplore` - Always splits the window (horizontally bu default) and opens the explorer.
 * `:Sexplore!` - Same as above but on a vertical split
 * `:Texplore` - Creates a new tab and opens the explorer.
@@ -148,3 +148,7 @@ tags:
 * `]s` - Move cursor to next misspelled word.
 * `[s` - Move cursor to previous misspelled word.
 * `:set nospell` - Turn off spell check highlighting.
+
+**External Commands**
+
+* `<C-z>` - 'Pause' Vim session and open shell. `$ fg` to return to vim.

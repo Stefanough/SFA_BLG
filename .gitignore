@@ -11,7 +11,7 @@
 /build
 
 # Ignore drafts
-*DRAFT.*
+*draft.*
 /source/drafts/
 
 # Ignore environment variables
