@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <% blog_title = 'Disparate Interests' %>
   <title>
-      <%= '[dev] ' if development? %>
-      <%= blog_title %> <%= ' - ' + current_article.title unless current_article.nil? %>
+      <%= '[d] ' if development? %>
+      <%= blog_title %>
+      <%= ' - ' + current_article.title unless current_article.nil? %>
   </title>
   <%= stylesheet_link_tag "all" %>
   <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-  <%= stylesheet_link_tag 'assets/normalize', media: 'all' %>
 </head>
 
 <body>

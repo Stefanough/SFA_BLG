@@ -16,11 +16,14 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     background-color: #f9feff;
     //padding: 10px 0px 0px 25px;
-    margin-left: 5%;
-    margin-top: 3%;
-    max-width: 85%;
+    margin-left: 5em;
+    margin-top: 3em;
+    width: 85%;
     font-size: 0.8em;
 }
 
@@ -37,6 +40,13 @@ a {
     text-decoration: none;
 }
 
+div.main {
+    width: 66%;
+}
+
+p {
+}
+
 .article-title {
     font-size: 2.5em;
     font-family:  "Overpass Mono", monospace;
@@ -44,7 +54,7 @@ a {
 }
 
 section > p, section > footer, section > table {
-    width: 100%;
+    width: 45em;
 }
 
 .content {
@@ -117,27 +127,22 @@ blockquote p {
 pre code {
     color: #00f300;
     line-height: 1.4em;
-    font-size: 0.9em;
+    font-size: 0.8em;
     background-color: #161705;
-    z-index: 1;
     padding: 1em;
     display: block;
-    width: 600px;
-    margin-right: 50px;
-    //padding-right: 50px;
+    width: 55em;
 }
 
 div.highlight {
-    width: 600px;
-    padding-right: 50px;
+    width: 60em;
 }
 
-span.nf, span.n, span.nb, span.vi {
+span.nf, span.n, span.nb, span.vi, span.nl, span.py {
     color: #f8f8f2;
 }
 
 code {
     font-family: "Overpass Mono", monospace;
     font-size: .9em;
-    padding: 2px;
 }
