@@ -23,20 +23,7 @@
         <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
 
         <!-- Use Nokogiri to build links in notes -->
-        <!-- if this is a notes 'blog' article find all text surounded with '** **' -->
-        <!-- I need to look in the note.html.markdown doc or treat is as a link? -->
-
-        <!-- inject href tags around sections in  note doc -->
-        <% if false %> <!-- BEGIN COMMENT -->
-        <section class="content">
-            <% @doc = Nokogiri::HTML::DocumentFragment.parse(yield) %>
-            <%# @doc %>
-            <% h2 = @doc.at_css "strong" %>
-            <% h2.name = "is this yielded doc changed?" %>
-            <%= @doc.to_html %>
-        </section>
-        <% end %> <!-- END COMMENT -->
-        
+        <!-- wrap 'note section' with '<a name="section"></a> --> 
         <section class="content">
             <% if is_note? %>
                 <% ndoc = current_article.body %>

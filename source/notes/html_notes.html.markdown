@@ -7,12 +7,11 @@ tags:
 
 ---
 
+**Tag and Element** - 
 
 
-HTML Notes
-----
+**Section** - 
 
-**Section** -
 
 **Header** - Content about the HTML document that is not rendered by the client browser. Content for the header is placed in the `<head></head>` tag
 
