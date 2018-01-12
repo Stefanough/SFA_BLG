@@ -19,7 +19,7 @@
     <%= partial "partials/nav" %>
 
     <div id="main" role="main">
-        <!-- Render '<NoteSubject> Notes' at the top of each notes page -->
+        <!-- Render '<Subject> Notes' at the top of each notes page -->
         <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
 
         <!-- Use Nokogiri to build links in notes -->
@@ -39,22 +39,26 @@
             <% end %>
         </section>
 
-    <!-- Bad to convert modified Nokogiri obj to HTML and render instead of yeilding? -->
+        <!-- Bad to convert modified Nokogiri obj to HTML and render instead of yeilding? -->
+        <!-- render the HTML doc created by Nokogiri above because 'yield' will display the unmodified html -->
         <section class="content">
-            <%# yield %>
+            <%#= yield %>
         </section>
     </div>
 
 
-    <!-- sidebar for notes. pull '<strong> elements (note sections) from article body -->
+    <!-- notes sidebar. pull <strong> elements (sections) from body -->
+    <div id="notesnav">
     <% if is_note? %>
         <% ndoc = current_article.body %>
         <ul>
-        <% doc = Nokogiri::HTML(ndoc).css('strong').each do |link| %>
+        <% nlist = Nokogiri::HTML(ndoc).css('strong').sort_by { |l| l.text } %>
+        <% nlist.each do |link| %>
             <li><a href="#<%= link.text %>"> <%= link %> </a></li>
         <% end %>
         </ul>
     <% end %>
+    </div>
 
 </body>
 </html>

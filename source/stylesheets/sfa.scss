@@ -16,9 +16,6 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    position: relative;
     background-color: #f9feff;
     //padding: 10px 0px 0px 25px;
     margin-left: 5em;
@@ -40,8 +37,24 @@ a {
     text-decoration: none;
 }
 
-div.main {
+#main {
     width: 66%;
+}
+
+#frontarticles, #frontnotes {
+    border: 1px solid black;
+}
+
+#frontarticles {
+    background-color: grey;
+}
+
+#frontnotes {
+    background-color: violet;
+}
+
+#notesnav {
+    background-color: pink;
 }
 
 p {
@@ -55,8 +68,8 @@ p {
 }
 
 section > p, section > footer, section > table {
-    width: 45em;
-}
+    // width: 45em;
+ }
 
 .content {
      padding-top: 0rem;

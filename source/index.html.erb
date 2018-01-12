@@ -11,12 +11,11 @@ per_page: 10
   <% end %>
 <% end %>
 
-<div>
+<div id="frontarticles">
 <% blog('scribbles').articles.each_with_index do |article, i| %>
     <% if !article.tags.any? { |t| ["draft", "special"].include? t } %>
         <h3><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h3>
   <p>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
        the first 250 characters -->
        <%= article.summary(450) %>
   </p>
@@ -24,21 +23,16 @@ per_page: 10
 <% end %>
 </div>
 
-<% if false %> <!-- begin comment -->
-<div>
+<div id="frontnotes">
 <% blog('notes').articles.each_with_index do |article, i| %>
-    <% if i ==0 %>
-  <h3>
-      <%= link_to article.title, article %>
-      <span><%= article.date.strftime('%b %e') %></span>
-  </h3>
-  <p>
-       <%#= article.summary(250) %>
-  </p>
+    <% if i < 5 %>
+    <h3> <%= link_to article.title, article %>
+      <!-- don't include date for now -->
+      <!-- <span><%#= article.date.strftime('%b %e') %></span> -->
+    </h3>
    <% end %>
 <% end %>
 </div>
-<% end %> <!-- end comment -->
 
 <% if paginate %>
   <% if next_page %>
