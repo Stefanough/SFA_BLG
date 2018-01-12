@@ -15,6 +15,15 @@ tags:
 * `:so $MYVIMRC` - reload the currently active .vimrc file. `so` is short for `source`.
 
 
+**Getting Help in vim**
+
+* Please help
+
+**Wrapping Lines**
+
+* `:set wrap!` - toggles line wrap.
+
+
 **Open files in vim**
 
 * `$ vim file.name` - opens a file in vim or creates a new file if one doesn't exist.

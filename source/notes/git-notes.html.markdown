@@ -11,7 +11,7 @@ Git is...
 GitHub is...
 
 `$ git help <command>` - help documentation for specific commands 
-`$ git remote -v show` - shows remore server names and urls
+`$ git remote -v show` - shows remote server names and urls
 
 **General Git Procedure**
 
@@ -19,7 +19,7 @@ GitHub is...
 
 **staging vs adding**
 
-`$ git add` is synonomous with `$ git stage`
+`$ git add` is synonymous with `$ git stage`
 
 **Gist vs Repository**
 
@@ -63,7 +63,7 @@ Help in Linux: git --help
 Navigation:
 git rev-parse --show-toplevel     shows the top leve (root) directory for the current repo
 
-Hella Usefull:
+Hella Useful:
 git ls-remote --get-url           shows the remote address where data will be pushed?
 git push -u origin master         pushes current changes to remote server or address
 
@@ -136,8 +136,8 @@ Anatomy of git command
 git commit -m "message about commit here"
  |    |     |              |______________________________________
  |    |     |___________________________________                 |
- |    |___________________                     |		         |
- |                       |		               |	  			 |
+ |    |___________________                     |	         |
+ |                       |		       |		 |
 initialize the    commiting changes    message option     describe changes
 git command       to current branch                       in this commit.
 ```
