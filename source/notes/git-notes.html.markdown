@@ -10,6 +10,8 @@ Git is...
 
 GitHub is...
 
+`$ git commit -a -m "super important commit message"` - Stage modified files for commit (but not new files) and commit with one command.
+
 `$ git help <command>` - help documentation for specific commands 
 `$ git remote -v show` - shows remote server names and urls
 
