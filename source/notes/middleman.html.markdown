@@ -24,7 +24,7 @@ Using these resources:
 
 <https://webdesign.tutsplus.com/articles/how-to-setup-a-static-website-with-middleman--cms-25275>
 
-*middlman with two blogs:*
+*middleman with two blogs:*
 <https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/>
 
 **official docs:**
@@ -68,7 +68,7 @@ Using these resources:
 <https://qntm.org/>
 
 **Blog inspirations (content):**
-Tsome overlap, ofcourse
+some overlap, of course
 
 <https://www.koszek.com/>
 
@@ -79,7 +79,10 @@ Tsome overlap, ofcourse
 <https://meteuphoric.wordpress.com/>
 
 
-**Site inspiration:**
+**Site inspiration (style):**
+
+<https://www.nytimes.com/>
+
 <https://logicmag.io/>
 
 <http://o-r-g.com/>
@@ -104,6 +107,8 @@ Tsome overlap, ofcourse
 
 <http://chriswanstrath.com/>
 
+**site inspiration (content):**
+
 Configuration notes:
 --------------------
 
@@ -117,7 +122,7 @@ Configuration notes:
     * `$ middleman build`
     * Upload files from `/build` to s3 bucket and view.
 * How to integrate with GitHub?????
-* Assosciate www.stefanarmijo.com with the blog
+* Associate www.stefanarmijo.com with the blog
 * Deploy to Amazon s3
     * install awscli on cloud9
         * new virtual workspace configured for python development
@@ -132,7 +137,7 @@ Design Ideas/goals:
         - blog
         - notes
         - projects (notes in here? or projects in notes?)
-        - project euler/code_something? (put in notes?)
+        - project Euler/code_something? (put in notes?)
         - photos
         - about
     - front page with just latest updates
@@ -140,7 +145,7 @@ Design Ideas/goals:
 articles and notes that are really pretty when rendered and really human readable when viewed in pure markup.
 
 #### Plan for notes page:
-* main notes page will have links to differente subject (Ruby, Rails, Sql, Vim, Etc...)
+* main notes page will have links to different subject (Ruby, Rails, SQL, Vim, Etc...)
     * each link goes to a markdown file of that subjects notes. One markdown file per subject?
     * different sections for programming related notes and others?
     * add front matter to each notes page? subject and whatnot?

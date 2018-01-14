@@ -18,13 +18,33 @@
 
     <%= partial "partials/nav" %>
 
-    <div id="main" role="main">
+    <section id="titlespace">
+        <% if current_article %>
+            <h2 id="article-title"> <%= current_article.title + " Notes" %> </h2>
+        <% end %>
+    </section>
+
+    <%= partial "partials/top_border" %>
+
+    <div id="notes-main" role="main">
         <!-- Render '<Subject> Notes' at the top of each notes page -->
-        <h2 class="article-title"> <%= current_article.title + " Notes" %> </h2>
+    <!-- notes sidebar. pull <strong> elements (sections) from body -->
+    <div id="notesnav">
+    <% if is_note? %>
+        <% ndoc = current_article.body %>
+        <ul>
+        <% nlist = Nokogiri::HTML(ndoc).css('strong').sort_by { |l| l.text } %>
+        <% nlist.each do |link| %>
+            <li><a href="#<%= link.text %>"> <%= link %> </a></li>
+            <br>
+        <% end %>
+        </ul>
+    <% end %>
+    </div>
 
         <!-- Use Nokogiri to build links in notes -->
         <!-- wrap 'note section' with '<a name="section"></a> --> 
-        <section class="content">
+        <section class="content" id="notebody">
             <% if is_note? %>
                 <% ndoc = current_article.body %>
                 <% doc = Nokogiri::HTML::DocumentFragment.parse(ndoc) %>
@@ -37,28 +57,17 @@
                 <% end %>
                 <%= doc.to_html %>
             <% end %>
+                hi im in content class.
         </section>
 
-        <!-- Bad to convert modified Nokogiri obj to HTML and render instead of yeilding? -->
-        <!-- render the HTML doc created by Nokogiri above because 'yield' will display the unmodified html -->
-        <section class="content">
+        <!-- Bad to convert modified Nokogiri obj to HTML and render instead of yeilding? No, render the HTML doc created above - 'yield' will display the original doc -->
+
+        <!-- <section class="content"> -->
             <%#= yield %>
-        </section>
+        <!-- </section> -->
     </div>
 
-
-    <!-- notes sidebar. pull <strong> elements (sections) from body -->
-    <div id="notesnav">
-    <% if is_note? %>
-        <% ndoc = current_article.body %>
-        <ul>
-        <% nlist = Nokogiri::HTML(ndoc).css('strong').sort_by { |l| l.text } %>
-        <% nlist.each do |link| %>
-            <li><a href="#<%= link.text %>"> <%= link %> </a></li>
-        <% end %>
-        </ul>
-    <% end %>
-    </div>
+    <%= partial "partials/footer" %>
 
 </body>
 </html>

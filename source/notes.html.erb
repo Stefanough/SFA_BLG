@@ -4,16 +4,20 @@ pageable: false
 per_page: 10
 ---
 
+<section class="article">
 <h2>On Notes and The Jargon File</h2>
 
-<% blog('scribbles').articles.each do |article| %>
-    <% if article.title == "The Jargon File" %>
-        <p> <%= article.body %> </p>
+    <% blog('scribbles').articles.each do |article| %>
+        <% if article.title == "The Jargon File" %>
+            <p> <%= article.body %> </p>
+        <% end %>
     <% end %>
-<% end %>
+</section>
 
-<ul class="compact">
-<% blog('notes').articles.each do |article| %>
-    <li> <%= link_to article.title, article %> </li>
-<% end %>
-</ul>
+<section id="notes-listing">
+    <ul class="compact">
+    <% blog('notes').articles.each do |article| %>
+        <li> <%= link_to article.title, article %> </li>
+    <% end %>
+    </ul>
+</section>

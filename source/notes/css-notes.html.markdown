@@ -96,6 +96,15 @@ In the last example, the styling rule will only be visible in a browser inspecto
 <section style="font-style:italic;color:red;">Italic Red Text Here</section>
 ```
 
+<br>
+**Display property** - If every HTML element on a web page is a rectangular box (it is), the `display` property tells that box how to behave. Even before being called in stylesheet, every element has a display property, mostly defaulting to `display: block;` or `display: inline`.
+
+<br>
+**Box Modeling in CSS** - Everything can be visualized as a box? The `<div>` tag, for example, if it contains zero content It will still be a 'box' of height and width zero.
+
+
+<br>
+**DOM** - 
 
 <br>**Visualise Elements** - Add this to `<head>` of an HTML document or use in a browser inspector to wrap all rendered html elements in a solid green border. Thicker borders indicate nested elements.
 

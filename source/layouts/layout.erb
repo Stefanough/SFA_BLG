@@ -16,28 +16,47 @@
 
 <body>
 
-    <%= partial "partials/nav" %>
+    <header id="top-header">
+        <nav id="top-nav">
+        <%= partial "partials/nav" %>
+        </nav>
 
-    <div id="main" role="main">
-        <% if current_article %>
-            <h2 class="article-title"> <%= current_article.title %> </h2>
-        <% end %>
-        <section class="content">
-            <%= yield %>
+        <section id="titlespace">
+            <h2>Disparate Interests<h2>
         </section>
+    </header>
+
+
+
+    <%= partial "partials/top_border" %>
+
+    <div id="front-main" role="main">
+
+        <section class="content">
+        <% if current_article %>
+        <h2 id="article-title"> <%= current_article.title %> </h2>
+        <% end %>
+            <%= yield %>
+            <div class="stop-float"></div>
+        </section>
+
     </div>
 
-  <aside>
-    <h2>Recent Articles</h2>
-    <!-- dont show drafts or 'special' articles -->
-    <ol>
-    <% blog('scribbles').articles.each_with_index do |article, i| %>
-        <% if !article.tags.any? { |t| ["draft", "special"].include? t } %>
-            <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+    <%= partial "partials/footer" %>
+
+    <% if false %> <!-- begin comment -->
+    <aside>
+        <h2>Recent Articles</h2>
+        <!-- dont show drafts or 'special' articles -->
+        <ol>
+        <% blog('scribbles').articles.each_with_index do |article, i| %>
+          <% if !article.tags.any? { |t| ["draft", "special"].include? t } %>
+              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+          <% end %>
         <% end %>
-    <% end %>
-    </ol>
-  </aside>
+        </ol>
+    </aside>
+    <!-- end comment --> <% end %>
 
 </body>
 </html>

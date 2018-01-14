@@ -9,6 +9,22 @@
              font-weight:bold;
              font-style:normal }
 
+
+/* color sections for dev */
+/*
+body { background-color: #f9feff; }
+#top-nav { background-color: orange; }
+#titlespace { background-color: green; }
+#front-main { background-color: blue; }
+#notes-main { background-color: black; }
+.content { background-color: yellow; }
+.stop-float { background-color: brown; }
+#frontarticles { background-color: grey; }
+#frontnotes { background-color: violet; }
+#notesnav { background-color: pink; }
+footer { background-color: red; }
+/*
+
 /* Styling */
 html {
     font-family: sans-serif;
@@ -16,68 +32,122 @@ html {
 }
 
 body {
-    background-color: #f9feff;
-    //padding: 10px 0px 0px 25px;
-    margin-left: 5em;
-    margin-top: 3em;
-    width: 85%;
+    margin-left: 2em;
+    margin-top: 1em;
     font-size: 0.8em;
+    max-width: 90%;
 }
 
 h1, h2, h3, h4 {
     font-weight: 200;
 }
 
-nav a {
+#top-nav {
+    font-family: "Overpass Mono", monospace;
+    font-size: 1.2rem;
+}
+
+#topnav a {
     padding: 0em 0.5em 0em 0em;
-    font-size: 0.9rem;
+}
+
+#home {
+    display: inline;
+    text-align: left;
+}
+
+#nav-content {
+    display: block;
+    float: right;
+}
+
+#nav-content a {
+   text-align: right;
+}
+
+#titlespace {
+    // height: 1px;
+    font-size: 1.8em;
+}
+
+#titlespace h2 {
+    display: block;
+     margin: 5px 0px 5px 0px;
+    padding-top: 12px;
+    padding-left: 150px;
 }
 
 a {
     text-decoration: none;
 }
 
-#main {
-    width: 66%;
+.borders {
+    border-top: 1px solid grey;
 }
 
-#frontarticles, #frontnotes {
-    border: 1px solid black;
+#top-left-border, #bottom-left-border {
+    width: 139px;
+    float: left;
 }
+
+#top-right-border, #bottom-right-border {
+    margin-left: 141px;
+}
+
+.article {
+    margin: 0px;
+    padding: 0px;
+}
+
+.content {
+    display: block;
+    border-left: 1px solid grey ;
+    padding-top: 0rem;
+    margin-left: 140px;
+    padding-left: 10px;
+ }
 
 #frontarticles {
-    background-color: grey;
+    width: 60%;
+    float: left;
+    border-right: 1px solid grey;
+    padding-right: 10px;
+}
+ 
+.stop-float {
+    background-color: brown;
+    display: block;
+    clear: left;
 }
 
 #frontnotes {
-    background-color: violet;
+    float: left;
+    display: block;
+    padding-left: 10px;
+}
+
+#notebody {
+    max-width: 500px;
 }
 
 #notesnav {
-    background-color: pink;
+    float: left;
+    width: 140px;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
+#notesnav ul {
+    list-style-type: none;
+    padding: 0px 10px;
+    text-align: right;
 }
 
 p {
-    margin: 1px 5px;
 }
 
-.article-title {
-    font-size: 2.5em;
+#article-title {
     font-family:  "Overpass Mono", monospace;
-    margin-left: 5%;
-}
-
-section > p, section > footer, section > table {
-    // width: 45em;
- }
-
-.content {
-     padding-top: 0rem;
-     margin-left: 5%;
- }
-
-p  {
-    // max-width: 66%;
 }
 
 section.exercises p {
@@ -85,6 +155,7 @@ section.exercises p {
     font-size: 1.1em;
     padding: 0px 0px 0px 25px;
 }
+
 
 section > ul {
     width: 90%;
@@ -94,10 +165,16 @@ img {
     width: 100%;
 }
 
+footer {
+    padding: 10px;
+    clear: left;
+}
+
 /*Notes list*/
 ul.compact {
     max-width: 520px;
     padding: 0;
+    margin: 0;
     text-align: center;
     font-size: 2em;
     width: 80%;
@@ -123,7 +200,7 @@ ul.compact-small {
 
 ul.compact-small li {
     line-height: 1.4em;
-    list-style-type: none;
+    // list-style-type: square;
     padding: 0 0.4em;
     display: inline;
  }
@@ -145,7 +222,7 @@ pre code {
     background-color: #161705;
     padding: 1em;
     display: block;
-    width: 55em;
+    width: 66%;
 }
 
 div.highlight {

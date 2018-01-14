@@ -25,8 +25,8 @@ Header content could include information about the document (title, description 
 
 ```html
 <head>
-    <title>Shakshuka Recipe</title>
-    <meta name="description" content="The best recipe for Middle Eastern Shakshuka, a cumin spiced tomato sauce with sautéd onions and chili peppers topped with poached eggs.">
+        <title>Peanut Butter and Jelly Sandwich</title>
+    <meta name="description" content="The best recipe for Peanut Butter and Jelly Sandwich">
 </head>
 ```
 Other `meta` attributes include authorship, content-language, social media specific descriptions, and information for browsers about how the page should be served.
@@ -72,9 +72,10 @@ Other `meta` attributes include authorship, content-language, social media speci
 
     </form>
 ```
-    In the above, `class`, `action`, and `method` are attributes for the form tag.
 
-    Some attributes have only two values and are known as `boolean attributes`. They can be shortened to an empty value or just the attribute name.
+In the above, `class`, `action`, and `method` are attributes for the form tag.
+
+Some attributes have only two values and are known as `boolean attributes`. They can be shortened to an empty value or just the attribute name.
  
 ```html
     <input required="required">
