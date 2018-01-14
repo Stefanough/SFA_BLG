@@ -177,7 +177,7 @@ Todo
 
 * ~~**ToDo**: Partial out nav bar~~
 * **ToDo**: Notes pulled from GitHub instead of stored locally.
-* **ToDo**: remove 'recent articles' on bottom of page
+* ~~**ToDo**: remove 'recent articles' on bottom of page~~
 * ~~**ToDo**: use nokogiri to parse links for CodeEval projects~~
    * ~~**Todo**: ^^^ the same for project euler~~
    * ~~**ToDo**: clean up link names~~

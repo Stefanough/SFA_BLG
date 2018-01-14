@@ -23,12 +23,9 @@ body { background-color: #f9feff; }
 #frontnotes { background-color: violet; }
 #notesnav { background-color: pink; }
 footer { background-color: red; }
-/*
+*/
 
 /* Styling */
-
-
-
 html {
     font-family: sans-serif;
     font-size: 12pt;
@@ -59,17 +56,19 @@ h1, h2, h3, h4 {
 }
 
 #home {
-    display: inline;
+    // display: inline;
     text-align: left;
+    float: left; 
 }
 
 #nav-content {
-    display: block;
-    float: right;
+    // display: block;
+    // float: right;
+    text-align: right;
 }
 
 #nav-content a {
-   text-align: right;
+    // text-align: right;
 }
 
 #titlespace {
@@ -79,7 +78,7 @@ h1, h2, h3, h4 {
 
 #titlespace h2 {
     display: block;
-     margin: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;
     padding-top: 12px;
     padding-left: 150px;
 }
@@ -115,6 +114,21 @@ a {
     max-width: 500px;
     min-height: 100%;
  }
+
+.content h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.content p:first-child {
+    font-style: italic;
+    margin-top: 0;
+}
+
+.content p:last-of-type {
+    font-style: italic;
+    margin-bottom: 0;
+}
 
 #frontarticles {
     width: 60%;
@@ -175,7 +189,7 @@ img {
 }
 
 #footer {
-    padding: 10px;
+    // padding: 10px;
     clear: left;
 }
 
