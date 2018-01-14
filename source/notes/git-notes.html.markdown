@@ -10,6 +10,15 @@ Git is...
 
 GitHub is...
 
+**Staging Area**
+**working directory**
+
+**Clean directory** - what is a clean directory?
+
+`$ git branch -d <branch>` - Delete unwanted branch.
+
+`$ git branch` - view availiable branches and current working branch.
+
 `$ git commit -a -m "super important commit message"` - Stage modified files for commit (but not new files) and commit with one command.
 
 `$ git help <command>` - help documentation for specific commands 
