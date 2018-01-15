@@ -151,6 +151,12 @@ p:first-child {
     margin-bottom: 0;
     padding-bottom: 1em;
 }
+
+#notebody p:first-child {
+    margin-top: 0px;
+    padding-top: 1em;
+}
+
 /*
 .content p {
     color: green;
@@ -239,10 +245,6 @@ img {
     left: 0;
 }
 
-#archive {
-    // padding-bottom: 8em;
-}
-
 /*Notes list*/
 ul.compact {
     max-width: 520px;
@@ -297,7 +299,7 @@ pre code {
 }
 
 div.highlight, pre code {
-    min-width: 500px;
+    min-width: 600px;
 }
 
 span.nf, span.n, span.nb, span.vi, span.nl, span.py {

@@ -6,9 +6,9 @@ tags:
 
 ---
 
-<br>**CSS** - Stands for Cascading Style Sheets. CSS is a domain specific language for the presentation layer of webpages (as opposed to the structural layer which is written in HTML). They are called *Style Sheets* because they're obviously stylish but the term *Cascading* is used because property values will 'cascade' down to child elements (more specific elements) in an HTML doc.
+**CSS** - Stands for Cascading Style Sheets. CSS is a domain specific language for the presentation layer of webpages (as opposed to the structural layer which is written in HTML). They are called *Style Sheets* because they're obviously stylish but the term *Cascading* is used because property values will 'cascade' down to child elements (more specific elements) in an HTML doc.
 
-
+ 
 <br>**syntax** - The basic structure of CSS.
 
 ```css
