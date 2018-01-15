@@ -12,6 +12,8 @@ tags:
 
 **Section** - 
 
+**href** - An attribute of the anchor tag, `href` gets its hame from the fact that it is a Hypertext REFerence.
+
 
 **Header** - Content about the HTML document that is not rendered by the client browser. Content for the header is placed in the `<head></head>` tag
 
