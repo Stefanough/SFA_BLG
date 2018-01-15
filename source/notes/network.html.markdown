@@ -1,6 +1,6 @@
 ---
 
-title: Networks
+title: Network
 date: 2017-12-18 05:22 UTC
 tags: 
 

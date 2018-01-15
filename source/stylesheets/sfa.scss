@@ -82,11 +82,11 @@ h1, h2, h3, h4 {
     font-size: 1.8em;
 }
 
-#titlespace h2 {
+#titlespace h1 {
     display: block;
     margin: 5px 0px 5px 0px;
     padding-top: 12px;
-    padding-left: 150px;
+    padding-left: 140px;
 }
 
 a {
@@ -220,7 +220,7 @@ p {
 }
 
 #article-title {
-    font-family:  "Overpass Mono", monospace;
+    // font-family:  "Overpass Mono", monospace;
 }
 
 section.exercises p {

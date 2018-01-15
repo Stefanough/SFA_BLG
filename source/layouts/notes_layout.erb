@@ -20,11 +20,11 @@
 
     <%= partial "partials/nav" %>
 
-    <section id="titlespace">
+    <div id="titlespace">
         <% if current_article %>
-            <h2 id="article-title"> <%= current_article.title + " Notes" %> </h2>
+            <h1 id="article-title"> <%= current_article.title + " Notes" %> </h1>
         <% end %>
-    </section>
+    </div>
 
     <%= partial "partials/top_border" %>
 
