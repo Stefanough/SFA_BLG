@@ -3,21 +3,20 @@ page_title: Stefan's Notes
 pageable: false
 per_page: 10
 ---
-
-<section class="article">
-<h2>On Notes and The Jargon File</h2>
+<div id="article-title">
+    <h2>On Notes and The Jargon File</h2>
+</div>
 
     <% blog('scribbles').articles.each do |article| %>
         <% if article.title == "The Jargon File" %>
             <%= article.body %>
         <% end %>
     <% end %>
-</section>
 
-<section id="notes-listing">
+<div id="notes-listing">
     <ul class="compact">
     <% blog('notes').articles.each do |article| %>
         <li> <%= link_to article.title, article %> </li>
     <% end %>
     </ul>
-</section>
+</div>

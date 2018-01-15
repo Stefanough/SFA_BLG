@@ -30,15 +30,18 @@
     <%= partial "partials/top_border" %>
 
     <div id="front-main" role="main">
-
         <section class="content">
-        <% if current_article %>
-        <h2 id="article-title"> <%= current_article.title %> </h2>
-        <% end %>
-            <%= yield %>
+            <% if current_article %>
+                <div id="article-title">
+                    <h2> <%= current_article.title %> </h2>
+                </div>
+            <% end %>
+
+            <div id="article">
+                <%= yield %>
+            </div>
             <div class="stop-float"></div>
         </section>
-
     </div>
 
     <%= partial "partials/footer" %>

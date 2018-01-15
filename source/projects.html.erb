@@ -9,17 +9,18 @@ per_page: 10
 <% if false %> <!-- Hide projects description. Begin comment -->
 <% blog('scribbles').articles.each do |article| %>
     <% if article.title == "Projects" %>
-        <p> <%= article.body %> </p>
-        <% break %>
+        <%= article.body %>
     <% end %>
 <% end %>
 <% end %> <!-- end comment -->
 
-<section class='exercises'>
-    <h2> Code exercises </h2>
+<div class='exercises'>
+    <div id="article-title">
+        <h2>Coding Exercises</h2>
+    </div>
     <p> Exercises completed on <%= link_to 'CodeEval', 'https://www.codeeval.com/' %> and hosted on <%= link_to 'Github', 'https://github.com/Stefanough/CodeEval' %>. </p>
     <p>Oh yeah, here's my <%= link_to 'profile', 'https://www.codeeval.com/profile/Stefanough/' %>
-</section>
+</div>
 
 <ul class='compact-small'>
     <% gh_links('https://github.com/Stefanough/CodeEval', 'td.content a').each do |l| %>
@@ -30,9 +31,9 @@ per_page: 10
 </ul>
 
 
-<section class='exercises'>
+<div class='exercises'>
     <p> Exercises completed on <%= link_to 'ProjectEuler', 'https://projecteuler.net/' %> and hosted on <%= link_to 'Github', 'https://github.com/Stefanough/project_euler_exercises/tree/master/projectEuler' %>. </p>
-</section>
+</div>
 
 <ul class='compact-small'>
     <% gh_links('https://github.com/Stefanough/project_euler_exercises/tree/master/projectEuler', 'td.content a').each do |l| %>
