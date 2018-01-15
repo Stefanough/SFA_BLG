@@ -15,6 +15,12 @@ GitHub is...
 
 **Clean directory** - what is a clean directory?
 
+**Committing** - Commiting is kind of like a meta-save. You're commiting changes you've made to code to the branch you're working in. Like a snapshot of the current state of the code.
+
+If I have a master branch and I make a checkout a new branch `styling_fixi`. I make some changes and save those to the project files but I don't commit. The state of the code is still the "current state" from when made the new branch. If I switch back to `master` branch has the state of any of the branches changed? No. I can switch between branches and the files will remain unchanged.
+
+If I go back into branch `styling_fix` and commit the changes, the state change has been recorded. I can switch back to master and see the project files in a different state.
+
 `$ git branch -d <branch>` - Delete unwanted branch.
 
 `$ git branch` - view availiable branches and current working branch.
