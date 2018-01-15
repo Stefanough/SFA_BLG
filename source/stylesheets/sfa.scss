@@ -11,7 +11,7 @@
 
 
 /* color sections for dev */
-
+/*
 body { background-color: #f9feff; }
 #top-nav { background-color: orange; }
 #titlespace { background-color: green; }
@@ -23,7 +23,7 @@ body { background-color: #f9feff; }
 #frontnotes { background-color: violet; }
 #notesnav { background-color: pink; }
 footer { background-color: red; }
-
+*/
 
 /* Styling */
 html {
@@ -105,7 +105,8 @@ a {
     margin-left: 141px;
 }
 
-#front-main {
+#front-main, #notes-main {
+    padding-bottom: 15px;
 }
 
 .article {
@@ -122,7 +123,7 @@ a {
     max-width: 500px;
 
     // min-height: 100%;
-    padding-bottom: 15px;
+    // padding-bottom: 15px;
     // margin-bottom: 20px;
     // overflow: auto;
     
@@ -263,11 +264,10 @@ pre code {
     background-color: #161705;
     padding: 1em;
     display: block;
-    width: 66%;
 }
 
-div.highlight {
-    width: 60em;
+div.highlight, pre code {
+    min-width: 500px;
 }
 
 span.nf, span.n, span.nb, span.vi, span.nl, span.py {
