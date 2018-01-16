@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <% blog_title = 'Disparate Interests' %>
   <title>
-      <%= '[d] ' if development? %>
+      <%= "[d] " if development? %>
       <%= blog_title %>
-      <%= ' - ' + current_article.title unless current_article.nil? %>
+      <%= " - #{current_article.title}" unless current_article.nil? %>
   </title>
   <%= stylesheet_link_tag "all" %>
   <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
@@ -22,7 +22,11 @@
 
     <div id="titlespace">
         <% if current_article %>
-            <h1 id="article-title"> <%= current_article.title + " Notes" %> </h1>
+            <% if current_article.title == "Jargon" %>
+                <h1 id="article-title"> <%= current_article.title %> </h1>
+            <% else %>
+                <h1 id="article-title"> <%= "#{current_article.title} Notes" %> </h1>
+            <% end %>
         <% end %>
     </div>
 
