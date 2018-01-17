@@ -8,11 +8,10 @@ tags:
 
 ###Really just my Vim cheatsheet
 
-**.vimrc**
 
-* `.vimrc` - Vim's configuration file is in the home dir by default. Can be accessed in vim with the variable $MYVIMRC
+**Auto Change Directory**
 
-* `:so $MYVIMRC` - reload the currently active .vimrc file. `so` is short for `source`.
+* `:set autochdir` - Tells Vim to change the pwd to whatever is holding the file being viewed. Essentially tells vim to follow you.
 
 
 **Getting Help in vim**
@@ -22,7 +21,6 @@ tags:
 **Wrapping Lines**
 
 * `:set wrap!` - toggles line wrap.
-
 
 **Open files in vim**
 
@@ -122,6 +120,7 @@ tags:
 * `:s/foo/bar/g` - Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
 * `:%s/foo/bar/gc` - Change each 'foo' to 'bar', but ask for confirmation first.
 * `:%s/\<foo\>/bar/gc` - Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+* `:%s/\s\+$//gc` - remove all trailing whitespaces and ask for confirmation
 
 
 **Repeat Last Command**
@@ -162,3 +161,17 @@ tags:
 **External Commands**
 
 * `<C-z>` - 'Pause' Vim session and open shell. `$ fg` to return to vim.
+
+**.vimrc**
+
+* `.vimrc` - Vim's configuration file is in the home dir by default. Can be accessed in vim with the variable $MYVIMRC
+
+* `:so $MYVIMRC` - reload the currently active .vimrc file. `so` is short for `source`.
+
+custom vimrc stuff:
+
+```
+nmap ,cs :let @+=expand("%")<CR>
+nmap ,cl :let @+=expand("%:p")<CR>
+```
+* `,cs` to copy just the pwd and the file name to the clipboard. `,cl` to copy the full path to the clipboard.

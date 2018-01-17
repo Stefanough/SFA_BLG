@@ -109,6 +109,8 @@ some overlap, of course
 
 **site inspiration (content):**
 
+<http://neurogami.com/>
+
 Configuration notes:
 --------------------
 
