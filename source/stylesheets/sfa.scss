@@ -55,6 +55,10 @@ h1, h2, h3, h4 {
     font-weight: 200;
 }
 
+#top-header {
+    margin-top: 20px
+}
+
 #top-nav {
     font-family: "Overpass Mono", monospace;
     font-size: 1.2rem;
@@ -120,7 +124,7 @@ a {
     border-left: 1px solid grey ;
     padding-top: 0rem;
     margin-left: 140px;
-    padding-left: 10px;
+    padding-left: 25px;
     max-width: 500px;
     padding-bottom: 8em;
  }
@@ -179,7 +183,7 @@ p:first-child {
     width: 60%;
     float: left;
     border-right: 1px solid grey;
-    padding-right: 10px;
+    padding-right: 25px;
 }
 
 #frontarticles h2, #frontnotes h2 {
@@ -195,7 +199,7 @@ p:first-child {
 #frontnotes {
     float: left;
     display: block;
-    padding-left: 10px;
+    padding-left: 25px;
 }
 
 #notebody {
