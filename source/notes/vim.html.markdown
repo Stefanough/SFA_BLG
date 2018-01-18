@@ -123,10 +123,10 @@ tags:
 * `:%s/\s\+$//gc` - remove all trailing whitespaces and ask for confirmation
 
 
-**Repeat Last Command**
+**Repeat Last Change**
 
 * `@` repeats the last command-line change (a command invoked with the `:`)
-
+* `.` Period repeats the last change made in normal mode (and insert mode?)
 
 **Insert Date and Time**
 
