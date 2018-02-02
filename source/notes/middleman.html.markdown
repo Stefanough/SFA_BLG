@@ -81,6 +81,8 @@ some overlap, of course
 
 **Site inspiration (style):**
 
+<http://oeis.org/>
+
 <https://www.nytimes.com/>
 
 <https://logicmag.io/>

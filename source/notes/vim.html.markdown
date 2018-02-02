@@ -26,7 +26,7 @@ tags:
 
 * `$ vim file.name` - opens a file in vim or creates a new file if one doesn't exist.
 * `$ vim -p file1 file2` - opens multiple files in separate tabs.
-* `$ vim -p *` - opens all files in current dir recursively.
+* `$ vim -p *` - opens all files in current dir in new tabs. Sub directories will be opened in Vim's explorer.
 
 
 **Closing Vim**

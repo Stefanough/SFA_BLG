@@ -86,46 +86,47 @@ git push -u origin master         pushes current changes to remote server or add
 
 
 ```
-Try these commands:----------------------------------------------------------------------------
-command---------------------------Description--------------------------------------------------
-git l                             Show commit history
-git show(1)                       Show various types of objects.
-git instaweb(1)                   Instantly browse your working repository in gitweb.
-git show-branch(1)                Show branches and their commits.
-git-ls-tree(1)                    List the contents of a tree object.
-git-update-index(1)               Register file contents in the working tree to the index.
-git-mktree(1)                     Build a tree-object from ls-tree formatted text.
-git-checkout-index(1)             Copy files from the index to the working tree.
-git-for-each-ref(1)               Output information on each ref.
+Try these commands:------------------------------------------------------------------
+command-----------------Description--------------------------------------------------
+
+git l                   Show commit history
+git show(1)             Show various types of objects.
+git instaweb(1)         Instantly browse your working repository in gitweb.
+git show-branch(1)      Show branches and their commits.
+git-ls-tree(1)          List the contents of a tree object.
+git-update-index(1)     Register file contents in the working tree to the index.
+git-mktree(1)           Build a tree-object from ls-tree formatted text.
+git-checkout-index(1)   Copy files from the index to the working tree.
+git-for-each-ref(1)     Output information on each ref.
 
 
-git-ls-files(1)                   Show information about files in the index and the working tree.
+git-ls-files(1)         Show information about files in the index and the working tree.
 
 
-git-ls-remote(1)                  List references in a remote repository.
+git-ls-remote(1)        List references in a remote repository.
 
 
-git-rev-list(1)                   Lists commit objects in reverse chronological order.
-git-config(1)                     Get and set repository or global options.
-git-checkout(1)                   Checkout a branch or paths to the working tree.
-git-commit(1)                     Record changes to the repository.
-git-update-index(1)               Register file contents in the working tree to the index.
+git-rev-list(1)         Lists commit objects in reverse chronological order.
+git-config(1)           Get and set repository or global options.
+git-checkout(1)         Checkout a branch or paths to the working tree.
+git-commit(1)           Record changes to the repository.
+git-update-index(1)     Register file contents in the working tree to the index.
 
 
 
 ENVIRONMENT VARIABLES:
-GIT_INDEX_FILE                    This environment allows the specification of an alternate index
-			                            file. If not specified, the default of $GIT_DIR/index is used.
+GIT_INDEX_FILE          This environment allows the specification of an alternate index
+		        file. If not specified, the default of $GIT_DIR/index is used.
 
-GIT_DIR                           If the GIT_DIR environment variable is set then it specifies a
-			                            path to use instead of the default .git for the base of the repository.
-			                            The --git-dir command-line option also sets this value.
+GIT_DIR                 If the GIT_DIR environment variable is set then it specifies a
+		        path to use instead of the default .git for the base of the
+                        repository. The --git-dir command-line option also sets this value.
 
 
 
-GIT_WORK_TREE                     Set the path to the root of the working tree. This can also be
-			                            controlled by the --work-tree command line option and the core.worktree
-														      configuration variable.
+GIT_WORK_TREE           Set the path to the root of the working tree. This can also be
+		        controlled by the --work-tree command line option and the core.work
+                        tree configuration variable.
 ```
 
 
@@ -153,8 +154,8 @@ Anatomy of git command
 git commit -m "message about commit here"
  |    |     |              |______________________________________
  |    |     |___________________________________                 |
- |    |___________________                     |	         |
- |                       |		       |		 |
+ |    |___________________                     |                 |
+ |                       |                     |                 |
 initialize the    commiting changes    message option     describe changes
 git command       to current branch                       in this commit.
 ```

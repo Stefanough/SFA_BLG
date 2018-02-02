@@ -20,10 +20,9 @@ Compare the contents of two Arrays:
 ```
 
 
-**Procs and Blocks** - 
+**Procs and Blocks** -
 
-
-When defining a method to take blocks, use an ampersand in the parameters where the block will be given. This converts the block to a proc object and assigns it to the name of the parameter. Why write a method to take a block? It allows you to customize a method by injecting some logic into it. The body of the method is where the basic structure is built, where you put loops or iteration or self refference (recursion). 
+When defining a method to take blocks, use an ampersand in the parameters where the block will be given. This converts the block to a proc object and assigns it to the name of the parameter. Why write a method to take a block? It allows you to customize a method by injecting some logic into it. The body of the method is where the basic structure is built, where you put loops or iteration or self refference (recursion).
 
 I think when writing a method that will take a block, you have to assume to know how many arguments the block will take.
 
@@ -38,7 +37,7 @@ end
 
 > 9.comparison(8) { |a, b| a > b }
 > => true
-> 
+>
 > 9.comparison(8) { |a, b| b < a }
 > => false
 ```
@@ -88,8 +87,52 @@ foo(100)
 ```
 
 
+
+
 Methods
 -------
+
+**Inspect** - a method in the `Object` class which means it is available to all other classes unless specifically overwritten. It presents a reperesentation of the object in a readable string. For built-in objects, this will just be the object itself in a string. When an instance of a class is called, `inspect` is the method being used by default to display the instance. Inspect can be modified for user defined classes:
+
+```ruby
+[1, 2, "three"].inspect
+=> "[1, 2, \"three\"].inspect"
+
+class Dog
+    def initialize(name)
+        @name = name
+    end
+end
+
+dog1 = Dog.new("Jim")
+
+dog1
+=> #<Dog:0x00000001c61618 @name="Jim">
+dog1.inspect
+=> "#<Dog:0x00000001c61618 @name=\"Jim\">"
+
+
+class Bug
+    def initialize(name)
+        @name = name
+    end
+
+    attr_reader :name
+
+    def inspect
+        "Bug: #{name}"
+    end
+end
+
+bug1 = bug.new("billy")
+
+bug1
+=> Bug: billy
+
+bug1.inspect
+=> "Bug: billy"
+```
+
 
 **Ruby bitwise or | operations**
 
@@ -541,7 +584,7 @@ p rect2
   values in an array. Same as `.sort.pop` and `.sort.shift`
 
 
-**Hash** - Hash tables exist in curly braces (like a block of code? Are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..`       A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the value $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
+**Hash** - Hash tables exist in curly braces (like a block of code? Are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..` A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the value $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
 
 Some things to remember about Hash tables:
 
@@ -574,6 +617,23 @@ hsh = {}
 hsh = Hash.new
 => {}
 ```
+* Pass a block when creating an empty hash so newly created keys can have default values.
+
+```ruby
+empty_hsh1 = Hash.new
+
+empty_hsh1[:count] += 1
+# => NoMethodError: undefined method `+' for nil:NilClass
+
+empty_hsh2 = Hash.new { |a| a = 0 }
+
+empty_hsh2[:count] += 1
+=> 1
+
+empty_hsh2
+=> {:count=>1}
+```
+
 
 * Populated hash:
 
@@ -965,6 +1025,7 @@ For Example:
 
 **Variables** allow you to store data in an *object* (strings, numbers, arrays). *Variables* are  *assigned*. A variable name consists of letters and numbers. It must start with a lowercase letter. It cannot contain spaces. Variables ARE NOT THEMSELVES OBJECTS (They CAN be objects, though?). Variables are names that point to values? The value is the Object.
 
+**Instance Variables** - These are variables that are accessable to one instance of a class. In the clase of several instances of a class existing simultaneously, each instance will only be able to access it's own variables.
 
 **Argument** - An *argument* is the data that is passed into a *method*. In `puts("yo!")` `puts` is the method and `` "yo!" `` is the *argument*. If a method requires an argument it must have parentheses ( ‘puts()’ for example). Some methods don’t require an argument and therefore don’t need parentheses (‘gets’ for example can be written by itself.
 
