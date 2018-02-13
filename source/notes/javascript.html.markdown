@@ -60,7 +60,7 @@ console.log(x);
 // → 9
 
 console.log(y);
-// → "was not assigned"
+// → 'was not assigned'
 ```
 
 **Arrow Assignment** - I'm used to declaring functions the following way:
@@ -99,7 +99,7 @@ arr.sort(function leastToGreatest(a, b) {
 // → [ 'I', 'me', 'cat', 'bird', 'gecko', 'lizard', 'face hugger' ]
 ```
 
-**eS Closure** - Stepping the closure example in *Eloquent JavaScript* 3rd ed.
+**EJS Closure** - Stepping the closure example in *Eloquent JavaScript* 3rd ed.
 
 ```javascript
 function multiplier(factor) {         //declare function multiplier with parameter factor
@@ -135,3 +135,79 @@ let twice = multiplier(2);
 ```
 
 Now that `twice` bound to a function, it can be called like one. `console.log(twice(5))` sets the parameter `number` to five and an integer can be returned.
+
+
+**Object Properties: [] vs . notation** - An objects properties can be accessed with either bracket `obj[property]` notation or dot `object.property` notation. In general, I think bracket notation is used for property names defined or coming from *outside* the object and dot notation is used for property names defined *inside* the object. With bracket notation, the brackets are *evaluating* the property name contained within and if that property name is a string or a binding holding a value it will try to match it to a property in the object. If you want to access an object property or define a new property with a string bracket notation must be used. To access an object property explicitly, dot notation can be used.
+
+```javascript
+let obj = {type: "little object"};
+
+console.log(obj.type);
+// → 'little object'
+console.log(obj["type"]);
+// → 'little object'
+console.log(obj[type]); //type is not a binding defined outside the object
+// → ReferenceError: type is not defined
+
+let t = "type";
+
+console.log(obj[t]);
+// → 'little object'
+```
+
+**Function Declarations vs Expressions** -
+
+```javascript
+function tstFnc() {  // Example of a function DECLARATION
+}
+
+
+let tstFnc = function() { // Example of a function EXPRESSION
+}
+
+let tstObj = {
+    type: "test object",
+    tstFnc() {
+        console.log(this);
+    }
+}
+```
+
+**This** - `this` always refers to the wrapping environment of where `this` is being evaluated? `this` is passed implicitly to functions when they are called - in effect telling the function "`this` does not point to the wrapping scope, instead it's pointing to this implicit parameter that's being passed to you."
+
+```javascript
+function print(line) {
+    console.log(`The ${this.process} prints ${line}`);
+}
+
+let thing = {process: thing, print};
+
+thing.print("hi");
+// → The thing prints 'hi'
+
+print("hello");
+// → The [Object process] prints 'hello'
+```
+
+In the above example, the function `print` is declared and takes a string as an argument. It prints a string including the property called `process` of the object that `print` is called on or that is implicitly passed to it. When `print` first called, `this` points to the object (created with the property `process`) it is called on. The second time, `this` points to the wrapping scope(?) which in this case is the Node.js interpretor environment.
+
+**Function declarations and .this binding** -
+
+```javascript
+function normalize() {
+    console.log(this.coords.map(function(n) {
+        console.log(this);
+    }));
+}
+
+function normalize2() {
+  console.log(this.coords.map(() => console.log(this)));
+}
+
+normalize.call({coords: [3], length: 5});
+
+
+normalize2.call({coords: [3], length: 5});
+```
+
+**Function.prototype.call()** - Calls a function within the context of a specified object (a specified `this` value).

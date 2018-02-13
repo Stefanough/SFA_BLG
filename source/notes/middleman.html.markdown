@@ -67,6 +67,8 @@ Using these resources:
 
 <https://qntm.org/>
 
+<http://bookch.in/>
+
 **Blog inspirations (content):**
 some overlap, of course
 
@@ -108,6 +110,10 @@ some overlap, of course
 <http://www.paulgraham.com/index.html>
 
 <http://chriswanstrath.com/>
+
+<http://hyper.zone/>
+
+<http://www.jma.com/The_History_of_the_PIX_Firewall/History_of_the_PIX_Firewall.html>
 
 **site inspiration (content):**
 
