@@ -35,6 +35,9 @@ Using these resources:
 
 
 **Blog inspiration (style):**
+
+<http://www.kyleerf.com/>
+
 <https://vgpena.github.io/>
 
 <https://ashfurrow.com/>

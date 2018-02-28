@@ -98,6 +98,9 @@ tags:
 * `u` - convert to lowercase
 * `U` - convert to uppercase
 
+**Replace Selcted**
+
+* `c<replacement>` - when a block is selected, use `c` to remove and enter insert mode in one step
 
 **Search Highlighting**
 

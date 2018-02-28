@@ -105,6 +105,18 @@ let tstObj = {
         console.log("hi");
     }
 };
-
-
 ```
+
+**Read From File** - In the node repl, read data from a plain `.txt` file:
+
+```javascript
+var fs = require('fs');
+let names;
+
+fs.readFile('names.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    names = data;
+});
+```
+
+`fs` is the file system module which provides an API for interacting with the system's file system. The `readFile` function takes the file name, optional encoding, and a callback. If no encoding scheme is specefied, raw data is returned. Read more about it at the spec [here](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
