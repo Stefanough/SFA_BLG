@@ -2,7 +2,7 @@
 
 title: Bash
 date: 2017-12-28 22:46 UTC
-tags: 
+tags:
 
 ---
 
@@ -45,7 +45,7 @@ tags:
  * `;` executes the right-hand command of `;` always regardless whether the previous command succeeded or failed. Unless set -e was previously invoked, which causes bash to fail on an error.
 
 
-**Formating, Partitioning, and Other Disk Things**
+**Formatting, Partitioning, and Other Disk Things**
 
 * `$ fdisk -l | grep '^Disk'` - List All Detected Physical Disks
 
@@ -79,7 +79,7 @@ tags:
 * `$ zip -r foo foo` creates foo.zip which contains all the files and directories inside the directory foo/ in the current directory.
 
 
-**Run Porcess in Background**
+**Run Process in Background**
 
 * `$ <command> &` appending an & to the end of a command runs it in a subshell
 
@@ -96,7 +96,7 @@ tags:
 
 **Packaging Multiple Files**
 
-* `$ for i in */; do zip -r "${i%/}.zip" "$i"; done` - loops through files in current directory and adds them to the package. 
+* `$ for i in */; do zip -r "${i%/}.zip" "$i"; done` - loops through files in current directory and adds them to the package.
 
 
 **Restart Wifi**
@@ -169,7 +169,7 @@ tags:
 * `$ chmod +x /path/to/your_script_or_file.sh`
 
 
-**Reset bash after modifying bash dotfile (or other thinkgs)**
+**Reset bash after modifying bash dotfile (or other things)**
 
 * `$ exec bash`
 
@@ -206,13 +206,13 @@ tags:
 **find**
 
 * `$ find directory/to/search -name 'name_of.file'`
-* `$ find . -name 'name_of.file'` - begins search in current directory. must be exact file name including extension
+* `$ find . -name 'name_of.file'` - begins search in current directory, must be exact file name including extension
 * `$ find . -iname '*.zip'` - begins search in current directory and lists all zip files
 * `$ find . -maxdepth <x> -name "*~"` - finds all files with a file name that contains a "~" at a depth of <x> nested directories.
-* `$ find . -maxdepth <x> -name "*.filetype" -delete` - finds and deletes all files of a specific filetype at a depth of <x> nested directories.
+* `$ find . -maxdepth <x> -name "*.filetype" -delete` - finds and deletes all files of a specific file type at a depth of <x> nested directories.
 
 
 **locate**
 
-* `$ locate "patern"` - search all visible directories for patern
- * NB: `locate` uses a cache of the filesystem. files are cached infrequently and therefore a newly created file may not be found by `locate`
+* `$ locate "patern"` - search all visible directories for pattern
+ * NB: `locate` uses a cache of the file system. Files are cached infrequently and therefore a newly created file may not be found by `locate`

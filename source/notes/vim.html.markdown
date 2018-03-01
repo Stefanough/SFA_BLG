@@ -47,7 +47,7 @@ tags:
 
 * `r` - replace one character
 * `R` - enter *replace* mode
-* `ci <delimiter>` - when cursor is on `"`, `'`, `(`, `{`, etc, remove internal text and enter insert
+* `ci<delimiter>` - when cursor is on `"`, `'`, `(`, `{`, etc, remove internal text and enter insert
 
 **Splits**
 
@@ -98,7 +98,7 @@ tags:
 * `u` - convert to lowercase
 * `U` - convert to uppercase
 
-**Replace Selcted**
+**Replace Selected**
 
 * `c<replacement>` - when a block is selected, use `c` to remove and enter insert mode in one step
 
@@ -141,7 +141,10 @@ tags:
 * `:%y` - Select and copy all into Vim's register. This copied text can only be pasted in the same instance of vim?
 * `"+y` - Copy to system register (clipboard). *NB- Requires +xterm_clipboard*
 * `"+p` - paste from system register (clipboard) while in Normal Mode.
+* `yi<delimiter>` - copy everything between delimiter (`'`, `"`, `(`, for example)
 * `ctrl + shift + v` - This works for pasting while in Insert Mode.
+* `P` - paste from vim's register before cursor.
+* `p` - paste from vim's register after cursor.
 
 **Explorer in Vim**
 
