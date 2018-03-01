@@ -122,6 +122,12 @@ tags:
 * `$ mv <source> <target_directory>` - rename `source` to `dest` or move `source` to `directory`
 
 
+**move or copy multiple files**
+
+* `$ mv -t <target_directory> file1 file2 file3` - move multiple files to target
+* `$ cp -t <target_directory> file1 file2 file3` - copy multiple files to target
+
+
 **rename file**
 
 * `$ mv <file_oldname> <file_newname>`
