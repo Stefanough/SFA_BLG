@@ -13,6 +13,12 @@ tags:
 * `Shift` + `PagegUp` - scroll up one whole page
 * `Shift` + `PageDown` - scroll down one whole page
 
+
+**grep**
+
+* `$ grep <pattern> ./*` - grep all files in current directory.
+
+
 **Return to Previous Directory**
 
 * `$ cd -`

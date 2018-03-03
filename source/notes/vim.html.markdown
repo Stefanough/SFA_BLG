@@ -113,6 +113,7 @@ tags:
 **Find and Replace**
 
 * `:%s/foo/bar/g` - Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+* `:.,$s/foo/bar/g` - Find and replace 'foo' with 'bar' from the current to the last line.
 * `:%s/\\//gc` - Find each occurrence of '\\' (single backslash) and replace with no character but ask for confirmation first.
 * `:%s/\n\n/\r/gc` - Find each occurrence of two consecutive newlines? And replace with single newline (change double space into single space).
 * `:%s/\n / /gc` - Find each occurrence of a newline and remove (change double space to single space) but ask for confirmation first.
