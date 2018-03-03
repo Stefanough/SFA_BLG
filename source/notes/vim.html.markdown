@@ -14,10 +14,6 @@ tags:
 * `:set autochdir` - Tells Vim to change the pwd to whatever is holding the file being viewed. Essentially tells vim to follow you.
 
 
-**Getting Help in vim**
-
-* Please help
-
 **Wrapping Lines**
 
 * `:set wrap!` - toggles line wrap.
@@ -145,6 +141,19 @@ tags:
 * `ctrl + shift + v` - This works for pasting while in Insert Mode.
 * `P` - paste from vim's register before cursor.
 * `p` - paste from vim's register after cursor.
+
+
+**Registers for Copy/Paste**
+
+* `"<char>y` - yank to the register named by the given character.
+* `"<char>p` - paste from the register named by the given character.
+
+
+**Paste to Command Line**
+
+* `<C-R><char>` - while in the command line `:` paste from the given register.
+* `<C-R>"` - in the cl, paste from the default register (what you yank to with `y` or `d`).
+
 
 **Explorer in Vim**
 
