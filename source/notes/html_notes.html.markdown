@@ -7,6 +7,9 @@ tags:
 
 ---
 
+**ul vs nav for navigation links** - The `<nav>` tag is an HTML5 sectioning element intended for major blocks of navigation links. A `<nav>` section will always be a subsection of its nearest ancestor. It is also semantically more specific in that `<nav>` implies that it is for navigation and therefore can be ignored by screen readers. The `<ul>` tag is much older, much less semantically informative, and is inteded to display unordered items in a list format. Navigation links can exist in a `<ul>` in a `<nav>`.
+
+
 **Tag and Element** - 
 
 

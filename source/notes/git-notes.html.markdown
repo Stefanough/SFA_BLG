@@ -171,3 +171,8 @@ advantages over just keeping your working files in Google drive?
 
 
 git -init : create new empty repo
+
+**Add coleague** -
+`$ git remote add <alias> <url>` - Adds an upstrem remote called 'alias' at the url.
+`$ git pull <alias> master` - pulls from the master branch of the remote called 'alias'
+
