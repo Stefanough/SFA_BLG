@@ -10,6 +10,14 @@ Git is...
 
 GitHub is...
 
+**Go back one commit** - 
+ * git reset HEAD~
+ * *do stuff to files*
+ * git add .
+ * git commit -m 
+
+**git log** - view commit history
+
 **Staging Area**
 **working directory**
 
