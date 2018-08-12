@@ -6,15 +6,22 @@ tags:
 
 ---
 
-Git is...
+**Go back one commit**
 
-GitHub is...
+1. `$ git reset HEAD~`
+2. *do stuff to files*
+3. `$ git add .`
+4. `$ git commit -m`
 
-**Go back one commit** - 
- * git reset HEAD~
- * *do stuff to files*
- * git add .
- * git commit -m 
+**Untrack an already tracked file after modification**
+
+`$ git rm  --chached <filename>`
+
+**Undoing git rm**
+
+1. `$ git reset`
+2. `$ git checkout -- $(git ls-files -d)`
+
 
 **git log** - view commit history
 
