@@ -24,42 +24,35 @@ page '/*.txt', layout: false
 ###
 
 helpers do
+  def whatsup
+    p 'whatup im on the internet'
+  end
 
-    def whatsup
-        p "whatup im on the internet"
+  def gh_links(url, css)
+    Nokogiri::HTML(open(url)).css(css).map do |link|
+      { name: link.content, uri: 'https://github.com' + link['href'] }
     end
+  end
 
-
-    def gh_links(url, css)
-        Nokogiri::HTML(open(url)).css(css).map { |link|
-            {:name=> link.content, :uri=> 'https://github.com' + link['href']} }
+  # is the the current object an article in the 'notes' blog?
+  def is_note?
+    notes = []
+    blog('notes').articles.each do |article|
+      notes << article
     end
-
-
-    # is the the current object an article in the 'notes' blog?
-    def is_note?
-        notes = []
-        blog('notes').articles.each do |article|
-            notes << article
-        end
-        if is_blog_article? & notes.include?(current_article)
-          true
-        end
-    end
-
+    true if is_blog_article? & notes.include?(current_article)
+  end
 end
-
 
 # Ignore drafts dir
 ignore 'drafts/*'
-
 
 # Activate two blogs for notes and articles
 # blog one - articles ('scribbles')
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-    blog.prefix = "scribbles"
-    blog.name = "scribbles"
+  blog.prefix = 'scribbles'
+  blog.name = 'scribbles'
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
@@ -73,33 +66,33 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.tag_template = 'tag.html'
+  blog.calendar_template = 'calendar.html'
 
   # Enable pagination
   blog.paginate = true
   blog.per_page = 2
-  blog.page_link = "page/{num}"
+  blog.page_link = 'page/{num}'
 end
 
 # blog two - notes
 activate :blog do |blog|
-  blog.layout = "notes_layout"
-# This will add a prefix to all links, template references and source paths
-  blog.prefix = "notes"
-  blog.name = "notes"
+  blog.layout = 'notes_layout'
+  # This will add a prefix to all links, template references and source paths
+  blog.prefix = 'notes'
+  blog.name = 'notes'
 
   # See blog config above for all the options
   # custom file naming template
-  blog.sources = "{title}.html"
+  blog.sources = '{title}.html'
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.tag_template = 'tag.html'
+  blog.calendar_template = 'calendar.html'
 
   # Enable pagination
   blog.paginate = true
   blog.per_page = 2
-  blog.page_link = "page/{num}"
+  blog.page_link = 'page/{num}'
 end
 
 # Realtime results durring development
@@ -111,15 +104,15 @@ activate :directory_indexes
 # Allow syntax highlighting
 set :markdown_engine, :redcarpet
 set :markdown,
-  fenced_code_blocks: true,
-  strikethrough: true,
-  smartypants: true,
-  highlight: true,
-  superscript: true,
-  tables: true
+    fenced_code_blocks: true,
+    strikethrough: true,
+    smartypants: true,
+    highlight: true,
+    superscript: true,
+    tables: true
 activate :syntax
 
-page "/feed.xml", layout: false
+page '/feed.xml', layout: false
 # Reload the browser automatically whenever files change
 # configure :development do
 #   activate :livereload
@@ -135,7 +128,7 @@ page "/feed.xml", layout: false
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-   activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript

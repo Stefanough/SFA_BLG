@@ -35,16 +35,17 @@ end
 
   To run the migration and add the table to the database, use the command:
 
-```
+```bash
 rake db:migrate
 ```
 
   from the terminal. This will run any migrations **that haven't been run yet**. This is why you can't just edit a migration file and run it again. Rails keeps track of the migrations that are run and when. Allowing a user to re-migrate the same file over and over doesn't allow Rails to keep track of when a specific column is changed or added. Check the schema file at `/db/schema.rb` to see the newly created table.
     **Editing Migrations** - To make edits to a Database table using migrations, use the command
 
-```
+```bash
 $ rake db:rollback
 ```
+
    to pop the last migration off of the 'stack'. You can then add columns under the `change` method and migrate again. This is acceptable for development but not for production or any mission critical work. Instead of rolling back a migration we can add or change tables by creating a new migration.
 
 **Validations** - There are levels of validations for resources:
@@ -149,7 +150,7 @@ end
 class Cat < ActiveRecord::Base
   belongs_to :house,
     primary_key: :id,
-    foriegn_key: :house_id,
+    foreign_key: :house_id,
     class_name: 'House'
 end
 ```
@@ -178,7 +179,7 @@ The macro for the above code is a `has_many` association in the House model:
 class House < ActiveRecord::Base
   has_many :cats,
     primary_key: :id,
-    foriegn_key: :house_id,
+    foreign_key: :house_id,
     class_name: 'Cat'
 end
 ```
@@ -200,14 +201,14 @@ Creating associations this way adds a buuuuuuuuunch of awesome functionality in 
 class Toy < ActiveRecord::Base
   belongs_to :cat,
     primary_key: :id,
-    foriegn_key: :cat_id,
+    foreign_key: :cat_id,
     class_name: 'Cat'
 end
 ```
 
 Above is a model file for a Toy resource. Its `primary_key` is its `id` and its foreign_key is `cat_id`. We can build associations that allow us to find all of the toys for a given Cat, the House that a Toy lives in, all of the Toys for all of the Cats that live in a House, etc. This involves traversing multiple associations. Because toys are associated with cats and not houses. If were considering a House object and we want to find the toys that the cats in that house own, we have to traverse the associations between the models:
 
-```
+```ruby
 House   --has_many->> Cat --has_many->> Toy
 House <<-belongs_to-- Cat <<-belongs_to Toy
 ```
@@ -216,7 +217,7 @@ House <<-belongs_to-- Cat <<-belongs_to Toy
 class House < ActiveRecord::Base
   has_many :cats,
     primary_key: :id,
-    foriegn_key: :house_id,
+    foreign_key: :house_id,
     class_name: 'Cat'
 
   def toys
@@ -264,6 +265,7 @@ class Cat < ActiveRecord::Base
 
 end
 ```
+
    We've made a method that goes from `houses` through `cats` to `toys`. What about a method that goes from `toys` to `houses` through `cats`:
 
 ```ruby
@@ -291,27 +293,22 @@ class Car <ActiveRecord::Base
 
 In the above code, if a `car` resource is destroyed, Rails will remove any associated `rental_requests` from the DB as well.
 
-**Adding Indicies** - Add an index to the database by using the `add_index` method in the migration. You can generate a new migration to do this (`$ rails g migration AddIndexToUsers`) if your adding an index to an already created table. The syntax for adding an index is `add_index <:table_name>, <:column_name>`
+**Adding Indices** - Add an index to the database by using the `add_index` method in the migration. You can generate a new migration to do this (`$ rails g migration AddIndexToUsers`) if your adding an index to an already created table. The syntax for adding an index is `add_index <:table_name>, <:column_name>`
 
 ```ruby
 add_index :cats, :name
 ```
-
 
 **Callbacks** - Methods that get called at specific times of an object's life cycle.
   `before_validation` (handy as a last chance to set forgotten fields)
   `after_create` (handy to do some post-create logic, like send a confirmation email)
   `after_destroy` (handy to perform post-destroy clean-up logic)
 
-
 **Active Record** -
-
 
 **Active Record Object** -
 
-
 **ORM** - Object Relational Mapping. The system that translates between SQL records and Ruby objects. *Active Record* is an implementation of ORM for Rails. The Active Record ORM generates Ruby objects from the rows of SQL tables on *fetch* and translates Ruby objects back into table rows on save.
-
 
 **REST** - Representational State Transfer. The way to route an HTTP request to the correct controller in a Rails server. (Why are they do they have this name? What is being represented? What objects state is being refereed to? And what is being transferred? **A representation of an objects state?**)
 
@@ -383,7 +380,6 @@ end
 
   This design decision assumes that each ability has a unique id, as in, Superman's flying ability has a different id than Green Lantern's flying ability. Therefore, you need a superhero's id to list all their abilities but only an ability's id to do something like update it or delete it.
 
-
 **Controller** - Controllers are Rails constructs which are responsible for controlling resources. A controller is really just a class. One controller will have the actions to control one resource.
 
   The Rails convention for naming controllers files is `<resource_name>_controller.rb`, using snake case. Because controllers are essentially classes, when you make a new controller for a resource, you want to create a class with the Rails naming convention using CamelCase, like: `<ResourceName>Controller` For example, a resource called 'silly' could have a route:
@@ -391,6 +387,7 @@ end
 ```ruby
 get 'silly', to: 'silly#fun'
 ```
+
   a controller file called: `silly_controller.rb` containing a class:
 
 ```ruby
@@ -401,8 +398,7 @@ end
 
   The class also must inherit from `ApplicationController`
 
-
-**Views** - Files in the `views` folder in a rails project are used to generate html pages from the data generated by models and the data they pull from the DB. In early projects, I was taking the data from models and the DB and sending it back to the browser as pure json. Views are ways to render the same data formatted with html. The controller recieves the data from the model (which pulls it from the DB), sends it to the view which formats it with html and sends it back to the controller, then to the browser.
+**Views** - Files in the `views` folder in a rails project are used to generate html pages from the data generated by models and the data they pull from the DB. In early projects, I was taking the data from models and the DB and sending it back to the browser as pure json. Views are ways to render the same data formatted with html. The controller receives the data from the model (which pulls it from the DB), sends it to the view which formats it with html and sends it back to the controller, then to the browser.
 
   The instance methods in a controller (such as an `index` method) are going to trigger views with the `render` method that they contain. Because this is inside of an instance method, the view will have access to instance variables created in that method.
 
@@ -430,19 +426,15 @@ class BooksController < ApplicationController
 end
 ```
 
-
 **redirect_to vs. render** - When `render` is called inside a method, the controller packages up an HTML response using the data it has and sends it back to the user (through the router). Its going to be the application HTML with the template of whatever action we're currently in (`:show` for the show action, `:index` for the index action etc.)
 
   When `redirect_to` is called, it serves up response consisting of a 300 level status code to client. This response tells the client to make a new request to the provided url (this can be provided by a helper method which generates a url for an application resource. `users_url` or `books_url`, for example. Check the routes). `redirect_to 'http://metafilter.com/'` will cause the client to make another request to the given url (in this case, metafilter.com).
 
   You can only have a single `redirect_to` or `render` method in a controller action. They are not equivalent to `return` as in they are not going to end execution of a method. Having both `render` and `redirect_to` in a method will give you a *double render error*.
 
-
 **Unexpected _** - When you get an 'unexpected h' or 'c' or something in the browser while trying to render json.
 
-
 **Template** - Templates are use HTML and Ruby to generate formatted HTML pages with the data from a resource model and the DB. A completed template is a view that is ready to be rendered.
-
 
 **Partials** - Essentially, a boilerplate template that will be rendered inside another template. Partials are not complete views and should not be rendered on their own. Partials have to be called or invoked from inside another template. Partials are \*.html.erb files usually stored in the `views` folder but they always begin with an underscore (thats how rails knows they're partials). `_userform.html.erb`, for example.
 
@@ -492,11 +484,8 @@ end
 
   When editing an erb file in atom, use the shortcuts `- + <tab>` for the first and `= + <tab>` for the second.
 
-
 **Actions** - Actions are Ruby methods defined inside of a controller.
 
-
 **HTTP Route** - The combination of the path in the URL and the HTTP method that determines (in the case of Rails) which controller receives the request and generates a response.
-
 
 **MVC** - Model View Controller. The design methodology Utilized by Rails.

@@ -9,13 +9,12 @@ tags:
 **Go back one commit**
 
 1. `$ git reset HEAD~`
-   - This command moves the HEAD back one commit but leaves changes associated with that commit preserved on disk. This is equivalent to passing the `--soft` tag which is the default behavior. If you want to revert the repo's state on disk back to the way it looked with the previous commit, pass the `--hard` flag with the command.
+   - This command moves the HEAD back one commit but leaves changes associated with that commit preserved on disk. This is equivalent to passing the `--soft` tag which is the default behavior. If you want to revert the repository's state on disk back to the way it looked with the previous commit, pass the `--hard` flag with the command.
 2. *do stuff to files*
 3. `$ git add .`
    - Re-add all changes in tracked files.
 4. `$ git commit -m '<message>'`
    - New commit message for the corrected commit.
-
 
 **Untrack an already tracked file after modification**
 
@@ -26,7 +25,7 @@ tags:
 1. `$ git reset`
 2. `$ git checkout -- $(git ls-files -d)`
 
-**git log** - view commit history
+*git log** - view commit history
 
 **Staging Area**
 **working directory**
@@ -82,7 +81,6 @@ Does this work retroactively? If I add a filetype to .gitignore will they be rem
 - add `*.md` to .gitignore
 
 *the .gitignore does not remove items retroactively. It only prevents items from being added or committed to the repository.*
-
 
 git workflow
 ------------

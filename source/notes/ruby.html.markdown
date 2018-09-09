@@ -19,10 +19,9 @@ Compare the contents of two Arrays:
 => false
 ```
 
-
 **Procs and Blocks** -
 
-When defining a method to take blocks, use an ampersand in the parameters where the block will be given. This converts the block to a proc object and assigns it to the name of the parameter. Why write a method to take a block? It allows you to customize a method by injecting some logic into it. The body of the method is where the basic structure is built, where you put loops or iteration or self refference (recursion).
+When defining a method to take blocks, use an ampersand in the parameters where the block will be given. This converts the block to a proc object and assigns it to the name of the parameter. Why write a method to take a block? It allows you to customize a method by injecting some logic into it. The body of the method is where the basic structure is built, where you put loops or iteration or self reference (recursion).
 
 I think when writing a method that will take a block, you have to assume to know how many arguments the block will take.
 
@@ -63,11 +62,9 @@ end
 
 ```
 
-
 **Byebug** - Byebug is a gem used for debugging Ruby code. Install Byebug with `gem install byebug`. Require byebug in your Ruby source code `require 'byebug'`. Finally, place the `debugger` keyword where you want byebug to initialize.
 
 use `s` to 'step' into method calls and . `n` to go to next line. `c` continues to end of program or until a breakpoint is reached. `v l`, short for `var local` displays values of all local variables.
-
 
 Writing Methods
 ---------------
@@ -86,13 +83,10 @@ foo(100)
 => 100
 ```
 
-
-
-
 Methods
 -------
 
-**Inspect** - a method in the `Object` class which means it is available to all other classes unless specifically overwritten. It presents a reperesentation of the object in a readable string. For built-in objects, this will just be the object itself in a string. When an instance of a class is called, `inspect` is the method being used by default to display the instance. Inspect can be modified for user defined classes:
+**Inspect** - a method in the `Object` class which means it is available to all other classes unless specifically overwritten. It presents a representation of the object in a readable string. For built-in objects, this will just be the object itself in a string. When an instance of a class is called, `inspect` is the method being used by default to display the instance. Inspect can be modified for user defined classes:
 
 ```ruby
 [1, 2, "three"].inspect
@@ -133,10 +127,9 @@ bug1.inspect
 => "Bug: billy"
 ```
 
-
 **Ruby bitwise or | operations**
 
-```ruby
+```bash
 +-------------+------------+
 | 9 | 5 => 13 | 2 | 4 => 6 |
 +-------------+------------+
@@ -146,11 +139,9 @@ bug1.inspect
 +-------------+------------+
 ```
 
-
 **<<** - fix `<<` count → integer Shifts fix left count positions, or right if count is negative.
 
 `3 << 4 => 48` double 3 4 times (6, 12, 24, 48)
-
 
 **Ternary Conditional** - A statement with three operands and two operators in the form of:
 `conditional` ? `return if condition = true` ? `return if condition = false`
@@ -178,13 +169,15 @@ each_cons(n) => an_enumerator
 
 Means `each consecutive`.
 ```
+
 Iterates a given block for `n` consecutive elements passed as an array Will return an array of length `self.length - 1` no matter the value of `n`.
 
 ```ruby
 arr = []
 (1..10).each_cons(3) { |a| arr << a }
 ```
-An array of 3 consecutive elements passed on each iteration
+
+An array of 3 consecutive elements passed on each iteration.
 
 ```ruby
 x
@@ -198,7 +191,6 @@ x
 [7, 8, 9]
 [8, 9, 10]
 ```
-
 
 **Enumerator#zip**
 
@@ -237,7 +229,6 @@ target_hash.merge(hash1) => nil
 ```
 
 Merges `target_hash` into `hash1`. Duplicate keys are superseded by the target hash. The order of keys will be `hash1...target_hash`
-
 
 **Array#each** - The `.each` method accepts a block of code to which each element of the array is passed in turn:
 
@@ -349,7 +340,6 @@ puts nums_hsh.include?('c')
 =>false #.include? can't access values in a hash. Use .has_value?
 ```
 
-
 **any?** **all?** and **none?** return a Boolean based on the given code block for the members in their collection. Check to see if an array has any element greater than zero, any odd/even elements, if all elements are positive etc.
 
 ```ruby
@@ -360,7 +350,6 @@ nums.any? do |i| #will return true of any elements are even.
 end
 => true
 ```
-
 
 **map** returns a new array with the results of running the called block on each element:
 
@@ -379,7 +368,6 @@ nato = {:a => "alpha", :b => "bravo"}
 nato.map { |key, value| value.upcase }
 => ["ALPHA", "BRAVO"]
 ```
-
 
 Basic Data Types
 ----------------
@@ -443,7 +431,6 @@ str.count("e") => 3
 ```
 
 **Arrays** - `[]`, `Array.new, %w(el_1 el_2 el_3`)
-
 
 To initialize an empty array:
 
@@ -532,7 +519,6 @@ a[2..4]
 => ["C", "D", "E"]
 ```
 
-
 **Array Methods** - continued
 
 * Transforming arrays. Array#map and Array#collect both have the same effect on arrays.  The (argument?) code within the curly braces following the method determine the effect.  For example:
@@ -556,7 +542,7 @@ names.select {|word| word.length > 5}
 Again, the code in the braces assigns a temporary variable ‘word’ to the elements in the array. It then measures the length of that element against  an integer returning a Boolean value. A word will only be selected if the block evaluates to true.
 
 
-An array within an array is sometimes called a 2 dimensional array or a matrix. An array of arrays will print all the elements in each array. To access individual elements inside an array use `arr[outter_arr][inner_arr]`
+An array within an array is sometimes called a 2 dimensional array or a matrix. An array of arrays will print all the elements in each array. To access individual elements inside an array use `arr[outer_arr][inner_arr]`
 
 ```ruby
 rect1 = [[[1, 1], [8, 4]], [[5, 6], [3, 1]]]
@@ -565,7 +551,7 @@ p rect1[0][1][0]
 => 8
 ```
 
-  * you can flatten these nested arrays by using the method #flatten. To use a method like ‘map’ or ‘each’ on a matrix you have to nest the method the same number of levels that are in the array.
+* you can flatten these nested arrays by using the method #flatten. To use a method like ‘map’ or ‘each’ on a matrix you have to nest the method the same number of levels that are in the array.
 
 ```ruby
 rect1 = [[[1, 1], [8, 4]], [[5, 6], [3, 1]]]
@@ -580,9 +566,8 @@ p rect2
 => [[[3, 3], [10, 6]], [[7, 8], [5, 3]]]
 ```
 
-  * `.max` and `.min` are **enumerable** methods and will find the greatest and least
+* `.max` and `.min` are **enumerable** methods and will find the greatest and least
   values in an array. Same as `.sort.pop` and `.sort.shift`
-
 
 **Hash** - Hash tables exist in curly braces (like a block of code? Are they a block?) Hash tables are like an array? In an array, the index is invisible but always the same (it is inherent or implied?). They always have the same default index system: `0, 1, 2, 3..` A hash table’s index can be defined along with the values it contains. If a restaurant menu was represented as a hash table then the index could be made up of the item names and the values they point to could be the price. Index location (called a key) "chicken_sandwich" could point to the value $5.65. In an array you can find a value associated with an index location. In a hash table you find a value associated with it’s key.
 
@@ -607,7 +592,6 @@ more_pets
     :dog=>{:type=>:pet, :name=>"Ann", :age=>9}}
 ```
 
-
 * To create an empty hash:
 
 ```ruby
@@ -617,6 +601,7 @@ hsh = {}
 hsh = Hash.new
 => {}
 ```
+
 * Pass a block when creating an empty hash so newly created keys can have default values.
 
 ```ruby
@@ -633,7 +618,6 @@ empty_hsh2[:count] += 1
 empty_hsh2
 => {:count=>1}
 ```
-
 
 * Populated hash:
 
@@ -664,7 +648,6 @@ hash_test[key2] = 2
 p hash_test
 => {key1=>1, key2=>2}
 ```
-
 
 * Add/remove and access key value pairs in a hash:
 
@@ -722,9 +705,7 @@ General
 
 **Gem** - A Ruby Gem is a packaged Ruby library. Packaging makes it easy to manage, download, install, update, remove, etc. Gems are handled by RubyGems, a package manager of sorts for gems.
 
-
 **Bundler** - Bundler allows you to make your app more portable by automatically installing required gems listed in your Gemfile. Bundler is itself a gem and uses RubyGems to find, download and install required gems. Bundler is helpful because if you move your application to a new location you can ensure that all required gems will be installed when `bundle install` is run.
-
 
 **tIDENTIFIER** - or `tINTEGER`, `tSTRING`. These are words in standard Ruby syntax error messages meant to help you debug your code. They hint at the type of object that the interpreter encountered and caused an error They usually appear in a form similar to:
 
@@ -735,9 +716,7 @@ SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
    ^
 ```
 
-
 **Colons Before and After Variables/Attributes** -
-
 
 **::, #, :** -
 
@@ -745,12 +724,9 @@ SyntaxError: unexpected tIDENTIFIER, expecting end-of-input
 * `:` - some thing
 * `#` - other things
 
-
 **Private v. Protected Methods** -
 
-
 **Options Hash** -
-
 
 **heredoc** - Generally, a Here Document, or heredoc, is an input stream in a programs source code that is treated like a separate file. It is a delimited chunk of text that the program can read in like a string and interpret as code. The benefit of using a heredoc is that the 'body' of the heredoc can be formatted in a way that is native for its content.
 
@@ -785,18 +761,17 @@ SELECT
 FROM
   animals
 JOIN
-  anecdotes ON aecdotes.animal_id = animals.id
+  anecdotes ON anecdotes.animal_id = animals.id
 SQL
 ```
-
 
 **Constants** - Constants are declared in ALL CAPS:
 
 ```ruby
 CAR_COLORS = ["red", "green", "black"]
 ```
-  Constants are accessible....
 
+Constants are accessible....
 
 **Instance Variables** - Declared using the `@` sigil.
 
@@ -816,8 +791,7 @@ But these are not **Constants**. Call the method `global_variables` to see all a
 
 * *@@* are for **class variables**. These are shared among objects of a class. If one object instance changes the value of the variable, that new value will essentially change for all other object instances.
 
-* *Double Underscores* the double underscores that surround certain variables indicate that the variables are special and should not be overwritten. `__FILE__` is a special variable that reffers to the actual file that is being interpreted. Calling `__FILE__` will prnt the name of the fil.
-
+* *Double Underscores* the double underscores that surround certain variables indicate that the variables are special and should not be overwritten. `__FILE__` is a special variable that refers to the actual file that is being interpreted. Calling `__FILE__` will print the name of the fil.
 
 **begin/rescue/end blocks in Ruby** - In Ruby, the `rescue` clause is used along with `begin` and `end` to define blocks of code that handle exceptions. For example:
 
@@ -855,9 +829,7 @@ This gets to why using different exception classes is important and why the abil
 
 The above code will output different messages depending on what exception is rescued.
 
-
 **Naked Rescue** - I believe this means rescuing without referencing a specific type of exception?
-
 
 **Thoughts on Methods** - A *method* is a basic Ruby command. Methods are *called* or *invoked* on to objects. When we call a method, we always use the format *object.method* (like noun.verb). `puts` is one of the most basic Ruby commands. `puts` tells ruby to print out a *string*, numbers, or an *array*.
 
@@ -865,7 +837,7 @@ The above code will output different messages depending on what exception is res
 
     `gets.chomp` calls the `gets` method to get user input and then calls the `chomp` method on that input. `gets.chomp.to_s` and `gets.to_s.chomp` give the same result. I don’t know if the order of methods is always arbitrary. Some methods, like `puts` need an argument. `chomp` and `gets` do not need arguments.  `gets().chomp().to_s()` is read the same as `gets.chomp.to_s`.
 
-* More on the `chomp` method. `name = gets.chomp` produces a new string without the newline; it does not modify or change the original string.  After using `name = gets’ using `name.chomp’ and then calling on `name` does not have the same effect. `name.chomp` creates a new string that is not called on when we simply call the variable `name`. `puts("Hello " + name.chomp + "!")` creates a new string and uses it immediately giving the same effect as using ‘name = gets.chomp’ but the original variable ‘name’ still contains the string with the newline character.  In IRB. When I create a new method in the main:Object (top level, "irb(main):01" right after opening a new irb session), it has the following properties:
+* More on the `chomp` method. `name = gets.chomp` produces a new string without the newline; it does not modify or change the original string.  After using `name = gets` using `name.chomp` and then calling on `name` does not have the same effect. `name.chomp` creates a new string that is not called on when we simply call the variable `name`. `puts("Hello " + name.chomp + "!")` creates a new string and uses it immediately giving the same effect as using ‘name = gets.chomp’ but the original variable ‘name’ still contains the string with the newline character.  In IRB. When I create a new method in the main:Object (top level, "irb(main):01" right after opening a new irb session), it has the following properties:
 
 ```ruby
 def is_a_string
@@ -979,11 +951,9 @@ Methods have a "receiver" , which is the data object to the left of the method b
 * In the expression x.y (object.method) x is the receiver of y.
 * For private methods the receiver is always "self"
 
-
 **Private Methods** - Private methods are always called on `self` in the context of the current object. If i enter `string".private_methods` I can see an array of private methods associated with string objects. These cannot be called on the string object itself ( `string.global_variables` for example ) but must be invoked on self *within the context of the string object*. I think when public or other methods are called on a string object, behind the scenes, Ruby jumps into the context of the string object and invokes its private methods to return the requested data which may be a string, fixnum, or an array. (Integer and Array are both private methods of string objects, btw)
 
 This is why you can use main:Object private methods initially in Ruby. You start off in the context of the main object and can use private methods (like puts and rand) to return data.
-
 
 **Adding `self` in front of method names when defining** - When adding a method to a class what you are usually making are `instance methods` that can be called on instances of that class. Class methods can be called on the class itself. For example `.new` can be called on a class itself to instantiate an object of that class. When defining methods inside a class, add `self` (for example `self.celsius_to_fahrenheit`) to the front of the method name to make it a class method. Now you can call `Temperature.celsius_to_fahrenheit` (on the class itself as opposed to a temperature object).
 
@@ -1007,7 +977,7 @@ For Example:
 
 **Operands** - These are the objects operated on by operators. In `a + b = c` `a`, `b`, and `c` are operands.
 
-**Modulus** - The `%` operator, called the modulous gives the remainder of two numbers. In Ruby, the following work:
+**Modulus** - The `%` operator, called the modulus gives the remainder of two numbers. In Ruby, the following work:
 
 ```ruby
 8 % 2
@@ -1025,7 +995,7 @@ For Example:
 
 **Variables** allow you to store data in an *object* (strings, numbers, arrays). *Variables* are  *assigned*. A variable name consists of letters and numbers. It must start with a lowercase letter. It cannot contain spaces. Variables ARE NOT THEMSELVES OBJECTS (They CAN be objects, though?). Variables are names that point to values? The value is the Object.
 
-**Instance Variables** - These are variables that are accessable to one instance of a class. In the clase of several instances of a class existing simultaneously, each instance will only be able to access it's own variables.
+**Instance Variables** - These are variables that are accessible to one instance of a class. In the case of several instances of a class existing simultaneously, each instance will only be able to access it's own variables.
 
 **Argument** - An *argument* is the data that is passed into a *method*. In `puts("yo!")` `puts` is the method and `` "yo!" `` is the *argument*. If a method requires an argument it must have parentheses ( ‘puts()’ for example). Some methods don’t require an argument and therefore don’t need parentheses (‘gets’ for example can be written by itself.
 
@@ -1081,7 +1051,6 @@ puts("Thanks for typing in a number!")
 
 The caller will give the input `number_of_squares`; this method will return an array consisting of the squares for numbers from 0 up until the number specified by 'number_of_squares'.
 
-
 ```ruby
 def first_square_numbers(number_of_squares)
   squares = []
@@ -1117,11 +1086,9 @@ end
 #   36
 ```
 
-
 * The array `squares` is returned by the method `first_square_numbers`.  The variable `squares` is assigned in the actual program after the method is defined. It is populated with whatever the return of the method `first_square_numbers` is. Inside the method, another variable called squares is assigned. This contains the value that is eventually returned but it is actually a whole new variable and could be named anything (a local variable I think?).
 
 * *Breaking out of loops* the `break` command (keyword?) is used to break out of normally infinite loops.
-
 
 **return** - Returns a value and exits a method. More accurately, `return` is a *keyword* that takes an argument (`nil` by default) and exits the method early with that value.
 
@@ -1135,6 +1102,7 @@ end
 hi(3)
 => "whatever"
 ```
+
 A method will always return the value of the most recent evaluated statement inside that method but `return` can be used to exit a method early if a conditional statement is satisfied, for example. You can also `return` multiple values from a method
 
 ```ruby
@@ -1146,7 +1114,6 @@ foo 3, 5
 => [3, 5]
 ```
 
-
 **Interpolation** - Interpret variables and blocks of code inside a string. The string must be enclosed in double quotation marks for interpolation to work
 
 ```ruby
@@ -1157,18 +1124,16 @@ puts "The number #{a} is less than #{b}"
 => "The number 1 is less than 4"
 
 
-def string_length_interpolater(argument_string)
+def string_length_interpolator(argument_string)
   "The string you just gave me has a length of #{argument_string.length}"
 end
 
-string_length_interpolater("Hello there!")
+string_length_interpolator("Hello there!")
 
 => "The string you just gave me has a length of 12"
 ```
 
-
 **Placeholders** are not just variables. Any valid block of Ruby code you place inside ``#{ }`` will be evaluated and inserted at that location. A String literal created with single quotes does not support interpolation!
-
 
 **Concatenating Strings**. Adding two strings together is called concatenation. To create a new string by adding two together:
 
@@ -1188,16 +1153,19 @@ RubyMonk
 ```ruby
 'RubyMonk'.gsub(/[aeiou]/,'1')
 ```
+
 replaces all the vowels in the string with the character 1. The RegEx interprets #‘/[aeiou]/’ as an array containing all the vowels? Somehow interprets the pattern?
 
 ```ruby
 'RubyMonk Is Pretty Brilliant'.gsub(/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/,'0')
 ```
+
 replaces all the Uppercase characters in the string with the character 0.
 
 ```ruby
 'RubyMonk Is Pretty Brilliant'.gsub(/[A-Z]/,'0')
 ```
+
 This also works and is shorter. Does the RegEx do special interpretation on [A-Z] or is that a standard way to express an array containing characters a through z?
 
 ```ruby
@@ -1205,6 +1173,7 @@ This also works and is shorter. Does the RegEx do special interpretation on [A-Z
 
 'RubyMonk Is Pretty Brilliant'.gsub(/[B-R]/,'0')
 ```
+
 These both work, too.
 
   * If you want to find something specific but you’re not sure what, RegEx come in handy. The String#match method converts a pattern to a RegEx (if it isn’t one already) and then invokes its match method on the target String object. Here is how you  find the characters from a String which are next to a whitespace:
@@ -1220,10 +1189,12 @@ The pattern that `.match` uses in this case is (/ ./) to indicate a character pr
 ```ruby
 'RubyMonk Is Pretty Brilliant'.match(/ ./, 10)
 ```
+
 You can also pass a second argument to the match method. The second parameter of `10` specifies the position in the string to begin the search.
 
 **Looping** - Using while and then giving a condition will run the loop as long as the while test is true. When  while is false, the program will jump to end. While this thing is true, run the loop and when it is false jump to end.
-* The do keyword can be used to initiate loops:
+
+The do keyword can be used to initiate loops:
 
 ```ruby
 def ring(bell, n)
@@ -1232,8 +1203,8 @@ def ring(bell, n)
   end
 end
 ```
- This loop will run n number of times then stop
 
+ This loop will run n number of times then stop
 
 **Literal**. The term "literal" comes from the fact that you have written data literally into your program, i.e. exactly as written, not hidden behind a variable name. A literal is a notation for  representing a fixed value in source code. It is some data that is presented directly in the code, rather than indirectly through a variable or function call. The data constituting a literal cannot be modified by a program, but it may be copied into a variable. When creating a variable and populating it with the integer 8, the variable is not a literal but the integer that it points to is? In the following, 1 is an integer literal and the three letter string in "cat" is a string literal:
 
@@ -1241,6 +1212,7 @@ end
 int a = 1;
 String s = "cat";
 ```
+
 A literal is hard coded directly into source code as opposed to being called from or created in memory at run time.
 
 **each** enumerable method and keyword `do`. ‘do’ is a keyword for creating loops in Ruby. `String#each_char` and `Array#each` call a block on to each character in the String or each element in the Array. The element or character must be represented in the block as a parameter in between the "double pipes" ||. `do` itself (concluded by `end`) contains the block of code.
@@ -1267,9 +1239,7 @@ The block can be between braces or inside of `do`.
 
 **Enumerable**. A Ruby module (collection of methods and constants mixed into other classes. See module vs Class here: https://lh4.googleusercontent.com/e_Eml6aYg1udItOLjQCzUKF1L2K1JcjyZTnzYwcP7A=w1530-h800-no (Modules are about providing methods that you can use across multiple classes. Classes are about objects; modules are about functions.) ‘map’ and ‘each’ are inside enumerable. Enumerable is mixed into the Array and Hash classes.
 
-
 Use map to get a modified array based on the code block. Use ‘each’ for its side effects (such as printing each element or pushing it into another array.)
-
 
 * A `Range` is a different class than `Array` but also mixes in enumerable. `Range` also works for strings?
 
