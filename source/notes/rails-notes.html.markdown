@@ -42,16 +42,17 @@ rake db:migrate
   from the terminal. This will run any migrations **that haven't been run yet**. This is why you can't just edit a migration file and run it again. Rails keeps track of the migrations that are run and when. Allowing a user to re-migrate the same file over and over doesn't allow Rails to keep track of when a specific column is changed or added. Check the schema file at `/db/schema.rb` to see the newly created table.
     **Editing Migrations** - To make edits to a Database table using migrations, use the command
 
-```bash
-$ rake db:rollback
+```Bash
+# $ rake db:rollback
 ```
 
    to pop the last migration off of the 'stack'. You can then add columns under the `change` method and migrate again. This is acceptable for development but not for production or any mission critical work. Instead of rolling back a migration we can add or change tables by creating a new migration.
 
 **Validations** - There are levels of validations for resources:
-  1.  *DataBase Level Validations* - These are validations done in the migration files and are visible in the DB schema file.
-  2.  *ActiveRecord Level Validations*
-  3.  *Model Level Validations* - These are validations made in the actual model files.
+
+1  *DataBase Level Validations* - These are validations done in the migration files and are visible in the DB schema file.
+2. *ActiveRecord Level Validations*
+3. *Model Level Validations* - These are validations made in the actual model files.
 
   These are almost like a hierarchy of defenses and the first line of defense are *Model Level Validation*. If there are only DB level validations for a resource, Rails will throw a DB level error if a there is a save attempt for an object that does not meet those validations. For example, trying to save a user without a name if the `name` column has a DB level validation will throw an error which may present a 500 error to the user. Having a *model level validation* helps prevent this.
 
@@ -106,9 +107,9 @@ class Cat < ActiveRecord::Base
 end
 ```
 
-
 **Associations** -
-  * `belongs_to` and `has_many`
+
+* `belongs_to` and `has_many`
 
 ```ruby
 # == Schema Information
@@ -157,11 +158,11 @@ end
 
    The `belongs_to` method takes as it's arguments, the name of this association method `:house` and then a hash of key/value pairs (the next 3 lines could be inside curly braces but its not necessary. It IS a hash object, though). Inside the hash, we need the values for
 
-   * `primary_key:`, which will be the id of an instance of the 'owning' class (in this case `House`) which will just be `:id`. Another way to think about this is the `primary_key` will be the name for the primary_key column (you can look at the schema information to see what the primary key is but it should always be :id) of the 'other' table that the class we're currently in 'belongs to' (`:id`).
+* `primary_key:`, which will be the id of an instance of the 'owning' class (in this case `House`) which will just be `:id`. Another way to think about this is the `primary_key` will be the name for the primary_key column (you can look at the schema information to see what the primary key is but it should always be :id) of the 'other' table that the class we're currently in 'belongs to' (`:id`).
 
-   * The value for `foreign_key` will be the name of the column in this table (the table that 'belongs to') that points to the primary key of the other table, `house_id` in this case.
+  * The value for `foreign_key` will be the name of the column in this table (the table that 'belongs to') that points to the primary key of the other table, `house_id` in this case.
 
-      * The value for `class_name` will be the name of the class (as a string or a symbol) of whatever object we want to return, in this case `'House'`.
+    * The value for `class_name` will be the name of the class (as a string or a symbol) of whatever object we want to return, in this case `'House'`.
 
        This `belongs_to` association returns the house that the cat 'belongs to'. To make a corresponding method for houses that returns the cats that live in a house:
 
@@ -185,7 +186,8 @@ end
 ```
 
 Creating associations this way adds a buuuuuuuuunch of awesome functionality in addition to providing the created methods.
-  * `has_many through` and `has_one through`
+
+* `has_many through` and `has_one through`
 
 ```ruby
 # == Schema Information
@@ -236,11 +238,11 @@ Above is a method in the House model that will return all of the toys for all of
 class House < ActiveRecord::Base
   has_many :cats,
     primary_key: :id,
-    foriegn_key: :house_id,
+    foreign_key: :house_id,
     class_name: 'Cat'
 
   has_many :toys,
-    through: :cats, # name of the association in THIS CLASS. 
+    through: :cats, # name of the association in THIS CLASS.
                     # The method will traverse through the association listed here.
     source: :toys   # association in the `Cat` class,
                     # the name of the target class,
@@ -255,12 +257,12 @@ Above, the new `has_many` association is similar to the first one. The first arg
 class Cat < ActiveRecord::Base
   belongs_to :house,
     primary_key: :id,
-    foriegn_key: :house_id,
+    foreign_key: :house_id,
     class_name: 'House'
 
   has_many :toys,
     primary_key: :id,
-    foriegn_key: :cat_id,
+    foreign_key: :cat_id,
     class_name: 'Toy'
 
 end
@@ -467,7 +469,7 @@ end
 
 **Params** - params are a hash-like object inside Rails controllers (also a instance method?). It is given to the controller by the router.
 
-  > The params come from the user's browser when they request the page. For an HTTP GET request, which is the most common, the params are encoded in the url. For example, if a user's browser requested http://www.example.com/?foo=1&boo=octopus then params[:foo] would be "1" and params[:boo] would be "octopus". In HTTP/HTML, the params are really just a series of key-value pairs where the key and the value are strings, but Ruby on Rails has a special syntax for making the params a hash-like object with hashes inside. For example, if the user's browser requested http://www.example.com/?vote[item_id]=1&vote[user_id]=2 then params[:vote] would be a hash, params[:vote][:item_id] would be "1" and params[:vote][:user_id] would be "2". - *StackOverflow*
+  > The params come from the user's browser when they request the page. For an HTTP GET request, which is the most common, the params are encoded in the url. For example, if a user's browser requested `http://www.example.com/?foo=1&boo=octopus` then params[:foo] would be "1" and params[:boo] would be "octopus". In HTTP/HTML, the params are really just a series of key-value pairs where the key and the value are strings, but Ruby on Rails has a special syntax for making the params a hash-like object with hashes inside. For example, if the user's browser requested `http://www.example.com/?vote[item_id]=1&vote[user_id]=2` then params[:vote] would be a hash, params[:vote][:item_id] would be "1" and params[:vote][:user_id] would be "2". - *StackOverflow*
 
   When the router receives an HTTP request, it generates the `params` object from the query string contained in the URL?
 
