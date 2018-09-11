@@ -28,7 +28,6 @@ BigEndian:
 | :---- | :---- | :---- | :---- |
 |    01 |    23 |    45 |    67 |
 
-
 LittleEndian:
 
 | 0x100 | 0x101 | 0x102 | 0x103 |
@@ -117,27 +116,27 @@ LittleEndian:
 
 **UEFI** - Unified Extensible Firmware Interface. A specification that defines a software interface between an operating system and platform firmware. UEFI replaces BIOS in IBM PC-compatible personal computers.
 
-**Runtime**
+**Runtime** -
 
-**Modem**
+**Modem** -
 
-**Process**
+**Process** -
 
-**Socket**
+**Socket** -
 
-**Execution Context**
+**Execution Context** -
 
-**Batch processing v. Interactive Computing**
+**Batch processing v. Interactive Computing** -
 
-**Command Interpreter**
+**Command Interpreter** -
 
-**Assembler**
+**Assembler** -
 
-**Macros**
+**Macros** -
 
-**Processes**
+**Processes** -
 
-**Hash**
+**Hash** -
 
 **JSON** - JavaScript Object Notation
   > ...an open-standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. It is the most common data format used for asynchronous browser/server communication, largely replacing XML which is used by AJAX. - *Wikipedia*  
@@ -152,24 +151,23 @@ LittleEndian:
   {"preference":"nbiconsize","value":"small"}
 ```
 
-**Atomic, Atomized**
+**Atomic, Atomized** -
 
-**Programmatic**
+**Programmatic** -
 
-**LF**
+**LF** -
 
 **CRLF** - Carriage Return | Line Feed  
   Indicates the beginning of a newline in a file or document. Indicated by a special character.
 
 **Stack** or **The Stack**?
 
-**Interface**
-  **As It Relates to API**
+**Interface As It Relates to API** -
 
 **Mnemonic** - symbolic codes
 
 **Hard Links** A file that points to an existing *inode* in the file-system.
 
-**Volume**
+**Volume** -
 
-**File**
+**File** -
