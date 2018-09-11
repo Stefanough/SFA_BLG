@@ -6,28 +6,21 @@ tags:
 
 ---
 
-
 **HyperText, HyperMedia, HyperAnything** - What is the original dream of Hyper Media? I think about internally linked spaces. Traveling to different documents without ever leaving the document-based (or media-based) world. Instead of leaving a document to find and open another, why not just have the method of traveling to a relevant document embedded in that document itself? A frame work or infrastructure that is above or outside of the document space that facilitates easy traversal? Is that the 'Hyper' in HyperText?
 
-**Haml** - Html abstraction markup language 
-
+**Haml** - Html abstraction markup language
 
 **Sass** - Syntactically Awesome Stylesheets. Sass is a scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
-
 **SCSS** - A newer syntactical variant of Sass.  SCSS uses block formatting like that of CSS. It uses braces to denote code blocks and semicolons to separate lines within a block. The indented syntax and SCSS files are traditionally given the extensions `.sass` and `.scss`, respectively.
 
-
-**Coffeescript** - CoffeeScript is a programming language that transcompiles to JavaScript. It adds syntactic sugar inspired by Ruby, Python and Haskell in an effort to enhance JavaScript's brevity and readability.[3] Specific additional features include list comprehension and pattern matching.
-
+**Coffeescript** - CoffeeScript is a programming language that transpiles to JavaScript. It adds syntactic sugar inspired by Ruby, Python and Haskell in an effort to enhance JavaScript's brevity and readability.[3] Specific additional features include list comprehension and pattern matching.
 
 **Higher Order Functions** - Tools that can take other functions as parameters and return functions as results.
 
-
 **Hashes and Hash as it relates to 'Hashing Functions'** -
 
-
-**Endianness** - The order in which a system stores and retrieves bytes into memory. In *Little Endian* machines, the last byte of binary representation of multiybyte data is stored first. In *Big Endian* systems, the first byte of binary representation of multibyte data is stored first.
+**Endianness** - The order in which a system stores and retrieves bytes into memory. In *Little Endian* machines, the last byte of binary representation of multi-byte data is stored first. In *Big Endian* systems, the first byte of binary representation of multi-byte data is stored first.
 
 BigEndian:
 
@@ -42,56 +35,39 @@ LittleEndian:
 | :---- | :---- | :---- | :---- |
 |    67 |    45 |    23 |    01 |
 
-
-
 **Function** - Suppose that to each element in a set A there is assigned, by some manner or other, a unique element of a set B. We call such assignments a function. For every input into a function, there is a unique output.
 
-
-**Statement** - A series of symbols, methods, operators, operands, functions or variables that has a complete meaning. ` x = 3 + 9 ` is a statement. A statement is syntactically correct and has meaning.
-
+**Statement** - A series of symbols, methods, operators, operands, functions or variables that has a complete meaning. x = 3 + 9 is a statement. A statement is syntactically correct and has meaning.
 
 **Segfault** - In computing, a segmentation fault (often shortened to segfault) or access violation is a fault, or failure condition, raised by hardware with memory protection, notifying an operating system (OS) the software has attempted to access a restricted area of memory (a memory access violation). On standard x86 computers (which includes most PC computers) this is a form of general protection fault. The OS kernel will, in response, usually perform some corrective action, generally passing the fault on to the offending process by sending the process a signal. Processes can in some cases install a custom signal handler, allowing them to recover on their own,[1] but otherwise the OS default signal handler is used, generally causing abnormal termination of the process (a program crash), and sometimes a core dump.
 
   Trying to access a part of memory that you don't have access to.
 
-
 **Hashing Function** -
-
 
 **Hash** -
 
-
 **Encryption v Encoding** -
-
 
 **Word** - (A word)
 
-
 **Lexeme** - A lexeme is a string of characters which forms a syntactic unit.
-
 
   Some authors just call this a token, using 'token' interchangeably to represent (a) the string being tokenized, and also (b) the token data structure resulting from putting this string through the tokenization process.
 
   Note that the usage of the word 'lexeme' in computer science is different from the meaning of the word 'lexeme' in linguistics. A lexeme in computer science roughly corresponds to what in linguistics might be called a word (in computer science, 'word' has a different meaning than the meaning of 'word' in linguistics), although in some cases it may be more similar to a morpheme.
 
-
 **Kilobyte v Kibibyte** - A Kilobyte is a *decimal multiple* of the unit byte for quantities of information and is one thousand (10^3) bytes of data. A kibibyte is a *binary multiple* of the unit byte for quantities of information and is 2^10 (1024) bytes of data. Sometimes they are used interchangeably. A mebibyte is 1024^2 (2^20) bytes of data and is sometimes used interchangeably with megabyte which is 1,000,000 (10^6 or 1000^2) bytes of data. These binary/decimal pairs of multiples of bytes exist for all notations for quantities of digital information.
-
 
 **Syntactic Sugar** -
 
-
 **RFC** - Request For Comments. A formal document from the IETF (Internet Engineering Task Force) that presents technical or informative content for review on it's way to potentially become a standard. Of those that are intended to become Internet standards, the final version of the RFC becomes the standard and no further comments or changes are permitted.
-
 
 **REPL** - Stands for Read Evaluate Print Loop. IRB and PRY are Ruby REPLs.
 
-
 **Helper or Helper Method** -
 
-
 **Closure** -
-
 
 **Is there a general way to interpret certain characters in code? Do `/`, `:`, `.`, `::`, `//`, `,` have meanings that can be interpreted as general across languages/platforms?**
 
@@ -197,4 +173,3 @@ LittleEndian:
 **Volume**
 
 **File**
-
