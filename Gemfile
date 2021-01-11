@@ -23,7 +23,7 @@ gem 'middleman-livereload'
 gem 'middleman-pry'
 
 # For parsing Markdown
-gem 'redcarpet', '~> 3.3', '>= 3.3.3'
+gem 'redcarpet', '~> 3.5'
 
 # The nokogiri for peering into documents
 gem 'nokogiri'
