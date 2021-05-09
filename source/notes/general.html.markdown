@@ -6,6 +6,37 @@ tags:
 
 ---
 
+**Dynamic and Static typing**
+Describes when the constraints on types are checked or enforced. The types for variables in statically typed languages are known at compile time and type errors are surfaced then. The types for data in dynamically typed languages are only known at runtime.
+
+**Strong and Weakly typed languages**
+
+**Structural vs Nominal typing**
+JavaScript is generally
+
+**Variadic Function**
+A function that can take a variable number of arguments. Said to have an indefinite _arity_ (as in a function that takes 1 argument is _unary_ and a function that takes 2 arguments is _binary_, these are both fixed-arity). - Programming TypeScript
+
+**Overloaded Function**
+A function with multiple call signatures
+
+**Generic Type**
+A placeholder type used to enforce a type-level constraint in multiple places. Also known as polymorphic type parameter. - Programming TypeScript.
+
+**Parameter vs Argument**
+- A parameter is a piece of data that a function needs to run, declared as part of a function declaration. Also called a formal parameter.
+- An argument is a piece of data that you passed into a function when invoking it. Also called an actual parameter.
+
+**Types of Instructions??**
+- Command vs Conditional
+- what else???
+-
+
+**Mixin**
+A class that contains methods for use by other classes with having to be the parent class of those other classes. Basically, _mixin_ some functionality from other classes or functions/methods defined in another location without having to inherit everything from a class.
+
+**Online Optimization** - A field of optimization theory having no or incomplete knowledge of the future (online). These problems are denoted a s online problems and are seen as opposed to the classical optimization problems where complete information is assumed (offline).
+
 **HyperText, HyperMedia, HyperAnything** - What is the original dream of Hyper Media? I think about internally linked spaces. Traveling to different documents without ever leaving the document-based (or media-based) world. Instead of leaving a document to find and open another, why not just have the method of traveling to a relevant document embedded in that document itself? A frame work or infrastructure that is above or outside of the document space that facilitates easy traversal? Is that the 'Hyper' in HyperText?
 
 **Haml** - Html abstraction markup language
@@ -150,6 +181,8 @@ LittleEndian:
   {"preference":"tabseparator","value":"tabsep_black"},
   {"preference":"nbiconsize","value":"small"}
 ```
+
+**noop** - an operation that results in no change. A "no-operation".
 
 **Atomic, Atomized** -
 
