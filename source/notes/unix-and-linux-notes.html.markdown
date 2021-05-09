@@ -2,7 +2,7 @@
 
 title: Unix/Linux
 date: 2017-12-14 23:31 UTC
-tags: 
+tags:
 
 ---
 
@@ -20,7 +20,7 @@ tags:
 
 
 **Root** - When `root` is used on it's own it almost always refers to the *root user* or *root account*, as in the system administrator's account (the only user that has complete access to every command and file on the system). When the system asks
- 
+
   ```ruby
   "...are you root?"
   ```
@@ -67,7 +67,7 @@ tags:
 The original sections go back to the Unix Programmers Manual created by Ken Thompson and Dennis Ritchie in 1971.
 
 
-**Plan 9** - An experimental research operating system born out of the Computer Science Research Center at Bell Labs. Plan 9 is based on Unix concepts but built from the ground up for networks and distributed systems (distributed systems can act as a single system). 
+**Plan 9** - An experimental research operating system born out of the Computer Science Research Center at Bell Labs. Plan 9 is based on Unix concepts but built from the ground up for networks and distributed systems (distributed systems can act as a single system).
 
 
 **Sessions**
@@ -100,7 +100,7 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
 **UART** - Universal Asynchronous Receiver and Transmitter
 
 
-**Terminal** An instance of a user/computer interaction environment. 'Dumb Terminals' used to be where users would interact with a mainframe machine. There was no actual relevant processing power in the terminal - just a video output and keyboard. A place of input/output. In some cases, real time input/output through a command line interface. Today on a modern OS, there are objects often      referred to as 'Terminal Emulators' which often take the form of a command line interface in a window. These are emulating the same input output experiences as the dumb terminals of olde, a place to access the machine directly with language. Today we can have an arbitrary number of these emulated terminals, all sending and receiving different information to and from the operating system.  
+**Terminal** An instance of a user/computer interaction environment. 'Dumb Terminals' used to be where users would interact with a mainframe machine. There was no actual relevant processing power in the terminal - just a video output and keyboard. A place of input/output. In some cases, real time input/output through a command line interface. Today on a modern OS, there are objects often      referred to as 'Terminal Emulators' which often take the form of a command line interface in a window. These are emulating the same input output experiences as the dumb terminals of olde, a place to access the machine directly with language. Today we can have an arbitrary number of these emulated terminals, all sending and receiving different information to and from the operating system.
 
   > I was then working on the development of APL2, a nested array, algorithmic, symbolic language, and I was committed to the idea that what we were doing with computers was making languages that were better than natural languages for procedural thought. The idea was to do for  whole ranges of human thinking what mathematics has been doing for thousands of years in the quantitative arrangement of knowledge, and to help people think in more precise and clear ways. What I saw in the Xerox PARC technology was the caveman interface, you point and you grunt. A massive winding down, regressing away from language, in order to address the technological nervousness of the user. Users wanted to be infantilized, to return to a pre linguistic condition in the using of computers, and the Xerox PARC technology's primary advantage was that it allowed users to address computers in a pre linguistic way. This was to my mind a terribly socially retrograde thing to do, and I have not changed my mind about that. - *Eben Moglem http://www.cabinetmagazine.org/issues/1/i_moglen_1.php*
 
@@ -185,6 +185,20 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
 **DotFiles** - A file with a dot preceding the file name. Dotfiles are often used to hold configuration data for other programs as they are hidden by default, reducing clutter when viewing a projects file tree and making them less likely to be accidentally modified.
 > In Unix-like operating systems, any file or folder that starts with a dot character (for example, /home/user/.config), commonly called a dot file or dotfile, is to be treated as hidden – that is, the ls command does not display them unless the -a flag (ls -a) is used. -  *Wikipedia*
 
+```
+It would be very useful if we could manage all the configuration stored in dotfiles in VCS. That way you can keep track of changes over time and restore configuration for any application to a previous state. Other benefits include backup and restore of configuration and syncing configuration to different machines.
+
+Most dotfiles have are very simple. They are plaintext files written in a scripting language or structured data format (JSON, YAML) that exist at the root of a users home directory. The easiest approach is to just initialize a git repository in your home directory and commit changes to your dotfiles as you change them. This has a few disadvantages. Your home directory likely has vastly more data than you would ever want in a repository and it is content that you would rather not make public (sensitive).
+
+Can we do better? Add everything to `.gitignore` and force add all directories that we want to include in our dotfiles repo? We can!
+
+Use external applications to manage dotfiles.
+
+Use GNU Stow to manage dotfiles. Just symlinks everything to where it should be?
+
+Steps involved:
+1. Create a `dotfiles` directory in your home directory.
+```
 
 **Vim** - **V**i **Im** proved   Vim  is  a  text editor that is upwards compatible to Vi.  It can be used to edit all kinds of plain text.  It is especially useful for editing programs. - *man vi* in Linux Terminal.
 
@@ -192,7 +206,7 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
 **Vi** - The ancestor of Vim, vi was written in 1976 by Bill Joy.
 
 
-**POISX** - Portable Operating System Interface (POISX) is a set of standards encompassing api's, command line shells, utilities, with the goal being software compatibility with variants and offshoots of Unix.
+**POSIX** - Portable Operating System Interface (POSIX) is a set of standards encompassing APIs, command line shells, utilities, with the goal being software compatibility with variants and offshoots of Unix.
 
 
 **Unix-like**
@@ -211,7 +225,7 @@ The original sections go back to the Unix Programmers Manual created by Ken Thom
   > Remember, /proc/cpuinfo isn’t actually a text file containing this information – the Linux kernel and the proc file system are exposing this information to us as a file. This allows us to use familiar tools to view and work with the information. - *howtogeek.com*
 
 
-  **/dev** - In the /dev directory, you’ll find files that represent devices – as well as files that represent other special things. For example, /dev/cdrom is your CD-ROM drive. /dev/sda represents your first hard drive, while /dev/sda1 represents the first partition on your first hard drive.  
+  **/dev** - In the /dev directory, you’ll find files that represent devices – as well as files that represent other special things. For example, /dev/cdrom is your CD-ROM drive. /dev/sda represents your first hard drive, while /dev/sda1 represents the first partition on your first hard drive.
 
 Want to mount your CD-ROM? Run the mount command and specify /dev/cdrom as the device you want to mount. Want to partition your first hard drive? Run a disk-partitioning utility and specify /dev/sda as the hard disk you want to edit. Want to format the first partition on your first hard drive? Run a formatting command and tell it to format /dev/sda1.
 
