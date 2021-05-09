@@ -6,6 +6,33 @@ tags:
 
 ---
 
+### Operators
+* `in` - The `in` operator returns `true` if the specified property is in the specified object or it's prototype chain.
+* `delete` - The `delete` operator
+
+### Truthy/Falsy Values
+
+Falsy values will evaluate to `false` when used in a boolean context (predicates in `if` statements, for example). Watch out for checking when accessing values in an object, if `object[n] = 0` it will evaluate to false.
+
+There are 8 falsy values:
+| value | description |
+| --------- | ---- |
+| `false` | The keyword `false`. |
+| `0` | The number zero. |
+| `-0` | The number negative zero. |
+| `0n` | BigInt, when used as a boolean, follows the same rule as a Number. `0n` is falsy. |
+| `""` |  Empty string value. |
+| `null` | The `null` keyword, the absence of any value. |
+| `undefined` | The `undefined` keyword, the primitive value. |
+| `NaN` | The Keyword `NaN` - not a number. |
+
+
+* Infinity - a global property `Infinity` is a numeric value representing infinity.
+
+## Array methods
+
+**Array.prototype.slice()**
+
 **Array.prototype.sort()** - Sorts the elements of an array in place and returns the array. `sort` can take an optional compare function but by default, it will turn given elements into strings (yes, even numbers are converted into strings) and sort them by their Unicode values from least to greatest:
 
 ```javascript
