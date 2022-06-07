@@ -52,7 +52,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     kramdown (2.3.1)
       rexml
     listen (3.0.8)
