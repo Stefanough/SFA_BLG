@@ -1,0 +1,12 @@
+{
+  "name": "stefanarmijo-blog",
+  "private": true,
+  "scripts": {
+    "build": "bundle exec middleman build",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

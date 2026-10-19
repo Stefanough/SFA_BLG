@@ -28,10 +28,50 @@ helpers do
     p 'whatup im on the internet'
   end
 
-  def gh_links(url, css)
-    Nokogiri::HTML(open(url)).css(css).map do |link|
-      { name: link.content, uri: 'https://github.com' + link['href'] }
+  # List the files in a public GitHub repository directory.
+  #
+  # The original implementation scraped github.com's HTML, which broke the
+  # build whenever a repository was renamed, deleted, or GitHub changed its
+  # markup. Use the contents API instead, and degrade to an empty list rather
+  # than failing the whole build.
+  def gh_links(url, _css = nil)
+    require 'cgi'
+    require 'json'
+    require 'open-uri'
+
+    parts = URI.parse(url).path.split('/').reject(&:empty?)
+    owner, repo = parts.shift(2)
+    return [] unless owner && repo
+
+    ref = nil
+    path = nil
+    if parts[0] == 'tree' && parts[1]
+      ref = parts[1]
+      path = parts[2..].join('/')
+    elsif parts.any?
+      path = parts.join('/')
     end
+
+    api_url = "https://api.github.com/repos/#{owner}/#{repo}/contents"
+    api_url += "/#{path}" if path && !path.empty?
+    api_url += "?ref=#{CGI.escape(ref)}" if ref
+
+    headers = {
+      'Accept' => 'application/vnd.github+json',
+      'User-Agent' => 'stefanarmijo-blog-build'
+    }
+    headers['Authorization'] = "Bearer #{ENV['GITHUB_TOKEN']}" if ENV['GITHUB_TOKEN']
+
+    body = URI.open(api_url, headers).read
+    entries = JSON.parse(body)
+    entries = [entries] unless entries.is_a?(Array)
+
+    entries.select { |entry| entry['type'] == 'file' }.map do |entry|
+      { name: entry['name'], uri: entry['html_url'] }
+    end
+  rescue StandardError => e
+    warn "gh_links: skipping #{url} (#{e.class}: #{e.message})"
+    []
   end
 
   # is the the current object an article in the 'notes' blog?

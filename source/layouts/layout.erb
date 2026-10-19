@@ -11,7 +11,7 @@
       <%= ' - ' + current_article.title unless current_article.nil? %>
   </title>
   <%= stylesheet_link_tag "all" %>
-  <%= feed_tag :atom, "#{blog('scribbles').options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+  <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
 </head>
 
 <body>

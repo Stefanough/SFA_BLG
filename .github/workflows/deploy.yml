@@ -1,0 +1,43 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: ruby:2.6.10
+    steps:
+      - uses: actions/checkout@v4
+
+      # Middleman loads ExecJS (via coffee-script), so a JS runtime is required.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Ruby dependencies
+        run: |
+          gem install bundler -v 1.17.3 --no-document
+          bundle _1.17.3_ install --jobs 4
+
+      - name: Build site
+        env:
+          # Avoid unauthenticated GitHub API rate limits on the projects page.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle _1.17.3_ exec middleman build
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: f54a4112a7fd625bc3d1ec6a504d43df
+          command: deploy

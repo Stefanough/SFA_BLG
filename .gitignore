@@ -23,3 +23,13 @@
 
 # Ignore .DS_store file
 .DS_Store
+
+# Node / Wrangler
+/node_modules
+/.wrangler
+
+# Vendored gems (use `bundle install`)
+/vendor/bundle
+
+# Local build logs
+build.log
