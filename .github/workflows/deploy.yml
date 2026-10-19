@@ -16,6 +16,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     container: ruby:2.6.10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,8 +38,11 @@ jobs:
         run: bundle _1.17.3_ exec middleman build
 
       - name: Deploy to Cloudflare Workers
+        # Skipped until the repo has a CLOUDFLARE_API_TOKEN secret, so a push
+        # before CI is configured still produces a green build.
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
           accountId: f54a4112a7fd625bc3d1ec6a504d43df
           command: deploy
